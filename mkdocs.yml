@@ -40,3 +40,15 @@ nav:
       - Architecture: developers/architecture.md
       - Data Storage: developers/data_storage.md
       - Job Flow: developers/job_flow.md
+      - Building: developers/building.md
+      - Testing: developers/testing.md
+      - Documenting: developers/documenting.md
+      - Logging: developers/logging.md
+      - Plugins:
+          - developers/plugins/index.md
+          - Plugin Manager: developers/plugins/manager.md
+          - Format Readers: developers/plugins/format_readers.md
+          - Format Writers: developers/plugins/format_writers.md
+          - Network Clients: developers/plugins/network_clients.md
+          - Repository Clients: developers/plugins/repo_clients.md
+          - Setup Modules: developers/plugins/setup_modules.md
