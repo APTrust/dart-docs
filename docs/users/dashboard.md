@@ -2,7 +2,7 @@
 
 The dashboard shows running jobs, recently completed jobs, and selected items from remote repositories.
 
-![Dashboard](/img/dashboard/dashboard.png)
+![Dashboard](../img/dashboard/dashboard.png)
 
 ## Running Jobs
 
@@ -39,15 +39,15 @@ See also: [Jobs](jobs/index.md)
 
 The Repositories panels show items from remote repositories that DART knows how to connect to. In the screenshot above, this panel shows items recently ingested into APTrust's demo repository:
 
-![Items ingested into APTrust demo system](/img/dashboard/aptrust_ingested.png)
+![Items ingested into APTrust demo system](../img/dashboard/aptrust_ingested.png)
 
 The panel below shows a list of pending or recently completed tasks from APTrust demo system. Some repository panels, such as those from APTrust, show additional information when you mouse over an item.
 
-![List of work items in APTrust demo system](/img/dashboard/aptrust_work_items.png)
+![List of work items in APTrust demo system](../img/dashboard/aptrust_work_items.png)
 
 The panels show errors if they cannot communicate with the remote repository. If you run into errors like this, chances are your [Remote Repository](settings/remote_repositories.md) is incorrectly configured.
 
-![APTrust production repository login failure](/img/dashboard/repo_login_failure.png)
+![APTrust production repository login failure](../img/dashboard/repo_login_failure.png)
 
 !!! info
     Remote repository panels require both a correctly configured Remote Repository

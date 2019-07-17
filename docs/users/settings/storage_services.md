@@ -8,13 +8,13 @@ Storage services allow DART to connect to these pickup and drop-off points. Note
 
 To list all storage services, choose __Settings &gt; Storage Services__ from the menu.
 
-![List of Storage Services](/img/settings/storage_services/list.png)
+![List of Storage Services](../../img/settings/storage_services/list.png)
 
 ## Editing Storage Services
 
 Click any storage servicei in the list to edit it.
 
-![Editing Storage Services](/img/settings/storage_services/edit.png)
+![Editing Storage Services](../../img/settings/storage_services/edit.png)
 
 ### Description of Settings
 

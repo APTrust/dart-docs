@@ -10,13 +10,13 @@ Remote repositories are services to which you upload data for preservation. DART
 
 To view the list of Remote Repository settings, choose __Settings &gt; Remote Repositories__ from the menu.
 
-![List of Remote Repositories](/img/settings/remote_repositories/list.png)
+![List of Remote Repositories](../../img/settings/remote_repositories/list.png)
 
 ## Editing Remote Repositories
 
 Click on any repository in the list to edit it, or click the __New__ button to create a new one.
 
-![Editing a Remote Repository](/img/settings/remote_repositories/list.png)
+![Editing a Remote Repository](../../img/settings/remote_repositories/list.png)
 
 ### Description of Settings
 
