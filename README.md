@@ -15,3 +15,9 @@ pip install pygments
 ```
 
 Once those are installed, you can run the docs locally with the command `mkdocs server`.
+
+## Deploying to GitHub pages
+
+```
+mkdocs gh-deploy
+```
