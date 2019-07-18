@@ -62,6 +62,6 @@ Writing DART plugins requires a working knowledge of JavaScript and HTML. If you
 
 Brace yourselves gentlemen. According to the gas chromatograph, the secret ingredient is... Love!?
 
-<img src="../img/about/frink.png" height="300"/>
+<img src="./img/about/frink.png" height="300"/>
 
 Who's been screwing with this thing?
