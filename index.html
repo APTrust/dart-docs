@@ -178,9 +178,59 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Home
+      </label>
+    
     <a href="." title="Home" class="md-nav__link md-nav__link--active">
       Home
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-operations" title="Supported Operations" class="md-nav__link">
+    Supported Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugin-architecture" title="Plugin Architecture" class="md-nav__link">
+    Plugin Architecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-links" title="Useful Links" class="md-nav__link">
+    Useful Links
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credits" title="Credits" class="md-nav__link">
+    Credits
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -267,6 +317,18 @@
   <li class="md-nav__item">
     <a href="users/bagit/importing/" title="Importing Profiles" class="md-nav__link">
       Importing Profiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="users/bagit/exporting/" title="Exporting Profiles" class="md-nav__link">
+      Exporting Profiles
     </a>
   </li>
 
@@ -778,6 +840,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-operations" title="Supported Operations" class="md-nav__link">
+    Supported Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugin-architecture" title="Plugin Architecture" class="md-nav__link">
+    Plugin Architecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-links" title="Useful Links" class="md-nav__link">
+    Useful Links
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credits" title="Credits" class="md-nav__link">
+    Credits
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -790,7 +889,68 @@
                 
                 
                 <h1 id="welcome-to-dart">Welcome to DART</h1>
-<p>DART documentation will live here.</p>
+<p>DART is the Digital Archivist's Resource Tool. It provides both a GUI and a command-line interface for packaging files and uploading them to remote repositories.</p>
+<h2 id="supported-operations">Supported Operations</h2>
+<p>The initial release of DART 2.0 supports the following features:</p>
+<ul>
+<li>Creating BagIt bags that conform to defined BagIt profiles</li>
+<li>Validating BagIt bags according to defined BagIt profiles</li>
+<li>Uploading bags and other files to remote S3 endpoints</li>
+<li>Creating and modifying BagIt profiles through a visual point-and-click editor</li>
+<li>Defining repeatable Workflows for bagging and uploading files</li>
+<li>Running multiple simultaneous bagging and upload jobs</li>
+<li>Read-only integration with the APTrust's REST API to display the status of ingested materials and pending work items</li>
+<li>A command-line tool to enable scriptable bagging and upload operations</li>
+</ul>
+<p>To start using DART, see our <a href="users/getting_started/">Getting Started</a> page.</p>
+<h2 id="plugin-architecture">Plugin Architecture</h2>
+<p>Most of DART's features are implemented in plugins, which enable developers to add new features without having to understand all of DART's internals. DART is an open source project of the Academic Preservation Trust, which encourages developers to contribute new plugins to extend the tool's functionality.</p>
+<p>DART 2.0 supports the following types of plugins:</p>
+<ol>
+<li>
+<p>Format Readers - These allow DART to read files packaged in various formats, such as tar, zip, rar, parchive, OCFL, etc. Currently supported in formats in version 2.0:</p>
+<ol>
+<li>directory/file system</li>
+<li>tar</li>
+</ol>
+</li>
+<li>
+<p>Format Writers - These allow DART to write files in various formats, such as tar, zip, rar, parchive, OCFL, etc. Currently supported in formats in version 2.0:</p>
+<ol>
+<li>directory/file system</li>
+<li>tar</li>
+</ol>
+</li>
+<li>
+<p>Network Clients - These allow DART to send and retrieve files across a network. DART 2.0 supports the following protocols:</p>
+<ol>
+<li>S3</li>
+</ol>
+</li>
+<li>
+<p>Repository Clients - These allow DART to interact with remote repositories. Currently supported:</p>
+<ol>
+<li>APTrust</li>
+</ol>
+</li>
+<li>
+<p>Setup Modules - These allow organizations to install default settings and create a list of simple questions to get local users up and running quickly. Currently supported:</p>
+<ol>
+<li>APTrust</li>
+<li>DPN</li>
+</ol>
+</li>
+</ol>
+<p>Writing DART plugins requires a working knowledge of JavaScript and HTML. If you're interested in developing DART plugins, see our <a href="developers/">Developers</a> page and our <a href="https://aptrust.github.io/dart/">full API documentation</a>.</p>
+<h2 id="useful-links">Useful Links</h2>
+<p><a href="users/getting_started/">Getting Started with DART</a></p>
+<p><a href="developers/">Developing DART Plugins</a></p>
+<p><a href="https://aptrust.github.io/dart/">DART API documentation</a></p>
+<p><a href="https://github.com/aptrust/dart/">DART source code on GitHub</a></p>
+<h2 id="credits">Credits</h2>
+<p>Brace yourselves gentlemen. According to the gas chromatograph, the secret ingredient is... Love!?</p>
+<p><img src="../img/about/frink.png" height="300"/></p>
+<p>Who's been screwing with this thing?</p>
                 
                   
                 

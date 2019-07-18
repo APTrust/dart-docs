@@ -275,8 +275,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#dart-bagit-profiles" title="DART BagIt Profiles" class="md-nav__link">
+    DART BagIt Profiles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#built-in-profiles" title="Built-in Profiles" class="md-nav__link">
     Built-in Profiles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-profiles" title="Custom Profiles" class="md-nav__link">
+    Custom Profiles
   </a>
   
 </li>
@@ -300,6 +314,18 @@
   <li class="md-nav__item">
     <a href="importing/" title="Importing Profiles" class="md-nav__link">
       Importing Profiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="exporting/" title="Exporting Profiles" class="md-nav__link">
+      Exporting Profiles
     </a>
   </li>
 
@@ -815,8 +841,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#dart-bagit-profiles" title="DART BagIt Profiles" class="md-nav__link">
+    DART BagIt Profiles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#built-in-profiles" title="Built-in Profiles" class="md-nav__link">
     Built-in Profiles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-profiles" title="Custom Profiles" class="md-nav__link">
+    Custom Profiles
   </a>
   
 </li>
@@ -839,11 +879,102 @@
                 
                 
                 <h1 id="bagit-profiles">BagIt Profiles</h1>
-<p>Describe what they are.</p>
-<p>Link to spec.</p>
-<p>Describe how DART BagIt profile differ from the BagIt profiles on GitHub.</p>
+<p>While the <a href="https://tools.ietf.org/html/rfc8493">BagIt specification</a> describes the general requirements for a valid bag, BagIt profiles describe the tags, manifests, and tag manifests required to make a valid bag for a specific organization or purpose.</p>
+<p>DART uses BagIt profiles to produce bags that adhere to a profile, and to validate that bags do adhere to the profile.</p>
+<h2 id="dart-bagit-profiles">DART BagIt Profiles</h2>
+<p>While the general specification for BagIt Profiles can be found on <a href="https://github.com/bagit-profiles/bagit-profiles">GitHub</a>, DART's BagIt profiles differ from the published specification in the following ways:</p>
+<ol>
+<li>
+<p>DART profiles use camel case identifiers with no hyphens or periods in attribute names. For example, the <code>Allow-Fetch.txt</code> in GitHub BagIt profiles is called <code>allowFetchTxt</code> in DART profiles. This is in part to simplify JavaScript attributes so they can be reference in dot notation, and in part because the nedb object database used in early versions of DART did not support attribute names containing dots.</p>
+</li>
+<li>
+<p>DART profiles include an <code>id</code> attribute with a UUID. This is used internally, while externally the bagItProfileIdentifier URL is used externally.</p>
+</li>
+<li>
+<p>DART profiles include the following additional boolean attributes:</p>
+<ol>
+<li><code>allowMiscTopLevelFiles</code> which indicates whether files other than
+       manifests and tag manifests are allowed in the bag's root directory.</li>
+<li><code>allowMiscDirectories</code> which indicates whether directories other than
+       /data and its children are allowed in the bag.</li>
+<li><code>tarDirMustMatchName</code> which indicates whether the name of the
+       unserialized bag must match the name of the serialized bag, minus
+       the serialization extension. (That is, whether my_bag.tar must untar
+       to my_bag, and my_bag.zip must unzip to my_bag.)</li>
+</ol>
+</li>
+<li>
+<p>DART includes the attribute <code>baseProfileId</code> for internal use, to know whether
+   a user-created profile was based on an existing profile.</p>
+</li>
+<li>
+<p>DART includes the <code>isBuiltIn</code> attribute to indicate that a profile was built
+   in to the application (usually through a setup module or migration). These
+   profiles cannot be deleted.</p>
+</li>
+<li>
+<p>DART does not specify <code>tagFilesRequired</code> or <code>tagFilesAllowed</code>.</p>
+</li>
+<li>
+<p>DART BagIt profiles specify all tag requirements in a single list called
+   <code>tags</code> while the GitHub BagIt spec defines them as nested objects with
+   arbitrary names. The single list of uniform objects in the DART model makes
+   tag definitions easier to manipulate.</p>
+</li>
+<li>
+<p>While tag definitions in the GitHub BagIt Profile spec include only the
+   attributes <code>required</code> and <code>values</code>, DART tag definitions include the following
+   attributes:</p>
+<ol>
+<li><code>id</code> - A unique identifier in UUID format that DART uses internally.
+       This allows users to edit tag definitions in the DART UI without
+       the system losing track of which tag is being edited. The UUID is
+       immutable while all other attributes are not.</li>
+<li><code>tagFile</code> - The name of the tag file that contains the tag. This is
+       a path relative to the bag root. For example, <code>bag-info.txt</code> or
+       <code>custom-tags/image-credits.txt</code>.</li>
+<li><code>tagName</code> - The name of the tag. For example, <code>Source-Organization</code>.</li>
+<li><code>required</code> - A boolean indicating whether the tag is required.</li>
+<li><code>values</code> - An option list of legal values. If this list is present
+       and a tag contains a value that's not in the list, the value and
+       the bag are invalid.</li>
+<li><code>defaultValue</code> - A default value assigned by the user to the tag.
+       DART's BagIt Profile editor allows users to specify default values
+       to tags that will be consistent across bags. For example, users
+       can define a default value to <code>Source-Organization</code> so they don't
+       have to assign it repeatedly every time they create a new bag.</li>
+<li><code>userValue</code> - The value of a tag to be written into or read from a
+       tag file. Users can specify a userValue that overrides the
+       defaultValue when they create a bag. When reading a bag, DART
+       assigns the actual value of a tag to what was read from the bag.</li>
+<li><code>isBuiltIn</code> - A boolean value indicating whether a tag definition
+       is built in (as opposed to user-created). DART's BagIt Profile
+       editor allows users to add custom tags to a published profile,
+       such as the APTrust profile, while preventing them from deleting
+       built-in tag definitions. Deleting a built-in tag definition such
+       as <code>Source-Organization</code> would lead to DART generating invalid bags.</li>
+<li><code>help</code> - Help text to describe the significance of the tag to the
+       user. If present, the DART UI will display this message for the
+       user's edification and delight.</li>
+</ol>
+</li>
+</ol>
 <h2 id="built-in-profiles">Built-in Profiles</h2>
-<p>Describe which profiles are built in. APTrust, DPN, BTR.</p>
+<p>DART includes the following built-in profiles. Note that the BagIt Profile editor allows you to clone and customize each of these, though customization is limited to adding tags and tag files, and setting default tag values.</p>
+<ul>
+<li>
+<p>APTrust - The standard APTrust BagIt profile.</p>
+</li>
+<li>
+<p>BTR - The Beyond the Repository BagIt profile, which will be accepted by a number of distributed digital preservation repositories. (Coming later in 2019.)</p>
+</li>
+<li>
+<p>DPN - The legacy DPN BagIt profile. This is used primarily for testing and development.</p>
+</li>
+</ul>
+<h2 id="custom-profiles">Custom Profiles</h2>
+<p>DART enables users to create new BagIt profiles from scratch, and to clone and modify existing profiles.</p>
+<p>See also: <a href="creating/">Creating BagIt Profiles</a>, <a href="customizing/">Customizing BagIt Profiles</a></p>
                 
                   
                 

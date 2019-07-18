@@ -270,6 +270,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../exporting/" title="Exporting Profiles" class="md-nav__link">
+      Exporting Profiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -794,7 +806,43 @@
                 
                 
                 <h1 id="creating-profiles">Creating Profiles</h1>
-<p>How to create a new profile through the UI.</p>
+<p>To create a new BagIt Profile:</p>
+<ol>
+<li>
+<p>Choose <b>Settings &gt; BagIt Profiles</b> from the menu.</p>
+</li>
+<li>
+<p>Click the <strong>New</strong> button at the top of the profiles list.</p>
+</li>
+<li>
+<p>Select an option from the <strong>Base Profile</strong> list.</p>
+<ol>
+<li>
+<p>Chose <strong>None</strong> if you want to create a new profile from scratch.</p>
+</li>
+<li>
+<p>Choose the name of an existing profile if you want to clone and modify
+   an existing profile.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click the <strong>Create</strong> button.</p>
+</li>
+</ol>
+<p><img alt="New BagIt Profile" src="../../../img/bagit_profiles/new.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cloning an existing BagIt profile can be useful if you're going to create
+bags on behalf of more than one organization or group. You can set different
+default values for tags such as <code>Source-Organization</code> or <code>Contact-Email</code>
+within each cloned profile, and then assign meaningful names such as
+<code>APTrust Profile for Law Library</code> and <code>APTrust Profile for Engineering
+Library</code>.</p>
+</div>
+<p>Once you've created a new BagIt profile, you'll want to customize it using
+the built-in BagIt profile editor.</p>
+<p>See also: <a href="../customizing/">Customizing BagIt Profiles</a></p>
                 
                   
                 
@@ -815,7 +863,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../importing/" title="Importing Profiles" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../exporting/" title="Exporting Profiles" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -824,7 +872,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Importing Profiles
+                Exporting Profiles
               </span>
             </div>
           </a>

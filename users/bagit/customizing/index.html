@@ -272,6 +272,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../exporting/" title="Exporting Profiles" class="md-nav__link">
+      Exporting Profiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../creating/" title="Creating Profiles" class="md-nav__link">
       Creating Profiles
     </a>
@@ -391,6 +403,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-a-tag-file" title="Deleting a Tag File" class="md-nav__link">
+    Deleting a Tag File
+  </a>
   
 </li>
         
@@ -980,6 +999,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#deleting-a-tag-file" title="Deleting a Tag File" class="md-nav__link">
+    Deleting a Tag File
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1003,18 +1029,91 @@
                 
                 
                 <h1 id="customizing-profiles">Customizing Profiles</h1>
-<p>How to customize a profile throught the UI.</p>
+<p>To customize a BagIt profile, click the name of the profile in the profiles list, or click new and follow the steps to <a href="../creating/">create a BagIt profile</a>.</p>
+<p><img alt="BagIt Profile List" src="../../../img/bagit_profiles/list.png" /></p>
 <h2 id="about">About</h2>
+<p>The About tab of the BagIt profile editor enables you to set a name and description for your profile.</p>
+<p><img alt="BagIt Profile About tab" src="../../../img/bagit_profiles/about.png" /></p>
 <h2 id="info">Info</h2>
+<p>The Info tab includes fields to edit the BagIt-Profile-Info section of the profile. This includes the profile's URL identifier.</p>
+<p><img alt="BagIt Profile Info tab" src="../../../img/bagit_profiles/info.png" /></p>
 <h2 id="general">General</h2>
+<p>The General tab includes information about which BagIt versions your profile accepts, whether to allow fetch.txt files, and whether to allow miscellaneous top level files (arbitrary tag files directly under the root directory) and miscellaneous directories outside the payload (/data) directory.</p>
+<p><img alt="BagIt Profile Info tab" src="../../../img/bagit_profiles/info.png" /></p>
 <h2 id="manifests">Manifests</h2>
+<p>The Manifests tab specifies which manifests and tag manifests your profile requires. You can select multiple options from each list by holding down the Control key on Windows or the Command key on Mac while you click.</p>
+<p><img alt="BagIt Profile Manifests tab" src="../../../img/bagit_profiles/manifests.png" /></p>
 <h2 id="serialization">Serialization</h2>
+<p>The Serialization tab allows you to specify whether serialization is required, optional, or forbidden, as well as which serialization formats are supported. You can also specify here whether serialized bags must deserialize to a directory whose name matches the serialized file name. (For example, my_bag.tar must untar to my_bag and my_bag.zip must unzip to my_bag.)</p>
+<p><img alt="BagIt Profile Serialization tab" src="../../../img/bagit_profiles/serialization.png" /></p>
 <h2 id="tag-files">Tag Files</h2>
+<p>The Tag Files tab includes a drop-down list for editing the profile's tag files, and for adding new tag files.</p>
+<p><img alt="BagIt Profile Tag Files tab" src="../../../img/bagit_profiles/tag_files.png" /></p>
 <h3 id="adding-a-new-tag-file">Adding a New Tag File</h3>
+<p>To add a new tag file:</p>
+<ol>
+<li>
+<p>Click <strong>Add New Tag File</strong> on the drop-down list.</p>
+</li>
+<li>
+<p>Enter a name for the tag file. If the name includes slashes, the tag file will be created in a subdirectory beneath the bag's root directory. For example, <code>custom-tags/photo-credits.txt</code> would be placed in the bag's custom-tags directory.</p>
+</li>
+<li>
+<p>Click the <strong>Save</strong> button.</p>
+</li>
+</ol>
+<p><img alt="BagIt Profile New Tag File dialog" src="../../../img/bagit_profiles/new_tag_file.png" /></p>
 <h3 id="editing-a-tag-file">Editing a Tag File</h3>
+<p>To edit a tag file:</p>
+<ol>
+<li>
+<p>Click the <strong>Tag Files</strong> tab.</p>
+</li>
+<li>
+<p>Select the name of the file you want to edit.</p>
+</li>
+</ol>
+<p><img alt="BagIt Profile Tag Files tab" src="../../../img/bagit_profiles/tag_files.png" /></p>
 <h4 id="adding-a-tag">Adding a Tag</h4>
+<p>To add a tag to a tag file, click the <strong>New Tag</strong> button (visible in the screenshot above), then follow the steps in Editing a Tag below.</p>
 <h4 id="editing-a-tag">Editing a Tag</h4>
+<p>To edit a tag:</p>
+<ol>
+<li>
+<p>Click the name of the tag you want to edit.</p>
+</li>
+<li>
+<p>Set the appropriate values in the dialog.</p>
+<ol>
+<li>
+<p>Tag Name - The name of the tag. This is required.</p>
+</li>
+<li>
+<p>Required - A Yes/No value indicating whether the tag must have a value
+   for the bag to be considered valid.</p>
+</li>
+<li>
+<p>Values - An optional list of allowed values for this tag.</p>
+</li>
+<li>
+<p>Default Value - An optional default value for this tag.</p>
+</li>
+<li>
+<p>Help - An optional help message. This message will be displayed to
+   users who are filling out a bag's tag values in DART.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click the <strong>Save</strong> button.</p>
+</li>
+</ol>
+<p><img alt="BagIt Profile tag definition" src="../../../img/bagit_profiles/tag_definitions.png" /></p>
 <h4 id="deleting-a-tag">Deleting a Tag</h4>
+<p>To delete a tag, click the red X to the right of the tag name in the tag list view. If the tag does not have a red X, it is a required tag from a published profile and cannot be deleted. When you delete the last tag of a tag file, DART deletes the tag file as well.</p>
+<p><img alt="BagIt Profile Tag Files tab" src="../../../img/bagit_profiles/tag_files.png" /></p>
+<h3 id="deleting-a-tag-file">Deleting a Tag File</h3>
+<p>To delete a tag file, delete all of the tags in the file. See <a href="#deleting-a-tag">Deleting a Tag</a> above.</p>
                 
                   
                 
