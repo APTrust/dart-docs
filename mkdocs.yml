@@ -17,6 +17,7 @@ nav:
       - BagIt Profiles:
           - users/bagit/index.md
           - users/bagit/importing.md
+          - users/bagit/exporting.md
           - users/bagit/creating.md
           - users/bagit/customizing.md
       - Command Line Reference: users/command_line.md
