@@ -24,6 +24,7 @@ nav:
       - Dashboard: users/dashboard.md
       - Jobs:
           - users/jobs/index.md
+          - users/jobs/list.md
           - users/jobs/files.md
           - users/jobs/packaging.md
           - users/jobs/metadata.md
