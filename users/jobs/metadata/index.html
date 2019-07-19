@@ -368,6 +368,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../list/" title="Listing Jobs" class="md-nav__link">
+      Listing Jobs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../files/" title="Adding Files" class="md-nav__link">
       Adding Files
     </a>
@@ -400,9 +412,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Metadata
+      </label>
+    
     <a href="./" title="Metadata" class="md-nav__link md-nav__link--active">
       Metadata
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adding-custom-tags" title="Adding Custom Tags" class="md-nav__link">
+    Adding Custom Tags
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -794,6 +835,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adding-custom-tags" title="Adding Custom Tags" class="md-nav__link">
+    Adding Custom Tags
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -806,7 +863,20 @@
                 
                 
                 <h1 id="metadata">Metadata</h1>
-<p>Job tags and metadata.</p>
+<p>You'll see the job metadata screen if you chose the BagIt packaging format on the previous screen. This screen allows you to enter values for tags that will go into BagIt tag files. By default, this screen only shows tags whose values are not already filled in by default values.</p>
+<p>Default values come from two places:</p>
+<ul>
+<li>
+<p>Default tag values you've entered into your local BagIt profiles. See the <a href="../bagit/customizing/#editing-a-tag">Editing a Tag</a> section for information about setting default values.</p>
+</li>
+<li>
+<p>Auto-filled values calculated by DART when it creates the bag, such as the Payload-Oxum, Bagging-Software, and Bagging-Date.</p>
+</li>
+</ul>
+<p>If you want to edit tags with pre-set default values, click the <strong>Show All Tags</strong> button in the top right corner of the page.</p>
+<p><img alt="Job packaging" src="../../../img/jobs/packaging.png" /></p>
+<h2 id="adding-custom-tags">Adding Custom Tags</h2>
+<p>You can add a custom tag to a bag by clicking the <strong>Add New Tag</strong> button at the top of the page. Note that adding extra tags to a bag generally will not cause the bag to be invalid. The only exception to this rule is adding tags that the BagIt specification says may not be repeated, such as the Payload-Oxum tag.</p>
                 
                   
                 

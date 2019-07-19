@@ -364,10 +364,51 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Jobs
+      </label>
+    
     <a href="./" title="Jobs" class="md-nav__link md-nav__link--active">
       Jobs
     </a>
     
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jobs-and-workflows" title="Jobs and Workflows" class="md-nav__link">
+    Jobs and Workflows
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="list/" title="Listing Jobs" class="md-nav__link">
+      Listing Jobs
+    </a>
   </li>
 
         
@@ -794,6 +835,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jobs-and-workflows" title="Jobs and Workflows" class="md-nav__link">
+    Jobs and Workflows
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -806,7 +863,25 @@
                 
                 
                 <h1 id="jobs">Jobs</h1>
-<p>This page describes DART jobs.</p>
+<p>A job is a set of actions that may include one or more of the following:</p>
+<ul>
+<li>Packaging a number of files into a defined format, such as BagIt, tar, etc.</li>
+<li>Validating the package.</li>
+<li>Uploading the package to one or more remote locations.</li>
+</ul>
+<p>DART was initially designed for APTrust depositors to bag files according to the APTrust BagIt profile, validate the bags, and then send them to an S3 bucket for ingest into APTrust's preservation repository.</p>
+<p>DART plugin architecture will allow it to handle similary patterned jobs that use different packaging formats and network protocols such as zip, rar, or parchive formats sent via FTP or rsync.</p>
+<p>The process for creating and running jobs invlolves these steps:</p>
+<ol>
+<li><a href="files/">Adding files</a>.</li>
+<li><a href="packaging/">Choosing a package format</a>.</li>
+<li><a href="metadata/">Adding metadata</a>.</li>
+<li><a href="upload/">Choosing upload targets</a>.</li>
+<li><a href="run/">Reviewing and running the job</a>.</li>
+</ol>
+<p>For infomation about developing DART plugins, see the <a href="../../developers/plugins">Plugins Developer Documentation</a>.</p>
+<h2 id="jobs-and-workflows">Jobs and Workflows</h2>
+<p>Jobs can be converted to workflows. A <a href="../workflow.md">workflow</a> is essentially a job template that can be run in the DART UI or from the command line. A workflow enables you to run a number of jobs that all follow the same pattern (same packaging format, same default metadata values, and same upload targets).</p>
                 
                   
                 
@@ -842,13 +917,13 @@
           </a>
         
         
-          <a href="files/" title="Adding Files" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="list/" title="Listing Jobs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Adding Files
+                Listing Jobs
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
