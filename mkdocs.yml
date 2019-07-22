@@ -33,11 +33,14 @@ nav:
       - Logs: users/logs.md
       - Scripting with DART: users/scripting.md
       - Settings:
+          - users/settings/index.md
           - users/settings/app_settings.md
           - users/settings/internal_settings.md
           - users/settings/remote_repositories.md
           - users/settings/storage_services.md
-      - Workflows: users/workflows.md
+      - Workflows:
+          - users/workflows/index.md
+          - users/workflows/job_params.md
   - For Developers:
       - developers/index.md
       - Architecture: developers/architecture.md
