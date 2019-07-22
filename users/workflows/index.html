@@ -486,6 +486,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../settings/" title="Settings" class="md-nav__link">
+      Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../settings/app_settings/" title="App Settings" class="md-nav__link">
       App Settings
     </a>
@@ -540,6 +552,27 @@
   
 
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10" type="checkbox" id="nav-2-10" checked>
+    
+    <label class="md-nav__link" for="nav-2-10">
+      Workflows
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-10">
+        Workflows
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -547,10 +580,83 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Workflows
+      </label>
+    
     <a href="./" title="Workflows" class="md-nav__link md-nav__link--active">
       Workflows
     </a>
     
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#defining-a-workflow" title="Defining a Workflow" class="md-nav__link">
+    Defining a Workflow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-workflow-from-a-job" title="Creating a Workflow from a Job" class="md-nav__link">
+    Creating a Workflow from a Job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-workflow-from-scratch" title="Creating a Workflow from Scratch" class="md-nav__link">
+    Creating a Workflow from Scratch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-for-workflows" title="Tips for Workflows" class="md-nav__link">
+    Tips for Workflows
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="job_params/" title="Job Params" class="md-nav__link">
+      Job Params
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -804,6 +910,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#defining-a-workflow" title="Defining a Workflow" class="md-nav__link">
+    Defining a Workflow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-workflow-from-a-job" title="Creating a Workflow from a Job" class="md-nav__link">
+    Creating a Workflow from a Job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-workflow-from-scratch" title="Creating a Workflow from Scratch" class="md-nav__link">
+    Creating a Workflow from Scratch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-for-workflows" title="Tips for Workflows" class="md-nav__link">
+    Tips for Workflows
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -816,9 +965,53 @@
                 
                 
                 <h1 id="workflows">Workflows</h1>
-<p>Describe what they are, why you would use them.</p>
-<p>They can be run from the UI or the command line.</p>
-<p>Describe how to create them.</p>
+<p>A workflow is a set of packaging, validation, and/or upload operations that you define as a template to be run on any sets of files you choose.</p>
+<p>Workflows ensure that the exact same set of steps is run on each set of files. DART can run workflows from the UI and from the command line, which means you can create scripts that use workflows to package and upload materials.</p>
+<h2 id="defining-a-workflow">Defining a Workflow</h2>
+<p>DART provides two ways to define a workflow: from a job or from scratch.</p>
+<h3 id="creating-a-workflow-from-a-job">Creating a Workflow from a Job</h3>
+<p>The easiest way to create a workflow is to first <a href="../jobs/">create a job</a> that includes all of the operations you want to include, run the job to ensure it works, then click the <a href="../jobs/run/#creating-a-workflow-from-a-job"><strong>Convert to Workflow</strong></a> button on the <strong>Review and Run</strong> screen.</p>
+<h3 id="creating-a-workflow-from-scratch">Creating a Workflow from Scratch</h3>
+<p>To create a workflow from scratch:</p>
+<ol>
+<li>
+<p>Choose <strong>Workflows &gt; New</strong> from the menu.</p>
+</li>
+<li>
+<p>Fill in the details.</p>
+<ol>
+<li>
+<p>The <strong>Name</strong> is required and should describe what the workflow will do. This name will appear on the Workflow menu, and scripted tasks will use this name to reference the workflow. (See #2 under <a href="#tips-for-workflows">Tips for Workflows</a> below.)</p>
+</li>
+<li>
+<p>The <strong>Description</strong> is for your internal use.</p>
+</li>
+<li>
+<p>Choose the <strong>Package Format</strong> that suits your needs.</p>
+</li>
+<li>
+<p>If you chose BagIt as the Package Format, choose which <strong>BagIt Profile</strong> you want to use to build the bag. (See #1 under <a href="#tips-for-workflows">Tips for Workflows</a> below.)</p>
+</li>
+<li>
+<p>Choose the destination to which you want to upload the packaged files. Note that only <a href="../settings/storage_services/">Storage Services</a> where <em>Allows Upload</em> is set to <em>Yes</em> will appear in the <strong>Upload To</strong> list.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>, and remember that you can edit or delete this workflow later.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p><img alt="Workflow editor" src="../img/workflows/edit.png" /></p>
+<h2 id="tips-for-workflows">Tips for Workflows</h2>
+<ol>
+<li>
+<p>Use customized BagIt profiles. DART lets you clone the base version of a BagIt profile and then add your own tag default values, so that you don't have to re-enter those values each time you create a new bag. For example, most BagIt profiles require a value for the Source-Organization tag, and typically, this value will be the same for every bag you create. Most profiles also require a number of other tags that may rarely or never change from bag to bag. For example, most depositors will set the same Access and Storage-Option values for 99% of the bags they upload to APTrust. Including in your workflow a custom BagIt profile with pre-set default values will save you having to re-enter common tag values, while still allowing you to override them when necessary.</p>
+</li>
+<li>
+<p>Use meaningful names for your workflows. Many repositories include both a staging environment and a production environment. You may create workflows that are identical except that one pushes packages into the staging environment while the other pushes to production. DART lets you run workflows directly from the workflow menu. Meaningful names help uses choose the right workflow and understand what the consequences of the actions they are about to take.</p>
+</li>
+</ol>
+<p><img alt="Workflow menu" src="../img/workflows/menu.png" /></p>
                 
                   
                 
@@ -854,13 +1047,13 @@
           </a>
         
         
-          <a href="../../developers/" title="Developer's Guide to DART" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="job_params/" title="Job Params" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Developer's Guide to DART
+                Job Params
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

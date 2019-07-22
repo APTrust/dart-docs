@@ -545,6 +545,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../settings/" title="Settings" class="md-nav__link">
+      Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../settings/app_settings/" title="App Settings" class="md-nav__link">
       App Settings
     </a>
@@ -597,10 +609,46 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10" type="checkbox" id="nav-2-10">
+    
+    <label class="md-nav__link" for="nav-2-10">
+      Workflows
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-10">
+        Workflows
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../workflows/" title="Workflows" class="md-nav__link">
       Workflows
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../workflows/job_params/" title="Job Params" class="md-nav__link">
+      Job Params
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -903,16 +951,57 @@
                 
                 
                 <h1 id="getting-started">Getting Started</h1>
-<p>Getting started with DART...</p>
+<p>DART is the Digital Archivist's Resource Tool. Its primary purpose is to package digital materials and send them off to long-term preservation storage. DART's initial release focuses on packaging materials in BagIt format and uploading them to S3 buckets for ingest in APTrust. DART can be extended through plugins to produce other packaging formats and to communicated via additional network protocols.</p>
+<p>DART runs in both graphical and command-line modes on Windows, Mac, and Linux.</p>
 <h2 id="installation">Installation</h2>
-<p>Installing DART...</p>
+<p>Download the DART installer for your system.</p>
+<p><strong>Mac</strong>: <a href="https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.0.dmg">https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.0.dmg</a></p>
+<p><strong>Windows</strong>: <a href="https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.0-win.exe">https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.0-win.exe</a></p>
+<p><strong>Linux</strong>: <a href="https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.0_amd64.deb">https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.0_amd64.deb</a></p>
+<p>Double-click the installer after download and follow the prompts on screen.</p>
 <h2 id="set-up">Set Up</h2>
-<p>Set up modules...</p>
-<p>Set some defaults...</p>
+<p>After installation, DART includes two BagIt profiles by default, one for APTrust and one for DPN. You can use one of these two profiles to create your first job. While jobs can include packaging, validation, and upload operations, you won't be able to upload anything until you've set up a <a href="../settings/storage_services/">Storage Service</a> to receive an upload. With this, your first job will be limited to creating and validating a BagIt bag.</p>
 <h2 id="running-your-first-job">Running Your First Job</h2>
-<p>Run a job in DART...</p>
+<p>Follow these steps to create a valid local bag that conforms to the APTrust BagIt profile:</p>
+<ol>
+<li>
+<p>Choose <strong>Jobs &gt; New</strong> from the main menu.</p>
+<p><img alt="New job" src="../../img/getting_started/new_job.png" /></p>
+</li>
+<li>
+<p>Drag some files or folders into the files window. To avoid a long-running job that will consume a lot of disk space, choose only a few megabytes of files.</p>
+<p><img alt="Job files" src="../../img/jobs/files.png" /></p>
+</li>
+<li>
+<p>Click <strong>Next</strong> and set the following:</p>
+<ol>
+<li><strong>Packaging Format</strong>: BagIt</li>
+<li><strong>BagIt Profile</strong>: APTrust</li>
+<li><strong>Package Name</strong>: test_bag</li>
+<li><strong>Output Path</strong>: Don't edit this for now. DART will set it for you.</li>
+</ol>
+<p><img alt="Job packaging" src="../../img/jobs/packaging.png" /></p>
+</li>
+<li>
+<p>Click <strong>Next</strong> and set the required metadata attributes, which are marked with a red asterisk. For an APTrust bag, these include the <strong>Access</strong> and <strong>Title</strong> tags in the aptrust-info.txt file, and the <strong>Source-Organization</strong> tag in the bag-info.txt file.</p>
+<p><img alt="Job metadata" src="../../img/jobs/metadata.png" /></p>
+</li>
+<li>
+<p>Click <strong>Next</strong> to choose the upload targets. Since there will be no available upload targets after initial installtion, Click <strong>Next</strong> again.</p>
+</li>
+<li>
+<p>The <strong>Review and Run</strong> screen shows the details of the job you've just defined. Click <strong>Run Job</strong> to run the job.</p>
+<p><img alt="Job run" src="../../img/jobs/run.png" /></p>
+</li>
+</ol>
+<p>When the job is complete, you'll find your bag in the <strong>Output Path</strong> displayed on the <strong>Review and Run</strong> screen.</p>
 <h2 id="further-reading">Further Reading</h2>
-<p>See Jobs and Workflows.</p>
+<p><a href="../bagit/">BagIt Profiles</a> describes how to build an customize BagIt profiles, so DART can build bags exactly as you want them. Be sure to read the section on tag default values under <a href="../bagit/customizing/#editing-a-tag">Editing a Tag</a>. That will save you from re-entering common tag values, such as Source-Organization, every time you create a new bag.</p>
+<p>The <a href="../dashboard/">Dashboard</a> displays information about currently running and recently completed jobs. If you've configured <a href="../settings/remote_repositories/">Remote Repository</a> connections, the dashboard can show the status of recent and pending ingests.</p>
+<p>To get details about what DART is doing, check the <a href="../logs/">Logs</a>.</p>
+<p>The <a href="../settings/">Settings</a> section describes how to set up upload targets, remote repository connections, and more.</p>
+<p>Organizations that distribute DART to their members can create <a href="../../developers/plugins/setup_modules/">Setup Modules</a> to automatically configure DART for their needs.</p>
+<p>After you've defined and tested a successful job, you can convert it to a <a href="workflows.md">Workflow</a> to run other files through the same process.</p>
                 
                   
                 
