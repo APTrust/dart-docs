@@ -32,7 +32,7 @@ To create a workflow from scratch:
 
     6. Click __Save__, and remember that you can edit or delete this workflow later.
 
-![Workflow editor](../img/workflows/edit.png)
+![Workflow editor](../../img/workflows/edit.png)
 
 ## Tips for Workflows
 
@@ -40,4 +40,4 @@ To create a workflow from scratch:
 
 2. Use meaningful names for your workflows. Many repositories include both a staging environment and a production environment. You may create workflows that are identical except that one pushes packages into the staging environment while the other pushes to production. DART lets you run workflows directly from the workflow menu. Meaningful names help uses choose the right workflow and understand what the consequences of the actions they are about to take.
 
-   ![Workflow menu](../img/workflows/menu.png)
+   ![Workflow menu](../../img/workflows/menu.png)

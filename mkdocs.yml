@@ -13,15 +13,6 @@ nav:
   - Home: index.md
   - For Users:
       - users/getting_started.md
-      - About: users/about.md
-      - BagIt Profiles:
-          - users/bagit/index.md
-          - users/bagit/importing.md
-          - users/bagit/exporting.md
-          - users/bagit/creating.md
-          - users/bagit/customizing.md
-      - Command Line Reference: users/command_line.md
-      - Dashboard: users/dashboard.md
       - Jobs:
           - users/jobs/index.md
           - users/jobs/list.md
@@ -30,17 +21,25 @@ nav:
           - users/jobs/metadata.md
           - users/jobs/upload.md
           - users/jobs/run.md
-      - Logs: users/logs.md
-      - Scripting with DART: users/scripting.md
+      - Workflows:
+          - users/workflows/index.md
+          - users/workflows/job_params.md
       - Settings:
           - users/settings/index.md
           - users/settings/app_settings.md
           - users/settings/internal_settings.md
           - users/settings/remote_repositories.md
           - users/settings/storage_services.md
-      - Workflows:
-          - users/workflows/index.md
-          - users/workflows/job_params.md
+      - Dashboard: users/dashboard.md
+      - BagIt Profiles:
+          - users/bagit/index.md
+          - users/bagit/importing.md
+          - users/bagit/exporting.md
+          - users/bagit/creating.md
+          - users/bagit/customizing.md
+      - Command Line Reference: users/command_line.md
+      - Scripting with DART: users/scripting.md
+      - Logs: users/logs.md
   - For Developers:
       - developers/index.md
       - Architecture: developers/architecture.md

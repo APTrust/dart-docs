@@ -26,4 +26,4 @@ The upload progress bar displays the number of bytes prepared, and will appear t
 
 ## Creating a Workflow from a Job
 
-If you've created a successful job that you want to be the pattern for future jobs, click the __Create Workflow__ button to create a repeatable [workflow](../workflows.md) that can run new files through the same set of steps that this job just completed.
+If you've created a successful job that you want to be the pattern for future jobs, click the __Create Workflow__ button to create a repeatable [workflow](../workflows/index.md) that can run new files through the same set of steps that this job just completed.
