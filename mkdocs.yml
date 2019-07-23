@@ -21,6 +21,7 @@ nav:
           - users/jobs/metadata.md
           - users/jobs/upload.md
           - users/jobs/run.md
+          - users/jobs/delete.md
       - Workflows:
           - users/workflows/index.md
           - users/workflows/job_params.md
