@@ -10,7 +10,7 @@ Download the DART installer for your system.
 
 __Mac__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.0.dmg](https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.0.dmg)
 
-__Windows__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.0-win.exe](https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.0-win.exe)
+__Windows__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.0.exe](https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.0.exe)
 
 __Linux__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.0_amd64.deb](https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.0_amd64.deb)
 
