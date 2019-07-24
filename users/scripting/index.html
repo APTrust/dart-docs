@@ -456,6 +456,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../settings/plugins/" title="Plugins" class="md-nav__link">
+      Plugins
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1002,7 +1014,92 @@ need to create a few bag-specific tag values at runtime. See
 
 
 <h1 id="example-python">Example: Python</h1>
-<p>Coming soon...</p>
+<p>The following Python class will help you define and run DART jobs. You can cut and paste this to get started, but note that you will likely have to change the value of <code>dart_command</code> to point to the DART executable on your local machine.</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
+
+<span class="k">class</span> <span class="nc">Job</span><span class="p">:</span>
+
+    <span class="c1"># Be sure to set this appropriately for your system.</span>
+    <span class="c1"># The command &#39;npm start&#39; is for DART development use only.</span>
+    <span class="n">dart_command</span> <span class="o">=</span> <span class="s1">&#39;npm start&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">workflow_name</span><span class="p">,</span> <span class="n">package_name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">workflow_name</span> <span class="o">=</span> <span class="n">workflow_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">package_name</span> <span class="o">=</span> <span class="n">package_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">files</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tags</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">add_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag_file</span><span class="p">,</span> <span class="n">tag_name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+            <span class="s2">&quot;tagFile&quot;</span><span class="p">:</span> <span class="n">tag_file</span><span class="p">,</span>
+            <span class="s2">&quot;tagName&quot;</span><span class="p">:</span> <span class="n">tag_name</span><span class="p">,</span>
+            <span class="s2">&quot;userValue&quot;</span><span class="p">:</span> <span class="n">value</span>
+        <span class="p">})</span>
+
+    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;workflowName&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">workflow_name</span><span class="p">,</span>
+            <span class="s2">&quot;packageName&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">package_name</span><span class="p">,</span>
+            <span class="s2">&quot;files&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">files</span><span class="p">,</span>
+            <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">tags</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">_dict</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">json_string</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Starting job&quot;</span><span class="p">)</span>
+        <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> -- --stdin&quot;</span> <span class="o">%</span> <span class="n">Job</span><span class="o">.</span><span class="n">dart_command</span>
+        <span class="n">child</span> <span class="o">=</span> <span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">stdin</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">close_fds</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">stdout_data</span><span class="p">,</span> <span class="n">stderr_data</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="n">json_string</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">stdout_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">stdout_data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">stderr_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">stderr_data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">child</span><span class="o">.</span><span class="n">returncode</span>
+</pre></div>
+
+
+<p>Assuming you saved the code above to a file called job.py, you can create a script like the following to run a job based on a pre-defined DART workflow.</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">job</span> <span class="kn">import</span> <span class="n">Job</span>
+
+
+<span class="c1"># Create a new job using the &quot;DART Test Workflow.&quot;</span>
+<span class="c1"># This job will create a tarred bag called test.edu.my_files.tar</span>
+<span class="c1"># in your DART bagging directory.</span>
+
+<span class="n">job</span> <span class="o">=</span> <span class="n">Job</span><span class="p">(</span><span class="s2">&quot;DART Test Workflow&quot;</span><span class="p">,</span> <span class="s2">&quot;test.edu.my_files.tar&quot;</span><span class="p">)</span>
+
+<span class="c1"># Add two directories to the list of items that should go into</span>
+<span class="c1"># the bag&#39;s payload. Note that you can add a mix of files and</span>
+<span class="c1"># directories.</span>
+
+<span class="n">job</span><span class="o">.</span><span class="n">add_file</span><span class="p">(</span><span class="s2">&quot;/Users/apd4n/aptrust/dart-docs/site&quot;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">add_file</span><span class="p">(</span><span class="s2">&quot;/Users/apd4n/tmp/logs&quot;</span><span class="p">)</span>
+
+<span class="c1"># &quot;DART Test Workflow&quot; uses a BagIt profile with a number of</span>
+<span class="c1"># preset default values, which are fine for tags like Contact-Email,</span>
+<span class="c1"># which doesn&#39;t change from bag to bag. Here we set bag-specific</span>
+<span class="c1"># tag values.</span>
+
+<span class="n">job</span><span class="o">.</span><span class="n">add_tag</span><span class="p">(</span><span class="s2">&quot;bag-info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;Bag-Group-Identifier&quot;</span><span class="p">,</span> <span class="s2">&quot;TestGroup_001&quot;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">add_tag</span><span class="p">(</span><span class="s2">&quot;aptrust-info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;Title&quot;</span><span class="p">,</span> <span class="s2">&quot;Workflow Test Files&quot;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">add_tag</span><span class="p">(</span><span class="s2">&quot;aptrust-info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;Description&quot;</span><span class="p">,</span> <span class="s2">&quot;Contains miscellaneous files for workflow testing.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Run the job and check the exit code. 0 indicates success.</span>
+<span class="c1"># Non-zero values indicate failure.</span>
+<span class="n">exit_code</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">exit_code</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Job completed&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Job failed. Check the DART log for details.&quot;</span><span class="p">)</span>
+</pre></div>
                 
                   
                 
