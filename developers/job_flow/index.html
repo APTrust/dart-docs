@@ -679,9 +679,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Job Flow
+      </label>
+    
     <a href="./" title="Job Flow" class="md-nav__link md-nav__link--active">
       Job Flow
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-jobrunner-step-by-step" title="The JobRunner, Step by Step" class="md-nav__link">
+    The JobRunner, Step by Step
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -864,6 +893,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-jobrunner-step-by-step" title="The JobRunner, Step by Step" class="md-nav__link">
+    The JobRunner, Step by Step
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -876,7 +921,104 @@
                 
                 
                 <h1 id="job-flow">Job Flow</h1>
-<p>Describe workers. What happens when you run a job?</p>
+<p>All DART jobs are run as individual processes. When you run a job from the DART UI, the application forks a child process and runs the job in that process. The code that forks the child is in the run method of the <a href="https://github.com/APTrust/dart/blob/master/ui/controllers/job_run_controller.js">JobRunController</a>, which is <a href="https://aptrust.github.io/dart/JobRunController.html">documented here</a>.</p>
+<p>Forking child processes has a number of advantages over running jobs in the same process as the UI.</p>
+<ul>
+<li>You can run multiple jobs simultaneously.</li>
+<li>You can continue to use the UI while jobs run.</li>
+<li>A crashed job will not crash the UI.</li>
+</ul>
+<p>The downside of running jobs in child processes is that if you close the DART application, you kill all of the running jobs. This is why DART always displays a badge in the upper right corner when jobs are running.</p>
+<p><img alt="Running jobs badge" src="../../img/common/running_jobs_badge.png" /></p>
+<p>All DART jobs, whether run from the UI or from the command line, are launched from the run() method of <a href="https://github.com/APTrust/dart/blob/master/main.js">main.js</a>, which does the following:</p>
+<ol>
+<li>
+<p>Calls the <a href="https://aptrust.github.io/dart/JobLoader.html">JobLoader</a> to load the job.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The JobLoader figures out whether you're passing in a Job object or
+some other type of object from which it can construct a job. You'll
+typically pass in JSON representing a lightweight
+<a href="https://aptrust.github.io/dart/JobParams.html">JobParams</a> object
+and the JobLoader will construct the job from that. The JobParams
+object simply names a set of files, a <a href="../../users/workflows/">Workflow</a>
+to pass them through, and a set of metadata tags to add to the package.
+The <a href="../../users/workflows/job_params/">user documentaiton for JobParams</a>
+will be helpful to developers.</p>
+</div>
+</li>
+<li>
+<p>Passes the <a href="https://aptrust.github.io/dart/Job.html">Job</a> object to the <a href="https://aptrust.github.io/dart/JobRunner.html">JobRunner</a> and then calls the JobRunner's run method.</p>
+</li>
+<li>
+<p>Returns the exit code so that the script or application that launched the job can know whether it succeeded. An exit code of zero indicates success. Any other code indicates failure. These codes are spelled out in <a href="https://github.com/APTrust/dart/blob/master/core/constants.js">core/constants.js</a> as follows:</p>
+</li>
+</ol>
+<div class="codehilite"><pre><span></span>    <span class="cm">/**</span>
+<span class="cm">     * This exit code indicates a process completed successfully,</span>
+<span class="cm">     * with no errors.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @type {number}</span>
+<span class="cm">     */</span>
+    <span class="nx">EXIT_SUCCESS</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="cm">/**</span>
+<span class="cm">     * This exit code indicates a process ran to completion, but one</span>
+<span class="cm">     * or more errors occurred along the way.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @type {number}</span>
+<span class="cm">     */</span>
+    <span class="nx">EXIT_COMPLETED_WITH_ERRORS</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="cm">/**</span>
+<span class="cm">     * This exit code indicates a process did not complete</span>
+<span class="cm">     * due to invalid parameters.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @type {number}</span>
+<span class="cm">     */</span>
+    <span class="nx">EXIT_INVALID_PARAMS</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="cm">/**</span>
+<span class="cm">     * This exit code indicates that the process did not complete</span>
+<span class="cm">     * due to an unexpected runtime error.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @type {number}</span>
+<span class="cm">     */</span>
+     <span class="nx">EXIT_RUNTIME_ERROR</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</pre></div>
+
+
+<h2 id="the-jobrunner-step-by-step">The JobRunner, Step by Step</h2>
+<p>The <a href="https://aptrust.github.io/dart/JobRunner.html">JobRunner</a> does the following:</p>
+<ol>
+<li>
+<p>If the Job includes a <a href="https://aptrust.github.io/dart/PackageOperation.html">PackageOperation</a>, the JobRunner packages the files specified in the operation. The PackageOperation describes how DART should create a bag, or a tar file, or a zip file, or some other package. If a user wants to upload files without packaging, there will be no PackageOperation.</p>
+</li>
+<li>
+<p>If the PackageOperation produced a BagIt bag (tarred or not), DART validates the bag. The JobRunner will create a <a href="https://aptrust.github.io/dart/ValidationOperation.html">ValidationOperation</a> to describe what needs to be validated and how.</p>
+</li>
+<li>
+<p>If the job includes any <a href="https://aptrust.github.io/dart/UploadOperation.html">UploadOperations</a>, DART will execute them one at a time, in sequence.</p>
+</li>
+<li>
+<p>The JobRunner sets and returns the appropriate exit code. (Note that the most common cause of the EXIT_COMPLETED_WITH_ERRORS code is a job whose packaging and validation succeeded, along with some but not all of the upload operations.)</p>
+</li>
+</ol>
+<p>The JobRunner logs its work, and you can watch the operations unfold in the <a href="../logging/">logs</a>.</p>
+<p>Each of the objects <a href="https://aptrust.github.io/dart/PackageOperation.html">PackageOperation</a>, <a href="https://aptrust.github.io/dart/ValidationOperation.html">ValidationOperation</a>, and <a href="https://aptrust.github.io/dart/UploadOperation.html">UploadOperation</a> include an <a href="https://aptrust.github.io/dart/OperationResult.html">OperationResult</a> object.</p>
+<p>After a job is complete, each of the operations and their results are stored with the job record in the DART's jobs database, which is a plain text JSON file. You can open the file directly to examine the full state of the object. See <a href="../data_storage/">Data Storage</a> for more information.</p>
+<p>All of the code for running jobs lives in the <a href="https://github.com/APTrust/dart/tree/master/workers">workers</a> folder of the DART source. The four key files have the following tasks:</p>
+<ul>
+<li>
+<p>workers/job_runner.js orchestrates the work of bagging, validating, and uploading. Links: <a href="https://github.com/APTrust/dart/blob/master/workers/job_runner.js">source code</a>, <a href="https://aptrust.github.io/dart/JobRunner.html">documentation</a>, <a href="https://github.com/APTrust/dart/blob/master/workers/job_runner.test.js">tests</a>.</p>
+</li>
+<li>
+<p>workers/bag_creator.js creates bags for the PackageOperation step of the job. Links: <a href="https://github.com/APTrust/dart/blob/master/workers/job_runner.test.js">source code</a>, <a href="https://aptrust.github.io/dart/BagCreator.html">documentation</a>, <a href="https://github.com/APTrust/dart/blob/master/workers/bag_creator.test.js">tests</a>.</p>
+</li>
+<li>
+<p>workers/bag_validator.js validates that a bag is complete and conforms to a specified BagIt profile. Links: <a href="https://github.com/APTrust/dart/blob/master/workers/bag_validator.js">source</a>, <a href="https://aptrust.github.io/dart/BagValidator.html">documentation</a>, <a href="https://github.com/APTrust/dart/blob/master/workers/bag_validator.test.js">tests</a>.</p>
+</li>
+<li>
+<p>workers/uploader.js uploads files to a remote upload target. Links: <a href="https://github.com/APTrust/dart/blob/master/workers/uploader.js">source</a>, <a href="https://aptrust.github.io/dart/Uploader.html">documentation</a>, <a href="https://github.com/APTrust/dart/blob/master/workers/uploader.test.js">tests</a>.</p>
+</li>
+</ul>
                 
                   
                 

@@ -703,9 +703,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Testing
+      </label>
+    
     <a href="./" title="Testing" class="md-nav__link md-nav__link--active">
       Testing
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#test-code-you-add" title="Test Code You Add" class="md-nav__link">
+    Test Code You Add
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -864,6 +893,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#test-code-you-add" title="Test Code You Add" class="md-nav__link">
+    Test Code You Add
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -876,8 +921,14 @@
                 
                 
                 <h1 id="testing-dart">Testing DART</h1>
-<p>Running existing tests.</p>
-<p>Writing tests for your modules.</p>
+<p>DART uses <a href="https://jestjs.io/">Jest</a> for testing. You can run DART's test suite with this command</p>
+<div class="codehilite"><pre><span></span><span class="n">npm</span> <span class="n">test</span> <span class="c1">-- --runInBand</span>
+</pre></div>
+
+
+<p>Note that the <code>--runInBand</code> option is required as a number of tests save fixture data to DART's disk-based data store. Because that data is globally accessible, tests must run in sequence to avoid deleting and overwriting data that other tests expect to be in a known state.</p>
+<h2 id="test-code-you-add">Test Code You Add</h2>
+<p>If you're adding code to DART, please write tests to ensure your code behaves as expected.</p>
                 
                   
                 

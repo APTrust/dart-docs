@@ -876,7 +876,26 @@
                 
                 
                 <h1 id="data-storage">Data Storage</h1>
-<p>JSON only, plain text. Describe location of data files, PersistentObject.</p>
+<p>DART stores all of its settings data in plain text JSON files. You find these files in the DART data directory. Choose <strong>Help &gt; About</strong> from the DART menu to find the data directory on your system. You'll see a dialog like the following.</p>
+<p><img alt="About DART" src="../../img/about/about.png" /></p>
+<p>DART uses the simple <a href="https://www.npmjs.com/package/conf">conf</a> module to read, write, and search data, and <a href="https://www.npmjs.com/package/write-file-atomic">write-file-atomic</a> to prevent write conflicts.</p>
+<p>If you want to dig further into DART's data persistence, see the documentation for <a href="https://aptrust.github.io/dart/JsonStore.html">JsonStore</a> and <a href="https://aptrust.github.io/dart/PersistentObject.html">PersistentObject</a>.</p>
+<p>You can examine DART's data stores by opening the JSON files, or in the console by following these steps:</p>
+<ol>
+<li>
+<p>Open DART by running <code>npm start</code> from the DART project directory.</p>
+</li>
+<li>
+<p>Right click anywhere on the page and choose <strong>Inspect Element</strong> from the context menu.</p>
+</li>
+<li>
+<p>Swich to the Console view in the developer tools window.</p>
+</li>
+<li>
+<p>Type <code>DART.Core.Context.dataStores</code> in the console.</p>
+</li>
+</ol>
+<p><img alt="About DART" src="../../img/about/data_stores_in_console.png" /></p>
                 
                   
                 

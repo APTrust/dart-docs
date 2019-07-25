@@ -662,29 +662,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#design-principles" title="Design Principles" class="md-nav__link">
-    Design Principles
+  <a href="#getting-the-code" title="Getting the Code" class="md-nav__link">
+    Getting the Code
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#section-one" title="Section One" class="md-nav__link">
-    Section One
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#section-two" title="Section Two" class="md-nav__link">
-    Section Two
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#section-three" title="Section Three" class="md-nav__link">
-    Section Three
+  <a href="#useful-links" title="Useful Links" class="md-nav__link">
+    Useful Links
   </a>
   
 </li>
@@ -918,29 +904,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#design-principles" title="Design Principles" class="md-nav__link">
-    Design Principles
+  <a href="#getting-the-code" title="Getting the Code" class="md-nav__link">
+    Getting the Code
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#section-one" title="Section One" class="md-nav__link">
-    Section One
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#section-two" title="Section Two" class="md-nav__link">
-    Section Two
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#section-three" title="Section Three" class="md-nav__link">
-    Section Three
+  <a href="#useful-links" title="Useful Links" class="md-nav__link">
+    Useful Links
   </a>
   
 </li>
@@ -963,14 +935,30 @@
                 
                 
                 <h1 id="developers-guide-to-dart">Developer's Guide to DART</h1>
-<h2 id="design-principles">Design Principles</h2>
-<p>Yadda yadda yadda.</p>
-<h2 id="section-one">Section One</h2>
-<p>Write you some code.</p>
-<h2 id="section-two">Section Two</h2>
-<p>Test your code.</p>
-<h2 id="section-three">Section Three</h2>
-<p>Document your code.</p>
+<p>DART's primary purpose is to pack and ship digital materials for preservation. It includes a GUI for non-technical users who want to drag and drop file, and a <a href="../users/command-line.md">command line interface</a> for more technical users who want to <a href="../users/scripting/">script DART jobs</a>.</p>
+<p>While DART's initial release supports the BagIt packaging format and uploads to S3-compatible services, future users may require additional package formats such as rar, parchive, OCFL, etc. They may also need to ship files using network protocols such as SFTP, rsync, scp and others.</p>
+<p>DART has a plugin architecture that allows developers to contribute code that will add these package formats and network protocols. If you know how to write JavaScript, you can contribute <a href="plugins/">plugins</a> without having to understand DART's internals.</p>
+<h2 id="getting-the-code">Getting the Code</h2>
+<p>To get started developing DART plugins, download the souce from GitHub.</p>
+<div class="codehilite"><pre><span></span><span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="n">git</span><span class="nv">@github</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="n">APTrust</span><span class="o">/</span><span class="n">dart</span><span class="p">.</span><span class="n">git</span><span class="w"></span>
+</pre></div>
+
+
+<p>Once you have the source, you'll need to install the dependencies. Change into the dart directory and run this:</p>
+<div class="codehilite"><pre><span></span><span class="n">npm</span> <span class="n">install</span>
+</pre></div>
+
+
+<p>To ensure all is working, run the tests.</p>
+<div class="codehilite"><pre><span></span><span class="n">npm</span> <span class="n">test</span> <span class="c1">-- --runInBand</span>
+</pre></div>
+
+
+<h2 id="useful-links">Useful Links</h2>
+<p><a href="plugins/">Writing Plugins for DART</a></p>
+<p><a href="building/">Building DART Installers</a></p>
+<p><a href="https://aptrust.github.io/dart/">DART API Documentation</a></p>
+<p><a href="https://github.com/APTrust/dart">DART source on GitHub</a></p>
                 
                   
                 
