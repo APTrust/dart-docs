@@ -1,6 +1,6 @@
 # Developer's Guide to DART
 
-DART's primary purpose is to pack and ship digital materials for preservation. It includes a GUI for non-technical users who want to drag and drop file, and a [command line interface](../users/command-line.md) for more technical users who want to [script DART jobs](../users/scripting.md).
+DART's primary purpose is to pack and ship digital materials for preservation. It includes a GUI for non-technical users who want to drag and drop file, and a [command line interface](../users/command_line.md) for more technical users who want to [script DART jobs](../users/scripting.md).
 
 While DART's initial release supports the BagIt packaging format and uploads to S3-compatible services, future users may require additional package formats such as rar, parchive, OCFL, etc. They may also need to ship files using network protocols such as SFTP, rsync, scp and others.
 
