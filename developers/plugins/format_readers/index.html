@@ -784,9 +784,45 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Format Readers
+      </label>
+    
     <a href="./" title="Format Readers" class="md-nav__link md-nav__link--active">
       Format Readers
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-and-events" title="API and Events" class="md-nav__link">
+    API and Events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-reader-examples" title="Format Reader Examples" class="md-nav__link">
+    Format Reader Examples
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -866,6 +902,29 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-and-events" title="API and Events" class="md-nav__link">
+    API and Events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-reader-examples" title="Format Reader Examples" class="md-nav__link">
+    Format Reader Examples
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -878,8 +937,64 @@
                 
                 
                 <h1 id="format-readers">Format Readers</h1>
-<p>What they do.</p>
-<p>How to write one.</p>
+<p>Format readers read file formats like tar, zip, OCFL, etc. Format readers provide methods for listing the contents of a directory or serialized file, and for reading individual files from the directory/file.</p>
+<p>The initial release of DART 2.0 includes two format readers: a <a href="https://aptrust.github.io/dart/FileSystemReader.html">FileSystemReader</a> and a <a href="https://aptrust.github.io/dart/TarReader.html">TarReader</a>. Developers can use these two examples as references for how to write a format reader.</p>
+<h2 id="api-and-events">API and Events</h2>
+<p>Format readers must extend the DART base <a href="https://aptrust.github.io/dart/Plugin.html">Plugin</a> and providing a description() method that returns meaningful <a href="https://aptrust.github.io/dart/global.html#PluginDefinition">PluginDescription</a> information.</p>
+<p>Format readers must implement the following methods:</p>
+<ul>
+<li>
+<p>A <strong>constructor</strong> that takes a single parameter, which is the path to the file that the reader will read. (If the reader reads from a directory, such as an OCFL object, the path should point to a directory.)</p>
+</li>
+<li>
+<p>A static <strong>definition</strong> method that takes no parameters and returns a description of the plugin (as described in <a href="index.md/#the-base-plugin">The Base Plugin</a>).</p>
+</li>
+<li>
+<p>A <strong>read</strong> method that takes no parameters and emits events <code>entry</code>, <code>error</code>, and <code>end</code> (described below).</p>
+</li>
+<li>
+<p>A <strong>list</strong> method that takes no parameters and emits events <code>entry</code>, <code>error</code>, and <code>end</code> (described below).</p>
+</li>
+<li>
+<p>Property <strong>fileCount</strong>, a number that starts at zero and is incremented by one each time <strong>read</strong> or <strong>list</strong> emits an entry event for a file.</p>
+</li>
+<li>
+<p>Property <strong>dirCount</strong>, a number that starts at zero and is incremented by one each time <strong>read</strong> or <strong>list</strong> emits an entry event for a directory.</p>
+</li>
+<li>
+<p>Property <strong>byteCount</strong>, a number that starts at zero and is incremented by the number of bytes in a file each time <strong>read</strong> or <strong>list</strong> emits an entry event for a file.</p>
+</li>
+</ul>
+<p>The <strong>error</strong> event passes a JavaScript error object to registered listeners and causes DART to stop reading.</p>
+<p>The <strong>end</strong> event passes nothing to registered listeners and tells DART that the reader has finished with all entries.</p>
+<p>The <strong>entry</strong> event passes an object containing the relative path of the current file entry, a lightweight <a href="https://aptrust.github.io/dart/FileStat.html">FileStat</a> object, and in the case a of the <strong>read</strong> method, an open <a href="https://nodejs.org/api/stream.html#stream_class_stream_readable">Readable</a> stream so DART can read the contents of the file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DART uses its own simplified <a href="https://aptrust.github.io/dart/FileStat.html">FileStat</a> object instead of Node's built-in <a href="https://nodejs.org/api/fs.html#fs_class_fs_stats">Stats</a> object because format readers will often have to read from serialized formats that don't include all of the information you'd find in a Stats object. For example, tar and zip headers may exclude information about inode, blocksize, etc.  The <a href="https://aptrust.github.io/dart/FileStat.html">FileStat</a> object simply captures the essentials that are common across most formats.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In cases where a FormatReader's <strong>read</strong> method cannot return a readable stream, it can return a <a href="https://aptrust.github.io/dart/DummyReader.html">DummyReader</a>. This is necessary in cases where the reader encounters a directory entry that cannot be read like a regular file. DART will still try to read from the readable stream in the <strong>entry</strong> event, and a DummyReader will allow DART to read without error. For an example of how to do this, look for DummyReader in the <strong>read</strong> method of the <a href="https://github.com/APTrust/dart/blob/master/plugins/formats/read/file_system_reader.js">FileSystemReader</a> source code.</p>
+</div>
+<h2 id="format-reader-examples">Format Reader Examples</h2>
+<p>The best way to understand how to write a FormatReader plugin is to review the API documentation, source code, and tests for the following:</p>
+<ul>
+<li>
+<p><a href="https://aptrust.github.io/dart/FileSystemReader.html">FileSystemReader</a>, which provides a working example.</p>
+</li>
+<li>
+<p>The <a href="https://github.com/APTrust/dart/blob/master/plugins/formats/read/file_system_reader.test.js">FileSystemReader tests</a>, which show how the reader is expected to behave.</p>
+</li>
+<li>
+<p><a href="https://aptrust.github.io/dart/TarReader.html">TarReader</a>.</p>
+</li>
+<li>
+<p>The <a href="https://github.com/APTrust/dart/blob/master/plugins/formats/read/tar_reader.test.js">TarReader tests</a>, which show how the TarReader is expected to behave.</p>
+</li>
+<li>
+<p>The <a href="https://aptrust.github.io/dart/FileStat.html">FileStat</a> documentation, which shows the structure of the FileStat object.</p>
+</li>
+</ul>
                 
                   
                 

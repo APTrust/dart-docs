@@ -796,9 +796,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Format Writers
+      </label>
+    
     <a href="./" title="Format Writers" class="md-nav__link md-nav__link--active">
       Format Writers
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-and-events" title="API and Events" class="md-nav__link">
+    API and Events
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -866,6 +895,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-and-events" title="API and Events" class="md-nav__link">
+    API and Events
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -878,8 +923,25 @@
                 
                 
                 <h1 id="format-writers">Format Writers</h1>
-<p>What they do.</p>
-<p>How to write one.</p>
+<p>Format writers write file formats like tar, zip, OCFL, etc. Format writers provide methods for writing contents into a directory or serialized file. The initial release of DART 2.0 includes two format writers: a <a href="https://aptrust.github.io/dart/FileSystemWriter.html">FileSystemWriter</a> and a <a href="https://aptrust.github.io/dart/TarWriter.html">TarWriter</a>. Developers can use these two examples as references for how to write a format writer.</p>
+<p>Format writers may be synchronous or asynchronous under the hood. Certain types of writers, such as the built-in <a href="https://aptrust.github.io/dart/TarWriter.html">TarWriter</a> MUST be synchronous internally because the tar format requires files to be written one at a time, in order. To assist with this, the <a href="https://aptrust.github.io/dart/BaseWriter.html">BaseWriter</a> implements a queue that executes requests sequentially, in the order they were received, with each write request beginning only after the last write has completed.</p>
+<h2 id="api-and-events">API and Events</h2>
+<p>Format writers should extend the DART <a href="https://aptrust.github.io/dart/BaseWriter.html">BaseWriter</a> and provide a description() method that returns meaningful <a href="https://aptrust.github.io/dart/global.html#PluginDefinition">PluginDescription</a> information.</p>
+<p>Format writers must implement the following methods:</p>
+<ul>
+<li>
+<p>A <strong>constructor</strong> that takes a single parameter, which is the path to the file or directory that the reader will write.</p>
+</li>
+<li>
+<p>A static <strong>definition</strong> method that takes no parameters and returns a description of the plugin (as described in <a href="index.md/#the-base-plugin">The Base Plugin</a>).</p>
+</li>
+<li>
+<p>An <strong>add</strong> method that takes two parameters: a <a href="https://aptrust.github.io/dart/BagItFile.html">BagItFile</a> and an options list of cryptographic hash algorithm names (such as 'md5', 'sha256', etc.). This method must emit a <code>fileAdded</code> event each time it writes a file into the target directory (or tar archive, zip archive, etc).</p>
+</li>
+</ul>
+<p>The <strong>fileAdded</strong> event ...  TODO: WRITE ME</p>
+<p>The <strong>error</strong> event ...  TODO: WRITE ME</p>
+<p>The <strong>finish</strong> event ...  TODO: WRITE ME</p>
                 
                   
                 
