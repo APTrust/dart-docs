@@ -4,11 +4,13 @@ Plugins allow DART to read and write data formats (such as tar, zip, etc.), to u
 
 DART plugins are written in plain JavaScript and HTML. Developers may contribute new plugins without having to learn DART's internals. A plugin simply has to conform to a simple API, which it typically limited to a small number of well-defined methods.
 
+The documentation in this section gives a high-level overview plugin structure and behavior as a starting point for developing your own plugins. You'll find more detail information in DART's API documentation and source code, as well as in the unit tests that accompany existing plugins. Along with an overview of each plugin type, this documentation provides relevant links to source and test code for further study.
+
 ## The Base Plugin
 
 DART's base [Plugin](https://github.com/APTrust/dart/blob/master/plugins/plugin.js) object is simply an [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter) with a static method that returns a description. The description includes the following fields:
 
-* __id__ - A UUID string that uniquely identifies the plugin.
+* __id__ - A UUID string that uniquely identifies the plugin. When writing a plugin, you should generate this once. It lives from then on as a hard-coded identifier.
 
 * __name__ - The name of the plugin. This will appear in parts of the DART UI that use the plugin.
 
