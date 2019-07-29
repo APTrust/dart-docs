@@ -12,7 +12,7 @@ Format readers must implement the following methods:
 
 * A __constructor__ that takes a single parameter, which is the path to the file that the reader will read. (If the reader reads from a directory, such as an OCFL object, the path should point to a directory.)
 
-* A static __definition__ method that takes no parameters and returns a description of the plugin (as described in [The Base Plugin](index.md/#the-base-plugin).
+* A static __definition__ method that takes no parameters and returns a description of the plugin (as described in [The Base Plugin](index.md/#the-base-plugin)).
 
 * A __read__ method that takes no parameters and emits events `entry`, `error`, and `end` (described below).
 
