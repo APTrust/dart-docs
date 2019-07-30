@@ -821,6 +821,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#format-writer-queue-functions" title="Format Writer Queue Functions" class="md-nav__link">
+    Format Writer Queue Functions
+  </a>
+  
+</li>
+      
       
       
       
@@ -905,6 +912,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#format-writer-queue-functions" title="Format Writer Queue Functions" class="md-nav__link">
+    Format Writer Queue Functions
+  </a>
+  
+</li>
+      
       
       
       
@@ -936,12 +950,23 @@
 <p>A static <strong>definition</strong> method that takes no parameters and returns a description of the plugin (as described in <a href="index.md/#the-base-plugin">The Base Plugin</a>).</p>
 </li>
 <li>
-<p>An <strong>add</strong> method that takes two parameters: a <a href="https://aptrust.github.io/dart/BagItFile.html">BagItFile</a> and an options list of cryptographic hash algorithm names (such as 'md5', 'sha256', etc.). This method must emit a <code>fileAdded</code> event each time it writes a file into the target directory (or tar archive, zip archive, etc).</p>
+<p>An <strong>add</strong> method that takes two parameters: a <a href="https://aptrust.github.io/dart/BagItFile.html">BagItFile</a> and an options list of cryptographic hash algorithm names (such as 'md5', 'sha256', etc.). This method must emit a <code>fileAdded</code> event each time it writes a file into the target directory (or tar archive, zip archive, etc). Note that a <a href="https://aptrust.github.io/dart/BagItFile.html">BagItFile</a> is a simple object with properties to denote the source path from which the file is copied, the destination path to which it should be copied, and some basic stats information that includes the file size. In the process of copying the file, the Format Writer should calculate the requested checksums and store them in the <code>checksums</code> hash of the BagItFile.</p>
 </li>
 </ul>
-<p>The <strong>fileAdded</strong> event ...  TODO: WRITE ME</p>
-<p>The <strong>error</strong> event ...  TODO: WRITE ME</p>
-<p>The <strong>finish</strong> event ...  TODO: WRITE ME</p>
+<p>Format writers should fire the <strong>fileAdded</strong> event each time a file has been written. See the <strong>add</strong> method of <a href="https://aptrust.github.io/dart/FileSystemWriter.html">FileSystemWriter</a> or <a href="https://aptrust.github.io/dart/TarWriter.html">TarWriter</a> to see when and how this occurs. The data passed by the <strong>fileAdded</strong> event includes the <a href="https://aptrust.github.io/dart/BagItFile.html">BagItFile</a> that was just added and the percent complete of the overall write operation (i.e. number of bytes written divided by number of total bytes to be written).</p>
+<p>Format writers won't need to emit the <strong>error</strong> event on their own, unless some special circumstance warrents it. The <a href="https://aptrust.github.io/dart/BaseWriter.html">BaseWriter</a> emits this event, passing back a string showing the name of the file being written and the error message.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The BaseWriter always emits the <strong>finish</strong> event immediately after emitting the <strong>error</strong> event. This is done on the assumption that there is no sense in continuing to write a failed, incomplete, or corrupt output file.</p>
+</div>
+<p>Format writers don't need to emit the <strong>finish</strong> event. The BaseWriter takes care of that internally. This event does not pass any parameters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After emission of the <strong>finish</strong> event, you should be able to check the <strong>filesWritten</strong> property to get the number of files written. That number is updated by the BaseWriter's <strong>onFileWritten</strong> method. If you override that method, be sure your override calls <strong>super()</strong>.</p>
+</div>
+<h2 id="format-writer-queue-functions">Format Writer Queue Functions</h2>
+<p>DART's <a href="https://aptrust.github.io/dart/BaseWriter.html">BaseWriter</a> uses a one-at-a-time queue to force sequential synchronous writes. The queue is an instance of <a href="https://caolan.github.io/async/v3/docs.html#queue">async.queue</a>, and it requires a function to be run on each item. The <strong>writeIntoArchive()</strong> functions in <a href="https://github.com/APTrust/dart/blob/master/plugins/formats/write/file_system_writer.js">FileSystemWriter source</a> and <a href="https://github.com/APTrust/dart/blob/master/plugins/formats/write/tar_writer.js">TarWriter source</a> provide examples on how to write a function for the queue.</p>
+<p>Notice that in both format writers, the <strong>add()</strong> method sets up a hash containing data and functions, then passes that hash into the queue by calling <code>this._queue.push(data)</code>. The queue eventually hands that data structure off to <strong>writeIntoArchive()</strong>, which does some piping internally to calculate multiple checksums in a single write.</p>
                 
                   
                 

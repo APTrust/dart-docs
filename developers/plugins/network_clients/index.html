@@ -808,9 +808,52 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Network Clients
+      </label>
+    
     <a href="./" title="Network Clients" class="md-nav__link md-nav__link--active">
       Network Clients
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-and-events" title="API and Events" class="md-nav__link">
+    API and Events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-transfer-object" title="The Transfer Object" class="md-nav__link">
+    The Transfer Object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-implementation" title="Reference Implementation" class="md-nav__link">
+    Reference Implementation
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -866,6 +909,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-and-events" title="API and Events" class="md-nav__link">
+    API and Events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-transfer-object" title="The Transfer Object" class="md-nav__link">
+    The Transfer Object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-implementation" title="Reference Implementation" class="md-nav__link">
+    Reference Implementation
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -878,8 +951,65 @@
                 
                 
                 <h1 id="network-clients">Network Clients</h1>
-<p>What they do. How they enable new types of storage services. How they show up in the providers list.</p>
-<p>How to write one.</p>
+<p>Network Clients allow DART to send and receive data using defined network protocols such as S3, FTP, etc. These clients should be able to do the following:</p>
+<ul>
+<li>
+<p>Use the information in a <a href="https://aptrust.github.io/dart/StorageService.html">StorageService</a> object to login to or authenticate with the remote service. StorageService objects include a URL, login name, password, and other information required for authentication.</p>
+</li>
+<li>
+<p>Upload files or data to the remote service (if the service supports upload).</p>
+</li>
+<li>
+<p>Download files or data from the remote service (if the service supports download).</p>
+</li>
+<li>
+<p>List files or objects in the remote service (if the service supports list operations).</p>
+</li>
+</ul>
+<p>Note that at the time of DART's 2.0 release, DART supports only S3 uploads.</p>
+<h2 id="api-and-events">API and Events</h2>
+<p>Network clients must implement the following:</p>
+<ul>
+<li>
+<p>A <strong>constructor</strong> that takes a <a href="https://aptrust.github.io/dart/StorageService.html">StorageService</a> object as its sole parameter.</p>
+</li>
+<li>
+<p>An <strong>upload</strong> method that takes two parameters, <strong>localPath</strong> and <strong>remotePath</strong>. This method uploads the file at localPath to the destination remotePath.</p>
+</li>
+<li>
+<p>A <strong>download</strong> method that takes two parameters, <strong>localPath</strong> and <strong>remotePath</strong>. This method downloads the file from remotePath to localPath.</p>
+</li>
+<li>
+<p>A <strong>list</strong> method whose parameters and return values are yet to be determined.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The API for network client plugins is still in flux. We may add optional parameters to each of the methods above, and we may further define some as-yet undefined behaviors. We plan to flesh out the network client API as we add new clients.</p>
+</div>
+<p>Network clients emit the following events:</p>
+<ul>
+<li>
+<p><strong>start</strong> - Indicates an upload or download has started.</p>
+</li>
+<li>
+<p><strong>status</strong> - Indicates the status of an upload or download operation.</p>
+</li>
+<li>
+<p><strong>warning</strong> - Issued when a non-fatal error occurs, such as a network connection interruption. The client should retry operations that failed due to non-fatal errors.</p>
+</li>
+<li>
+<p><strong>error</strong> - Issued when a fatal error occurs. Fatal errors include authentication failures, missing files, permission errors, and other problems you cannot reasonably expect to go away when you retry the operation.</p>
+</li>
+<li>
+<p><strong>finish</strong> - Emitted when the upload/download is complete.</p>
+</li>
+</ul>
+<h2 id="the-transfer-object">The Transfer Object</h2>
+<p>Network clients may internally use their own custom transfer object to keep track of the details of an upload or download operation. The structure of a custom transfer object is entirely up to the developer. The only requirement is that the object include a property called <code>result</code> of type <a href="https://aptrust.github.io/dart/OperationResult.html">OperationResult</a>.</p>
+<p>DART doesn't care what network client's do under the hood, but it does care about the results of each operation. Those results should be stored in the <a href="https://aptrust.github.io/dart/OperationResult.html">OperationResult</a> object, and that object should be made accessible to DART through the events listed above.</p>
+<h2 id="reference-implementation">Reference Implementation</h2>
+<p>The only current reference implementation for a network client plugin is the <a href="https://github.com/APTrust/dart/blob/master/plugins/network/s3_client.js">S3Client</a>. The <a href="https://github.com/APTrust/dart/blob/master/plugins/network/s3_client.test.js">S3Client tests</a> will give you an idea of how the client is expected to behave.</p>
                 
                   
                 

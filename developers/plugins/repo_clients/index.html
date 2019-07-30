@@ -820,9 +820,45 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Repository Clients
+      </label>
+    
     <a href="./" title="Repository Clients" class="md-nav__link md-nav__link--active">
       Repository Clients
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" title="API" class="md-nav__link">
+    API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report-templates" title="Report Templates" class="md-nav__link">
+    Report Templates
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -866,6 +902,29 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" title="API" class="md-nav__link">
+    API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report-templates" title="Report Templates" class="md-nav__link">
+    Report Templates
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -878,9 +937,29 @@
                 
                 
                 <h1 id="repository-clients">Repository Clients</h1>
-<p>What they do.</p>
-<p>Requirements: REST API.</p>
-<p>Inputs and outputs.</p>
+<p>Repository clients communicate with the REST APIs of remote repositories such as APTrust, Fedora, etc. For safety, these clients should be limited to read operations, such as showing a list of ingested objects or a list of pending work items from a queue.</p>
+<h2 id="api">API</h2>
+<p>Repository clients should inherit from <a href="https://aptrust.github.io/dart/RepositoryBase.html">RepositoryBase</a>. They must implement the following methods:</p>
+<ul>
+<li>
+<p>A <strong>constructor</strong> that takes a <a href="https://aptrust.github.io/dart/RemoteRepository.html">RemoteRepository</a> object as its first parameter.</p>
+</li>
+<li>
+<p>A <strong>provides</strong> method that takes no parameters and returns a list of object describing what methods this object provides. Each of the described methods should return a promise that ultimately returns HTML to be displayed in the DART dashboard. See the <a href="https://aptrust.github.io/dart/APTrustClient.html">APTrustClient</a> for an example.</p>
+</li>
+<li>
+<p>A <strong>hasRequiredConnectionInfo</strong> method that takes no parameters and returns true or false to indicate whether the client's <a href="https://aptrust.github.io/dart/RemoteRepository.html">RemoteRepository</a> object appears to have enough info to query the repository. If this returns false, the DART dashboard will skip its automatic attempt to connect to the repo.</p>
+</li>
+</ul>
+<h2 id="report-templates">Report Templates</h2>
+<p>Because repository clients return HTML, they may use templates to translate the repository's JSON responses to fomatted markup. These templates should be in a directory whose name matches the file name of repository client, minus the .js at the end. For example, the <a href="https://aptrust.github.io/dart/APTrustClient.html">APTrustClient</a> is in the file plugins/repository/aptrust.js. It's templates are in plugins/repository/aptrust/.</p>
+<p>DART uses <a href="https://handlebarsjs.com/">Handlebars</a> templates. The <a href="https://aptrust.github.io/dart/APTrustClient.html">APTrustClient</a> includes templates to display <a href="https://github.com/APTrust/dart/blob/master/plugins/repository/aptrust/objects.html">ingested objects</a> and <a href="https://github.com/APTrust/dart/blob/master/plugins/repository/aptrust/work_items.html">work items</a>, which are items queued for ingest or restoration.</p>
+<p>Since the APTrust client is currently the only existing repository client plugin, its <a href="https://github.com/APTrust/dart/blob/master/plugins/repository/aptrust.js">source code</a> is probably the best reference for writing your own client. The <a href="https://github.com/APTrust/dart/blob/master/plugins/repository/aptrust.test.js">APTrustClient tests</a> show how the client is expected to behave.</p>
+<p>You can see what the output of the APTrust client looks like in the <a href="../../../users/dashboard/">dashboard documentation</a>. If you're interested in seeing how the dashboard loads reports from repository clients, see the <code>show()</code> method of the <a href="https://github.com/APTrust/dart/blob/master/ui/controllers/dashboard_controller.js">DashboardController</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The API for repository clients is subject to change. Most changes will likely be additions.</p>
+</div>
                 
                   
                 
