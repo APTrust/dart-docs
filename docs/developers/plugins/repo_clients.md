@@ -21,3 +21,6 @@ DART uses [Handlebars](https://handlebarsjs.com/) templates. The [APTrustClient]
 Since the APTrust client is currently the only existing repository client plugin, its [source code](https://github.com/APTrust/dart/blob/master/plugins/repository/aptrust.js) is probably the best reference for writing your own client. The [APTrustClient tests](https://github.com/APTrust/dart/blob/master/plugins/repository/aptrust.test.js) show how the client is expected to behave.
 
 You can see what the output of the APTrust client looks like in the [dashboard documentation](../../users/dashboard.md). If you're interested in seeing how the dashboard loads reports from repository clients, see the `show()` method of the [DashboardController](https://github.com/APTrust/dart/blob/master/ui/controllers/dashboard_controller.js).
+
+!!! Warning
+    The API for repository clients is subject to change. Most changes will likely be additions.
