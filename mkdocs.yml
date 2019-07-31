@@ -9,6 +9,7 @@ theme: material
 markdown_extensions:
   - admonition
   - codehilite
+repo_url:  https://github.com/APTrust/dart
 nav:
   - Home: index.md
   - For Users:
