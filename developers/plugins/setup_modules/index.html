@@ -1113,19 +1113,58 @@
 <p>After silently installing these objects, the walk-through questions can ask users for their specific login names and passwords to fill out the remaining information required to make the storage services and remote repositories usable.</p>
 <p>The process of automated configuration followed by simple questions is easier and less error-prone than processes that require users to search out a number of setting options and then fill out many fields. Setup modules have the added benefit of being repeatable. If a user's credentials have changed and he/she doesn't know which settings to update, they can go through the setup process again, enter their credentials where prompted, and the setup plugin will store them in the correct place.</p>
 <h2 id="api">API</h2>
-<p>Descended from SetupBase...</p>
-<p>TODO: WRITE ME...</p>
+<p>Setup plugins must extend the <a href="https://aptrust.github.io/dart/SetupBase.html">SetupBase</a> class, which implements all of a setup plugin's required methods, and also defines the following optional methods, which your plugin can override:</p>
+<ul>
+<li>
+<p><a href="https://aptrust.github.io/dart/SetupBase.html#afterAllQuestions">afterAllQuestions</a> - A callback invoked after a user has provided valid answers to all questions.</p>
+</li>
+<li>
+<p><a href="https://aptrust.github.io/dart/SetupBase.html#afterEachQuestion">afterEachQuestion</a> - A callback invoked after a valid answer to each question.</p>
+</li>
+<li>
+<p><a href="https://aptrust.github.io/dart/SetupBase.html#beforeAllQuestions">beforeAllQuestions</a> - A callback invoked before the first question is presented to the user.</p>
+</li>
+<li>
+<p><a href="https://aptrust.github.io/dart/SetupBase.html#beforeObjectInstallation">beforeObjectInstallation</a> - Invoked before the <a href="https://aptrust.github.io/dart/SetupController.html">SetupController</a> installs objects from JSON files.</p>
+<div class="admonition tip">
+<p class="admonition-title">Read the Source</p>
+<p>Take some time to review the source of <a href="https://github.com/APTrust/dart/blob/master/plugins/setup/setup_base.js">SetupBase</a> to see what features it provides.</p>
+</div>
+</li>
+</ul>
 <h2 id="supporting-files">Supporting Files</h2>
-<p>TODO: WRITE ME...</p>
+<p>Your setup module may include any or all of the following files. These files should be placed in folder beside your plugin, with a name that matches your plugin (minus the .js extension). For example, the <a href="https://github.com/APTrust/dart/blob/master/plugins/setup/aptrust.js">APTrust setup plugin</a> is in <code>plugins/setup/aptrust.js</code> and its <a href="https://github.com/APTrust/dart/tree/master/plugins/setup/aptrust">supporting files</a> are in <code>plugins/setup/aptrust/</code>.</p>
+<p>Note that you should generate a UUID to identify each item you install from the JSON files below, and any custom code that manipulates those items should refer to objects by their UUID. For example, see the <a href="https://github.com/APTrust/dart/blob/master/plugins/setup/aptrust/storage_services.json">storage services</a> that the APTrust plugin installs and the source code of the <a href="https://github.com/APTrust/dart/blob/master/plugins/setup/aptrust.js">_setBucketNames</a> method that manipulates the records after they've been installed.</p>
+<p>Your setup module can install partially configured objects whose incomplete properties are filled in later based on user responses. Again, see the <a href="https://github.com/APTrust/dart/blob/master/plugins/setup/aptrust.js">_setBucketNames</a> method of the APTrust setup plugin.</p>
+<p>Objects from each of the JSON files listed below will be installed before the user sees the first question in your setup module. All of the following files are optional.</p>
 <h3 id="app_settingsjson">app_settings.json</h3>
+<p>This file contains <a href="https://aptrust.github.io/dart/AppSetting.html">AppSetting</a> records to be installed at the beginning of the setup process. Example: <a href="https://github.com/APTrust/dart/blob/master/plugins/setup/aptrust/app_settings.json">app_settings.json</a>.</p>
 <h3 id="bagit_profilesjson">bagit_profiles.json</h3>
+<p>This file contains <a href="https://aptrust.github.io/dart/BagItProfile.html">BagItProfile</a> objects to be installed. Example: <a href="https://github.com/APTrust/dart/blob/master/plugins/setup/aptrust/bagit_profiles.json">bagit_profiles.json</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">BagIt Profile Differences</p>
+<p>DART BagIt profiles differ somewhat from the standard BagIt profiles found in the GitHub bagit-profiles repo. The differences are described <a href="../../../users/bagit/">here</a>. We're working on code to translate between the two formats. For now, you can <a href="../../users/bagit/creating/">define DART BagIt profiles</a> using the DART UI.</p>
+</div>
 <h3 id="end_messagehtml">end_message.html</h3>
+<p>This file contains the message the user will see upon completing the setup process. This file can contain any valid HTML.</p>
 <h3 id="internal_settingsjson">internal_settings.json</h3>
+<p>This file contains <a href="https://aptrust.github.io/dart/InternalSetting.html">InternalSetting</a> records to be installed at the beginning of the setup process. Example: <a href="https://github.com/APTrust/dart/blob/master/plugins/setup/aptrust/internal_settings.json">internal_settings.json</a>.</p>
 <h3 id="logopng">logo.png</h3>
+<p>A logo to be displayed in your setup module. This will appear on the list of available setup modules, as in the image below.</p>
+<p><img alt="List of setup modules" src="../../../img/setup/list.png" /></p>
 <h3 id="questionsjson">questions.json</h3>
+<p>This file contains a list of questions that will be presented one at a time to the user. Each question is a JSON representation of a <a href="https://aptrust.github.io/dart/SetupQuestion.html">SetupQuestion</a> object.</p>
+<p>The DART <a href="https://aptrust.github.io/dart/SetupController.html">SetupController</a> will present these questions in the order they appear in the JSON file. DART copies responses to questions into specific properties of objects installed by your setup module. Read the documentation and example for the <code>mapsToProperty</code> attribute of the <a href="https://aptrust.github.io/dart/SetupQuestion.html">SetupQuestion</a> object for details.</p>
+<p>Example: <a href="https://github.com/APTrust/dart/blob/master/plugins/setup/aptrust/questions.json">questions.json</a></p>
 <h3 id="remote_repositoriesjson">remote_repositories.json</h3>
+<p>This file contains one or more <a href="https://aptrust.github.io/dart/RemoteRepository.html">RemoteRepository</a> objects to be installed. Note that if your repository includes more than one environment (e.g. demo and production) you should include one object for each environment, since they will have different URLs and different login credentials.</p>
+<p>You probably won't want to include user credentials with these objects, but DART can fill in the userId and apiToken fields based on user responses to your questions. See the questions <code>q_aws_demo_secret_key</code> and <code>q_pharos_demo_login</code> in the <a href="https://github.com/APTrust/dart/blob/master/plugins/setup/aptrust/questions.json">APTrust setup questions</a>. Each includes a <code>mapsToProperty</code> object that tells DART to copy the user's response into a specific field of a specific object.</p>
+<p>Example: <a href="https://github.com/APTrust/dart/blob/master/plugins/setup/aptrust/remote_repositories.json">remote_repositories.json</a>.</p>
 <h3 id="start_messagehtml">start_message.html</h3>
+<p>The HTML of the message the user will see when they launch your setup plugin.</p>
 <h3 id="storage_servicesjson">storage_services.json</h3>
+<p>This file contains <a href="https://aptrust.github.io/dart/StorageService.html">StorageService</a> objects to be installed. Storage services are network-accessible drop-off points for ingests and/or pick-up points for restorations.</p>
+<p>Example: <a href="https://github.com/APTrust/dart/blob/master/plugins/setup/aptrust/storage_services.json">storage_services.json</a></p>
 <h2 id="mechanism">Mechanism</h2>
 <p>If you're curious about how setup plugins are run, see the <a href="https://aptrust.github.io/dart/SetupController.html">SetupController documentation</a> and <a href="https://github.com/APTrust/dart/blob/master/ui/controllers/setup_controller.js">SetupController source</a>.</p>
                 
