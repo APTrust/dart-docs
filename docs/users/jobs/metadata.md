@@ -10,7 +10,7 @@ Default values come from two places:
 
 If you want to edit tags with pre-set default values, click the __Show All Tags__ button in the top right corner of the page.
 
-![Job packaging](../../img/jobs/packaging.png)
+![Job metadata](../../img/jobs/metadata.png)
 
 ## Adding Custom Tags
 
