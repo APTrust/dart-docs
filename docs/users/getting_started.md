@@ -16,6 +16,9 @@ __Linux__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.0_amd
 
 Double-click the installer after download and follow the prompts on screen.
 
+!!! note "Note for Mac Users"
+    If you see a message that states it can’t open DART.app because it is from an unidentified developer: Open System Preferences > Security & Privacy and click Open Anyway. APTrust is working on getting an Apple Developer certificate, so this issue should be resolved in a later release.
+
 ## Set Up
 
 After installation, DART includes two BagIt profiles by default, one for APTrust and one for DPN. You can use one of these two profiles to create your first job. While jobs can include packaging, validation, and upload operations, you won't be able to upload anything until you've set up a [Storage Service](settings/storage_services.md) to receive an upload. With this, your first job will be limited to creating and validating a BagIt bag.
