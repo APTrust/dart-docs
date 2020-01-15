@@ -14,7 +14,7 @@ pip install mkdocs-material
 pip install pygments
 ```
 
-Once those are installed, you can run the docs locally with the command `mkdocs server`.
+Once those are installed, you can run the docs locally with the command `mkdocs serve`.
 
 ## Deploying to GitHub pages
 
