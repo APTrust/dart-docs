@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
     
     
       
@@ -40,7 +40,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
       
       
     
@@ -169,7 +169,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -924,13 +924,23 @@
                 
                 
                 <h1 id="importing-profiles">Importing Profiles</h1>
-<p>This feature isn't implemented yet. Currently, the only ways to get profiles into DART
-are:</p>
-<ul>
-<li>migrations</li>
-<li>setup modules</li>
-<li>creating your own through the UI</li>
-</ul>
+<p>DART can import BagIt profiles that follow the <a href="https://bagit-profiles.github.io/bagit-profiles-specification/">BagIt Profiles 1.3 specification</a>, ordered Library of Congress profiles, such as <a href="https://github.com/LibraryOfCongress/bagger/blob/master/bagger-business/src/main/resources/gov/loc/repository/bagger/profiles/SANC-state-profile.json">SANC State Profile</a>, and unordered Library of Congress profiles like <a href="https://github.com/LibraryOfCongress/bagger/blob/master/bagger-business/src/main/resources/\gov/loc/repository/bagger/profiles/other-project-profile.json">other-project-profile.json</a>.</p>
+<p>To import a profile:</p>
+<ol>
+<li>Choose <strong>Settings &gt; BagIt Profiles</strong> from the main menu.</li>
+<li>
+<p>Click the <strong>Import Profile</strong> button in the top right corner.</p>
+<p><img alt="BagIt Profile list" src="../../../img/bagit_profiles/profile_list.png" /></p>
+</li>
+<li>
+<p>Option 1: Choose <em>Import from URL</em>. Type or paste the URL you want to import, then click <strong>Import</strong>.</p>
+<p><img alt="BagIt Profile import from URL" src="../../../img/bagit_profiles/profile_import_url.png" /></p>
+</li>
+<li>
+<p>Option 2: Choose <strong>Import from JSON</strong>, paste the BagIt profile JSON you want to import, then click <strong>Import</strong>.</p>
+<p><img alt="BagIt Profile import from JSON" src="../../../img/bagit_profiles/profile_import_text.png" /></p>
+</li>
+</ol>
                 
                   
                 
@@ -1000,7 +1010,7 @@ are:</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      <script src="../../../assets/javascripts/application.c648116f.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
