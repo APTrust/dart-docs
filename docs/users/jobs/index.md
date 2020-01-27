@@ -17,6 +17,7 @@ The process for creating and running jobs invlolves these steps:
 1. [Adding metadata](metadata.md).
 1. [Choosing upload targets](upload.md).
 1. [Reviewing and running the job](run.md).
+1. [Troubleshooting](troubleshooting.md).
 
 For infomation about developing DART plugins, see the [Plugins Developer Documentation](../../developers/plugins).
 

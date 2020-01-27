@@ -23,6 +23,7 @@ nav:
           - users/jobs/upload.md
           - users/jobs/run.md
           - users/jobs/delete.md
+          - users/jobs/troubleshooting.md
       - Workflows:
           - users/workflows/index.md
           - users/workflows/job_params.md
