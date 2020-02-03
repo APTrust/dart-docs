@@ -1,5 +1,7 @@
 # Setup Modules
 
+<p style="font-weight:bold;color:red;">WARNING - Setup Modules will soon be deprecated in favor of a much simpler system of importing and exporting settings. The import/export feature should be complete in February, 2020.</p>
+
 Setup modules ease the process of configuring DART for users who will require common settings. These modules allow a developer or organization to:
 
 * Automatically install a number of default settings.
