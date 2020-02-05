@@ -34,6 +34,8 @@ nav:
           - users/settings/remote_repositories.md
           - users/settings/storage_services.md
           - users/settings/plugins.md
+          - users/settings/export.md
+          - users/settings/import.md
       - Dashboard: users/dashboard.md
       - BagIt Profiles:
           - users/bagit/index.md

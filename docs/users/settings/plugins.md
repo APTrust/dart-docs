@@ -10,8 +10,6 @@ DART plugins provide features such as the following:
 
 * __Repository__ - Allows DART to communicate with remote repositories to retrieve information such as a list of ingested objects.
 
-* __Setup__ - These plugins allow organizations to automatically apply common configuration settings for their users.
-
 To see the list of plugins installed on your system, choose __Settings &gt; Plugins__ from the menu. You should see a list like this:
 
 ![Plugins list](../../img/settings/plugins/list.png)

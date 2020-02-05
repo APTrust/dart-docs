@@ -66,6 +66,6 @@ To get details about what DART is doing, check the [Logs](logs.md).
 
 The [Settings](settings/index.md) section describes how to set up upload targets, remote repository connections, and more.
 
-Organizations that distribute DART to their members can create [Setup Modules](../developers/plugins/setup_modules.md) to automatically configure DART for their needs.
+Organizations that distribute DART to their members can [Export Settings](settings/index.md) to help users quickly configure DART for their needs.
 
 After you've defined and tested a successful job, you can convert it to a [Workflow](workflows/index.md) to run other files through the same process.
