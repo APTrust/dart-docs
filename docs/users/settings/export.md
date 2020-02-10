@@ -23,3 +23,23 @@ After exporting your settings, click __Copy to Clipboard__ to copy them.
 ![Exported settings](../../img/settings/export/exported.png)
 
 You can then post the settings to a public URL, or email them to other users for import.
+
+## Export Questions
+
+If you are exporting settings for a number of other users, you may want to add questions to your export, to help walk users through the setup process.
+
+Because settings are meant to be published and shared, DART does not export login names and passwords. You should pass those by phone, PrivNote, or some other secure channel.
+
+You can define questions that will prompt the user for that information and DART will copy the user's response to the setting and field you define. For example, you can ask a user to enter their SFTP password and tell DART to copy into the connection settings for your SFTP server.
+
+DART can also copy values into the default value fields of BagIt profile tags. For example, if your BagIt profile includes an "Internal-Department" tag, user can enter their department name in response to a question and have the response become the default value for all bags they produce.
+
+To define setup questions:
+
+1. Check the box next to _Add questions to help users import these settings._
+1. Click the __Add Question__ button on the bottom of the Settings Export screen.
+    ![Add setup questions](../../img/settings/export/add_questions.png)
+1. Type in your question. For example, "What is your password for the sftp server?"
+1. Tell DART to copy the user's response into the password field of the Storage Service called "SFTP demo server".
+
+![Sample setup question](../../img/settings/export/question.png)
