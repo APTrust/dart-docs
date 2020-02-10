@@ -540,9 +540,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Exporting Settings
+      </label>
+    
     <a href="./" title="Exporting Settings" class="md-nav__link md-nav__link--active">
       Exporting Settings
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#export-questions" class="md-nav__link">
+    Export Questions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -946,6 +975,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#export-questions" class="md-nav__link">
+    Export Questions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -977,6 +1022,20 @@
 <p>After exporting your settings, click <strong>Copy to Clipboard</strong> to copy them.</p>
 <p><img alt="Exported settings" src="../../../img/settings/export/exported.png" /></p>
 <p>You can then post the settings to a public URL, or email them to other users for import.</p>
+<h2 id="export-questions">Export Questions</h2>
+<p>If you are exporting settings for a number of other users, you may want to add questions to your export, to help walk users through the setup process.</p>
+<p>Because settings are meant to be published and shared, DART does not export login names and passwords. You should pass those by phone, PrivNote, or some other secure channel.</p>
+<p>You can define questions that will prompt the user for that information and DART will copy the user's response to the setting and field you define. For example, you can ask a user to enter their SFTP password and tell DART to copy into the connection settings for your SFTP server.</p>
+<p>DART can also copy values into the default value fields of BagIt profile tags. For example, if your BagIt profile includes an "Internal-Department" tag, user can enter their department name in response to a question and have the response become the default value for all bags they produce.</p>
+<p>To define setup questions:</p>
+<ol>
+<li>Check the box next to <em>Add questions to help users import these settings.</em></li>
+<li>Click the <strong>Add Question</strong> button on the bottom of the Settings Export screen.
+    <img alt="Add setup questions" src="../../../img/settings/export/add_questions.png" /></li>
+<li>Type in your question. For example, "What is your password for the sftp server?"</li>
+<li>Tell DART to copy the user's response into the password field of the Storage Service called "SFTP demo server".</li>
+</ol>
+<p><img alt="Sample setup question" src="../../../img/settings/export/question.png" /></p>
                 
                   
                 
