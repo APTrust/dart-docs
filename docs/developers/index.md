@@ -1,6 +1,6 @@
 # Developer's Guide to DART
 
-DART's primary purpose is to pack and ship digital materials for preservation. It includes a GUI for non-technical users who want to drag and drop file, and a [command line interface](../users/command_line.md) for more technical users who want to [script DART jobs](../users/scripting.md).
+DART's primary purpose is to pack and ship digital materials for preservation. It includes a GUI for non-technical users who want to drag and drop files, and a [command line interface](../users/command_line.md) for more technical users who want to [script DART jobs](../users/scripting.md).
 
 While DART's initial release supports the BagIt packaging format and uploads to S3-compatible services, future users may require additional package formats such as rar, parchive, OCFL, etc. They may also need to ship files using network protocols such as SFTP, rsync, scp and others.
 
@@ -8,10 +8,10 @@ DART has a plugin architecture that allows developers to contribute code that wi
 
 ## Getting the Code
 
-To get started developing DART plugins, download the souce from GitHub.
+To get started developing DART plugins, download the source from GitHub.
 
 ```
-git clone git@github.com:APTrust/dart.git
+git clone https://github.com/APTrust/dart.git
 ```
 
 Once you have the source, you'll need to install the dependencies. Change into the dart directory and run this:
