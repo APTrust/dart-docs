@@ -8,11 +8,11 @@ DART runs in both graphical and command-line modes on Windows, Mac, and Linux.
 
 Download the DART installer for your system.
 
-__Mac__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.0.dmg](https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.0.dmg)
+__Mac__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.1.dmg](https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.1.dmg)
 
-__Windows__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.0.exe](https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.0.exe)
+__Windows__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.1.exe](https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.1.exe)
 
-__Linux__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.0_amd64.deb](https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.0_amd64.deb)
+__Linux__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.1_amd64.deb](https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.1_amd64.deb)
 
 Double-click the installer after download and follow the prompts on screen.
 
