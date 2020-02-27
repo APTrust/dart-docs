@@ -6,7 +6,7 @@ DART runs in both graphical and command-line modes on Windows, Mac, and Linux.
 
 ## Installation
 
-Download the DART installer for your system.
+Download the DART installer for your system. The current version is 2.0.1.
 
 __Mac__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.1.dmg](https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.1.dmg)
 
