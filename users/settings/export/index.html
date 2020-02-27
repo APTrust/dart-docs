@@ -1007,7 +1007,7 @@
                 <h1 id="exporting-settings">Exporting Settings</h1>
 <p>If you're setting up DART for a number of users, you may want to configure your local DART installation, then export your settings for others to use. For example, you can set up a BagIt Profile, application settings, remote repositories and storage services for your institution, then publish them to a URL for others to install via DART's import feature.</p>
 <div class="admonition note">
-<p class="admonition-title">Data Export Does Not Export Credentials</p>
+<p class="admonition-title">DART Does Not Export Credentials</p>
 <p>When you export StorageService and RemoteRepository records, DART will not export login and password fields, unless they begin with "env:", which indicates the logins/passwords are to be loaded from the environment.</p>
 <p>You may still export these records, but you will then have to pass login and password information through another channel, such as phone, email, or <a href="https://privnote.com/#" target="_blank">PrivNote</a>.</p>
 <p>Also note that if you export StorageService and RemoteRepository records and then import them back into your own DART installation, you may overwrite the records' existing login and password info with blank data.</p>
@@ -1036,6 +1036,7 @@
 <li>Tell DART to copy the user's response into the password field of the Storage Service called "SFTP demo server".</li>
 </ol>
 <p><img alt="Sample setup question" src="../../../img/settings/export/question.png" /></p>
+<p>DART will present these questions to users when they import your settings. For more info, see <a href="../import/">importing settings</a>.</p>
                 
                   
                 
