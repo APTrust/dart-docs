@@ -9,7 +9,7 @@ script: true # Skip script (Don't use this if one already exists)
 
 before_deploy:
     - mkdocs build --verbose
-    - ls -alr .
+    - ls -alR .
 
 notifications:
   slack:
@@ -20,6 +20,7 @@ env:
 deploy:
     - provider: pages
       cleanup: true
+      skip_cleanup: true
       token: "$GH_TOKEN"
       keep_history: true
       verbose: true
