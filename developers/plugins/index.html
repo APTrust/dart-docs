@@ -943,18 +943,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="setup_modules/" title="Setup Modules" class="md-nav__link">
-      Setup Modules
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -1047,9 +1035,6 @@
 <p><strong>implementsProtocols</strong> - The network protocols that this plugin implements. For example, an FTP plugin may implement ['ftp', 'sftp', 'ftps']. This applies only to plugins of type NetworkClient. If your plugin is not a NetworkClient, this should be an empty list. Use all lower case letters.</p>
 </li>
 <li>
-<p><strong>setsUp</strong> - This describes what general configuration your plugin provides. For example, the 'aptrust' setup plugin helps the user configure some basic APTrust settings, such as the URL of the APTrust repository, the user's API keys, etc. This applies only to plugins of type Setup. If your plugin is not a Setup plugin, this should be empty. Use all lower case letters.</p>
-</li>
-<li>
 <p><strong>talksToRepository</strong> - This describes what type of repository your plugin talks to. For example, 'fedora', 'aptrust', etc. This applies only to plugins of type Repository. If your plugin is not a Repository plugin, this should be empty. Use all lower case letters.</p>
 </li>
 </ul>
@@ -1060,7 +1045,6 @@
 <p><a href="format_writers/">Format Writers</a> write file formats.</p>
 <p><a href="network_clients/">Network Clients</a> provide methods for uploading and download via different network protocols.</p>
 <p><a href="repo_clients/">Repo Clients</a> provide communication between DART and the REST APIs of remote repositories.</p>
-<p><a href="setup_modules/">Setup Modules</a> automate pars of the setup and configuration process, and provide one-at-a-time walkthrough questions to help users configure their DART environment.</p>
 <p>The <a href="manager/">PluginManager</a> provides methods for discovering and loading installed plugins.</p>
                 
                   
