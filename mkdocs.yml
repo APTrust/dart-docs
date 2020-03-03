@@ -62,4 +62,3 @@ nav:
           - Format Writers: developers/plugins/format_writers.md
           - Network Clients: developers/plugins/network_clients.md
           - Repository Clients: developers/plugins/repo_clients.md
-          - Setup Modules: developers/plugins/setup_modules.md

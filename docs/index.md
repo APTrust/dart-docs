@@ -4,7 +4,7 @@ DART is the Digital Archivist's Resource Tool. It provides both a GUI and a comm
 
 ## Supported Operations
 
-The initial release of DART 2.0.1 supports the following features:
+The current release of DART 2.0.3 supports the following features:
 
 * Creating BagIt bags that conform to defined BagIt profiles
 * Validating BagIt bags according to defined BagIt profiles
@@ -41,14 +41,6 @@ DART 2.0 supports the following types of plugins:
 1. Repository Clients - These allow DART to interact with remote repositories. Currently supported:
 
     1. APTrust
-
-1. Setup Modules [DEPRECATED] - These allow organizations to install default settings and create a list of simple questions to get local users up and running quickly. Currently supported:
-
-    1. APTrust
-    1. DPN
-
-    Note that Setup modules are deprecated in favor of exporting and
-    importing settings. See [settings export](./users/settings/export.md)
 
 Writing DART plugins requires a working knowledge of JavaScript and HTML. If you're interested in developing DART plugins, see our [Developers](developers/index.md) page and our [full API documentation](https://aptrust.github.io/dart/).
 

@@ -24,8 +24,6 @@ DART's base [Plugin](https://github.com/APTrust/dart/blob/master/plugins/plugin.
 
 * __implementsProtocols__ - The network protocols that this plugin implements. For example, an FTP plugin may implement ['ftp', 'sftp', 'ftps']. This applies only to plugins of type NetworkClient. If your plugin is not a NetworkClient, this should be an empty list. Use all lower case letters.
 
-* __setsUp__ - This describes what general configuration your plugin provides. For example, the 'aptrust' setup plugin helps the user configure some basic APTrust settings, such as the URL of the APTrust repository, the user's API keys, etc. This applies only to plugins of type Setup. If your plugin is not a Setup plugin, this should be empty. Use all lower case letters.
-
 * __talksToRepository__ - This describes what type of repository your plugin talks to. For example, 'fedora', 'aptrust', etc. This applies only to plugins of type Repository. If your plugin is not a Repository plugin, this should be empty. Use all lower case letters.
 
 The [PluginManager](manager.md) uses these descriptions to tell the application what plugins are available and what capabilities they have.
@@ -41,7 +39,5 @@ Plugins are EventEmitters. They can work synchronously or asynchronously, but th
 [Network Clients](network_clients.md) provide methods for uploading and download via different network protocols.
 
 [Repo Clients](repo_clients.md) provide communication between DART and the REST APIs of remote repositories.
-
-[Setup Modules](setup_modules.md) automate pars of the setup and configuration process, and provide one-at-a-time walkthrough questions to help users configure their DART environment.
 
 The [PluginManager](manager.md) provides methods for discovering and loading installed plugins.
