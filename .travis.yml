@@ -19,7 +19,7 @@ env:
     secure: vgcOxKAK/pPfXN8qPmIhWtutbTZzrs2Vp+gqwrkBzEIfV60vA3ipWoOJNs0qThiMA/Q+O+n8p1UzSKLGoPGZCuD4PUAkaDWmtcfyHYUSDPMD3rELq0T0l7qESu87SSCya3TIWb/xOZKTg3DJmg0khommO+qftGSBjnukrNMCOij/D6sNWZlnqaNuMwhEjFT6d2wFLUzn8NNDe6dOJPJsA+L8JMp0mIanCIfPv1m1utxLcK2OQ6+H1M1dX67mZO93khnh2rLegnGmXpaiyf9m684hn/GQRagvdUpxo81nYOLI6i2SACrGbkQ2DAT1OD0Oes38diWjn19BVuLKLC9hk5HOfLxaOE1DMykLMYP1HhDVOWsKnLstuStdzx9t+QbzQJTGvirdFKjrA3d4YR0Mgy29X2/1g5V0o/IoIIrer+h9Fx+V7T4dXwdMr/nevNAKfL6J3YuhV3XLwubdWv5d6lVqaAtOYB7R+HhIh9dJWCTLG2iR8V67nv4lqKZ3r8ccWuQnvXlY1q+2qP3sZ1vkPhtrtGN2rDtuWVGJD7+D0ex8QZ8n/4/bbQS9iBU48548Ykyak1RCavBTZnyf4t6qRXCb6QLWPEGwyq0B/qlCf3imeFfMEYBtXUnY7NfoUaYOov9ntm/DpUsIxP+MyFSOXaKYinWg5d/vtkz53IHs8o0=
 deploy:
     - provider: pages
-      skip-cleanup: true
+      cleanup: true
       token: "$GH_TOKEN"
       keep_history: true
       verbose: true
