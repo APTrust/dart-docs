@@ -1,11 +1,9 @@
-language: python # Set the build language to Python
-
-python: 3.6 # Set the version of Python to use
-
-branches: master # Set the branch to build from
+language: python
+python: 3.6
+branches: master
 
 install:
-    - pip install mkdocs mkdocs-material pymdown-extensions pygments
+    - pip install mkdocs mkdocs-material pymdown-extensions pygments fontawesome_markdown
 
 script: true # Skip script (Don't use this if one already exists)
 
@@ -24,6 +22,6 @@ deploy:
       token: "$GH_TOKEN"
       keep_history: true
       verbose: true
-      local_dir: docs
+      local_dir: site
       on:
           branch: master
