@@ -2,6 +2,7 @@
 #
 # pip install mkdocs
 # pip install mkdocs-material
+# Or just see the README
 #
 # ----------------------------------------------------------------------
 site_name: DART Documentation
