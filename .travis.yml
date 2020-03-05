@@ -4,6 +4,7 @@ branches: master
 
 install:
     - pip install mkdocs mkdocs-material pymdown-extensions pygments fontawesome_markdown
+    - ls -al
 
 script: true # Skip script (Don't use this if one already exists)
 
