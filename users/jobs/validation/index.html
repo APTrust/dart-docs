@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
     
     
       
@@ -40,7 +40,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
       
       
     
@@ -169,7 +169,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -384,9 +384,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Validation Jobs
+      </label>
+    
     <a href="./" title="Validation Jobs" class="md-nav__link md-nav__link--active">
       Validation Jobs
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-note-on-mac-os-dot-underscore-files" class="md-nav__link">
+    A Note on Mac OS Dot-Underscore Files
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -946,6 +975,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-note-on-mac-os-dot-underscore-files" class="md-nav__link">
+    A Note on Mac OS Dot-Underscore Files
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -982,6 +1027,15 @@
 </ol>
 <p>The progress bar will show the progress of the job, and DART will display specific error messages below the progress bar when the job is complete.</p>
 <p>Note that a bag that is valid according to one profile may be invalid according to others. If a bag is valid according to the Empty Profile, it conforms to the general <a href="https://tools.ietf.org/html/rfc8493" target="_blank">IETF BagIt specification</a>.</p>
+<h2 id="a-note-on-mac-os-dot-underscore-files">A Note on Mac OS Dot-Underscore Files</h2>
+<p>DART may report a number of errors for tarred bags created on Mac OS, stating that .DS_Store files or files beginning with "._" were found in the payload but not in the manifests.</p>
+<p>Typically, there will be one dot-underscore file for each payload file, like so:</p>
+<ul>
+<li>data/article.pdf -&gt; data/._article.pdf</li>
+<li>data/image.jpg -&gt; data/._image.jpg</li>
+</ul>
+<p>These files contain metadata used by the Mac OS filesystem. When you tar a bag with the typical command, <code>tar -cf mybag.tar mybag</code>, Mac includes the dot-underscore files by default, but your bagging software may not include those hidden files in the manifests, so the DART validator considers the bags invalid, with messages like "File data/._image.jpg found in data directory is not present in manifest-sha256.txt."</p>
+<p>When tarring your own bags outside of DART, you get around this problem with the command <code>COPYFILE_DISABLE=1 tar -cf mybag.tar mybag</code>. That tells Mac's tar program to exclude dot-underscore files from the tarball.</p>
                 
                   
                 
@@ -1051,7 +1105,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      <script src="../../../assets/javascripts/application.c648116f.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
