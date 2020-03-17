@@ -19,3 +19,16 @@ If you simply want to validate an existing bag, follow these steps:
 The progress bar will show the progress of the job, and DART will display specific error messages below the progress bar when the job is complete.
 
 Note that a bag that is valid according to one profile may be invalid according to others. If a bag is valid according to the Empty Profile, it conforms to the general <a href="https://tools.ietf.org/html/rfc8493" target="_blank">IETF BagIt specification</a>.
+
+## A Note on Mac OS Dot-Underscore Files
+
+DART may report a number of errors for tarred bags created on Mac OS, stating that .DS_Store files or files beginning with "._" were found in the payload but not in the manifests.
+
+Typically, there will be one dot-underscore file for each payload file, like so:
+
+* data/article.pdf -> data/._article.pdf
+* data/image.jpg -> data/._image.jpg
+
+These files contain metadata used by the Mac OS filesystem. When you tar a bag with the typical command, `tar -cf mybag.tar mybag`, Mac includes the dot-underscore files by default, but your bagging software may not include those hidden files in the manifests, so the DART validator considers the bags invalid, with messages like "File data/._image.jpg found in data directory is not present in manifest-sha256.txt."
+
+When tarring your own bags outside of DART, you get around this problem with the command `COPYFILE_DISABLE=1 tar -cf mybag.tar mybag`. That tells Mac's tar program to exclude dot-underscore files from the tarball.
