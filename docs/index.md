@@ -4,7 +4,7 @@ DART is the Digital Archivist's Resource Tool. It provides both a GUI and a comm
 
 ## Supported Operations
 
-The current release of DART 2.0.6 supports the following features:
+The current release of DART 2.0.7 supports the following features:
 
 * Creating BagIt bags that conform to defined BagIt profiles
 * Validating BagIt bags according to defined BagIt profiles
