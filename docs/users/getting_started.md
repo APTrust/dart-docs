@@ -6,13 +6,13 @@ DART runs in both graphical and command-line modes on Windows, Mac, and Linux.
 
 ## Installation
 
-Download the DART installer for your system. The current version is 2.0.7 (released May 14, 2020).
+Download the DART installer for your system. The current version is 2.0.8 (released May 14, 2020).
 
-__Mac__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.7.dmg](https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.7.dmg)
+__Mac__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.8.dmg](https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.8.dmg)
 
-__Windows__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.7.exe](https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.7.exe)
+__Windows__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.8.exe](https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.8.exe)
 
-__Linux__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.7_amd64.deb](https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.7_amd64.deb)
+__Linux__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.8_amd64.deb](https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.8_amd64.deb)
 
 Double-click the installer after download and follow the prompts on screen.
 
