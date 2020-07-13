@@ -29,6 +29,7 @@ nav:
       - Workflows:
           - users/workflows/index.md
           - users/workflows/job_params.md
+          - users/workflows/batch_jobs.md
       - Settings:
           - users/settings/index.md
           - users/settings/app_settings.md
