@@ -4,6 +4,8 @@ While the [BagIt specification](https://tools.ietf.org/html/rfc8493) describes t
 
 DART uses BagIt profiles to produce bags that adhere to a profile, and to validate that bags do adhere to the profile.
 
+<iframe width="845" height="518" src="https://www.youtube.com/embed/qnFFlRhlfCA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## DART BagIt Profiles
 
 While the general specification for BagIt Profiles can be found on [GitHub](https://github.com/bagit-profiles/bagit-profiles), DART's BagIt profiles differ from the published specification in the following ways:

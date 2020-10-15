@@ -4,7 +4,7 @@ DART is the Digital Archivist's Resource Tool. It provides both a GUI and a comm
 
 ## Supported Operations
 
-The current release of DART 2.0.7 supports the following features:
+The current release of DART 2.0.10 supports the following features:
 
 * Creating BagIt bags that conform to defined BagIt profiles
 * Validating BagIt bags according to defined BagIt profiles
@@ -14,6 +14,9 @@ The current release of DART 2.0.7 supports the following features:
 * Running multiple simultaneous bagging and upload jobs
 * Read-only integration with the APTrust's REST API to display the status of ingested materials and pending work items
 * A command-line tool to enable scriptable bagging and upload operations
+* BagIt Profile import and export
+* BagIt Profile customization throug a visual editor
+* Settings import and export
 
 To start using DART, see our [Getting Started](users/getting_started.md) page.
 
@@ -53,6 +56,12 @@ Writing DART plugins requires a working knowledge of JavaScript and HTML. If you
 [DART API documentation](https://aptrust.github.io/dart/)
 
 [DART source code on GitHub](https://github.com/aptrust/dart/)
+
+[Video: Jobs and Workflows](https://www.youtube.com/watch?v=_ga9XfuyO-I)
+
+[Video: BagIt Profiles in DART](https://www.youtube.com/watch?v=qnFFlRhlfCA)
+
+[Video: Settings Import and Export](https://www.youtube.com/watch?v=GcJptP4h4IM)
 
 ## Credits
 

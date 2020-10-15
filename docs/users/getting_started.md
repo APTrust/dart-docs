@@ -2,17 +2,19 @@
 
 DART is the Digital Archivist's Resource Tool. Its primary purpose is to package digital materials and send them off to long-term preservation storage. DART's initial release focuses on packaging materials in BagIt format and uploading them to S3 buckets for ingest in APTrust. DART can be extended through plugins to produce other packaging formats and to communicated via additional network protocols.
 
-DART runs in both graphical and command-line modes on Windows, Mac, and Linux.
+DART runs in both graphical and command-line modes on Windows, Mac, and Linux. What can you do with it? Take a look:
+
+<iframe width="845" height="479" src="https://www.youtube.com/embed/_ga9XfuyO-I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Installation
 
-Download the DART installer for your system. The current version is 2.0.9 (released July 24, 2020).
+Download the DART installer for your system. The current version is 2.0.10 (released July 24, 2020).
 
-__Mac__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.9.dmg](https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.9.dmg)
+__Mac__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.10.dmg](https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.10.dmg)
 
-__Windows__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.9.exe](https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.9.exe)
+__Windows__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.10.exe](https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.10.exe)
 
-__Linux__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.9_amd64.deb](https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.9_amd64.deb)
+__Linux__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.10_amd64.deb](https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.10_amd64.deb)
 
 Double-click the installer after download and follow the prompts on screen.
 
