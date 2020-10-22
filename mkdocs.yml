@@ -50,6 +50,7 @@ nav:
       - Command Line Reference: users/command_line.md
       - Scripting with DART: users/scripting.md
       - Logs: users/logs.md
+      - FAQ: users/faq.md
   - For Developers:
       - developers/index.md
       - Architecture: developers/architecture.md
