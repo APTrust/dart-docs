@@ -59,7 +59,7 @@ For S3 services, you may want to keep your access keys in an environment variabl
 For example, if you keep your AWS access key id in an environment variable called AWS_ACCESS_KEY_ID, then enter `env:AWS_ACCESS_KEY_ID`.
 
 #### Password
-Enter your password for the service. For FTP and rsync services, this will typically be an actual passowrd. For S3 services, it will be an secret access key. As with the Login field above, you can set this to reference an environment variable using the `env:` pattern. For example, `env:AWS_SECRET_ACCESS_KEY`.
+Enter your password for the service. For FTP and rsync services, this will typically be an actual passowrd. For S3 services, it will be a secret access key. As with the Login field above, you can set this to reference an environment variable using the `env:` pattern. For example, `env:AWS_SECRET_ACCESS_KEY`.
 
 #### Login Extra
 This field is typically not used. If your storage service requires it, the plugin documentation should describe what to enter here. Otherwise, leave this field blank.

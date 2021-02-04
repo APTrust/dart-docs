@@ -5,7 +5,7 @@ The JobParams object is a simple JSON structure that gives a DART command-line j
 * __workflowName__ - The name of the workflow to run.
 * __packageName__ - The name of the package to create.
 * __files__ - A list of files and/or directories to put into the package and/or
-  upload to a remote server. If the workflow incudes one or more upload operations
+  upload to a remote server. If the workflow includes one or more upload operations
   but no packaging operation, the files will be uploaded directly.
 * __tags__ - A list of tag names and values to add to the package.
 
