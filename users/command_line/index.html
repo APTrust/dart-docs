@@ -1109,6 +1109,12 @@
                 <h1 id="command-line-reference">Command Line Reference</h1>
 <p>DART provides several ways of running jobs from the command line. The most convenient method, and the easiest to script, is to define a workflow and then create a <a href="../workflows/job_params/">JobParams</a> object that describes which files to pass through the workflow and what custom metadata attributes to assign.</p>
 <p>Note that in all of these examples, the <code>dart</code> command is followed by two dashes, and then the command-line parameters. Parameters to the left of the double dash will be consumed by the Node.js runtime, while those to the right will be passed to DART.</p>
+<div class="admonition note">
+<p class="admonition-title">Note<p>Replace <code>dart</code> in the examples below with the full path to DART on your computer.</p>
+<p>On Windows, the default path to the DART executable is <code>C:\Users\&lt;USERNAME&gt;\AppData\Local\Programs\DART\DART.exe</code>. Replace &lt;USERNAME&gt; with your user name.</p>
+<p>On Mac, the default path to DART is <code>/Applications/DART.app/Contents/MacOS/DART</code>.</p>
+</p>
+</div>
 <ul>
 <li>
 <p>From a JobParams JSON file</p>
@@ -1116,7 +1122,7 @@
 </li>
 <li>
 <p>From JobParams JSON passed through STDIN</p>
-<p><code>echo "{ ... json ... } | dart -- --stdin"</code></p>
+<p><code>echo "{ ... json ... }" | dart -- --stdin</code></p>
 </li>
 <li>
 <p>From a Job JSON file</p>
