@@ -4,13 +4,23 @@ DART provides several ways of running jobs from the command line. The most conve
 
 Note that in all of these examples, the `dart` command is followed by two dashes, and then the command-line parameters. Parameters to the left of the double dash will be consumed by the Node.js runtime, while those to the right will be passed to DART.
 
+
+
+!!! note
+        Replace `dart` in the examples below with the full path to DART on your computer.
+
+        On Windows, the default path to the DART executable is `C:\Users\<USERNAME>\AppData\Local\Programs\DART\DART.exe`. Replace &lt;USERNAME&gt; with your user name.
+
+        On Mac, the default path to DART is `/Applications/DART.app/Contents/MacOS/DART`.
+
+
 * From a JobParams JSON file
 
     `dart -- --job path/to/job_params.json`
 
 * From JobParams JSON passed through STDIN
 
-    `echo "{ ... json ... } | dart -- --stdin"`
+    `echo "{ ... json ... }" | dart -- --stdin`
 
 * From a Job JSON file
 
