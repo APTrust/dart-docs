@@ -20,7 +20,7 @@ The Info tab includes fields to edit the BagIt-Profile-Info section of the profi
 
 The General tab includes information about which BagIt versions your profile accepts, whether to allow fetch.txt files, and whether to allow miscellaneous top level files (arbitrary tag files directly under the root directory) and miscellaneous directories outside the payload (/data) directory.
 
-![BagIt Profile Info tab](../../img/bagit_profiles/info.png)
+![BagIt Profile General tab](../../img/bagit_profiles/general.png)
 
 ## Manifests
 

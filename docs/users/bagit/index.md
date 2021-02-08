@@ -79,9 +79,9 @@ DART includes the following built-in profiles. Note that the BagIt Profile edito
 
 * APTrust - The standard APTrust BagIt profile.
 
-* BTR - The Beyond the Repository BagIt profile, which will be accepted by a number of distributed digital preservation repositories. (Coming later in 2019.)
+* BTR - The Beyond the Repository BagIt profile, which will be accepted by a number of distributed digital preservation repositories.
 
-* DPN - The legacy DPN BagIt profile. This is used primarily for testing and development.
+* Empty Profile - A BagIt profile that defines the basic tags of the BagIt specification but does not require any of them. You can clone use this profile to create valid generic bags.
 
 ## Custom Profiles
 

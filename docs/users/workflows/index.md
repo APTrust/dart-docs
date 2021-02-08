@@ -10,7 +10,7 @@ DART provides two ways to define a workflow: from a job or from scratch.
 
 ### Creating a Workflow from a Job
 
-The easiest way to create a workflow is to first [create a job](../jobs/index.md) that includes all of the operations you want to include, run the job to ensure it works, then click the [__Convert to Workflow__](../jobs/run/#creating-a-workflow-from-a-job) button on the __Review and Run__ screen.
+The easiest way to create a workflow is to first [create a job](../jobs/index.md) that includes all of the operations you want to include, run the job to ensure it works, then click the [__Create Workflow__](../jobs/run/#creating-a-workflow-from-a-job) button on the __Review and Run__ screen.
 
 ### Creating a Workflow from Scratch
 
