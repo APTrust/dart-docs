@@ -10,7 +10,7 @@ Network Clients allow DART to send and receive data using defined network protoc
 
 * List files or objects in the remote service (if the service supports list operations).
 
-Note that at the time of DART's 2.0 release, DART supports only S3 uploads.
+Note DART 2.0.11 supports only S3 and SFTP uploads.
 
 ## API and Events
 
