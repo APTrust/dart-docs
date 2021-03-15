@@ -6,15 +6,8 @@ This is a source repository. The public-facing documentation lives at https://ap
 
 ## Local Editing
 
-If you want to clone this respository and edit it locally, you'll need to install (mkdocs)[https://www.mkdocs.org/] and the (material)[https://squidfunk.github.io/mkdocs-material/] theme. We also use (pygments)[http://pygments.org/] for highlighting code samples. Assuming you have reasonably current versions of Python and pip, you can do that with the following commands:
-
-```
-pip install mkdocs
-pip install mkdocs-material
-pip install pygments
-```
-
-Once those are installed, you can run the docs locally with the command `mkdocs serve`.
+If you want to edit this documentation locally, you'll need Python 3.x and pip. To set it all up, just run
+`pip install -r requirements.txt`. Then you can start the server with `mkdocs serve`.
 
 ## Deploying to GitHub pages
 

@@ -2,6 +2,12 @@
 
 DART is the Digital Archivist's Resource Tool. It provides both a GUI and a command-line interface for packaging files and uploading them to remote repositories.
 
+## Download
+
+{! shared/downloads.md !}
+
+After installation, check out the [Getting Started page](./users/getting_started)
+
 ## Supported Operations
 
 The current release of DART 2.0.11 supports the following features:

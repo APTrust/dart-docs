@@ -10,10 +10,13 @@ theme: material
 markdown_extensions:
   - admonition
   - codehilite
+  - markdown_include.include:
+      base_path: docs
 repo_url:  https://github.com/APTrust/dart
 nav:
   - Home: index.md
   - Videos: videos.md
+  - Download: download.md
   - For Users:
       - users/getting_started.md
       - Jobs:
