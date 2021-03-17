@@ -1,14 +1,11 @@
 _Updated March 15, 2021_
 
-Download the DART installer for your system. The current Windows version is 2.0.11 (released March 12, 2021). For Mac and Linux, please use version 2.0.10 until we are able to produce a viable 2.0.11 build.
+Download the DART installer for your system. The current version is 2.0.11 (released March 17, 2021).
 
-__Mac__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.10.dmg](https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.10.dmg)
+__Mac__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.11.dmg](https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.11.dmg)
 
 __Windows__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.11.exe](https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.11.exe)
 
-__Linux__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.10_amd64.deb](https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.10_amd64.deb)
+__Linux__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.11_amd64.deb](https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.11_amd64.deb)
 
 Double-click the installer after download and follow the prompts on screen.
-
-!!! note "Note for Mac Users"
-    If you see a message that states it can’t open DART.app because it is from an unidentified developer: Open System Preferences > Security & Privacy and click Open Anyway. APTrust is working on getting an Apple Developer certificate, so this issue should be resolved in a later release.
