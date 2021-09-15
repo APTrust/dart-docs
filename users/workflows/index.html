@@ -1129,6 +1129,16 @@
                 <h1 id="workflows">Workflows</h1>
 <p>A workflow is a set of packaging, validation, and/or upload operations that you define as a template to be run on any sets of files you choose.</p>
 <p>Workflows ensure that the exact same set of steps is run on each set of files. DART can run workflows from the UI and from the command line, which means you can create scripts that use workflows to package and upload materials.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the future, DART plans to support running workflows on servers. Currently, this is
+difficult because DART's underlying Electron framework insists on graphics capabilities
+even when running in command-line mode.</p>
+<p>We plan to release a stand-alone binary that will be able to run DART jobs and workflows
+on a server without requiring a UI or graphics capabilities. This likely won't be ready
+until sometime in 2022. We are tracking this
+<a href="https://github.com/APTrust/dart/issues/500">issue on GitHub</a>.</p>
+</div>
 <h2 id="defining-a-workflow">Defining a Workflow</h2>
 <p>DART provides two ways to define a workflow: from a job or from scratch.</p>
 <h3 id="creating-a-workflow-from-a-job">Creating a Workflow from a Job</h3>
