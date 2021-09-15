@@ -26,6 +26,16 @@ The current release of DART 2.0.13 supports the following features:
 
 To start using DART, see our [Getting Started](users/getting_started.md) page.
 
+!!! note
+    In the future, DART plans to support running workflows on servers. Currently, this is
+    difficult because DART's underlying Electron framework insists on graphics capabilities
+    even when running in command-line mode.
+
+    We plan to release a stand-alone binary that will be able to run DART jobs and workflows
+    on a server without requiring a UI or graphics capabilities. This likely won't be ready
+    until sometime in 2022. We are tracking this
+    [issue on GitHub](https://github.com/APTrust/dart/issues/500).
+
 ## Plugin Architecture
 
 Most of DART's features are implemented in plugins, which enable developers to add new features without having to understand all of DART's internals. DART is an open source project of the Academic Preservation Trust, which encourages developers to contribute new plugins to extend the tool's functionality.
