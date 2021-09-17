@@ -10,9 +10,9 @@ Workflows ensure that the exact same set of steps is run on each set of files. D
     even when running in command-line mode.
 
     We plan to release a stand-alone binary that will be able to run DART jobs and workflows
-    on a server without requiring a UI or graphics capabilities. This likely won't be ready
-    until sometime in 2022. We are tracking this
-    [issue on GitHub](https://github.com/APTrust/dart/issues/500).
+    on a server without requiring a UI or graphics capabilities. You'll find a draft of the
+    proposed features [here ](https://docs.google.com/document/d/15s8tgoYPYTzr6ZIB0u1Nk-YZEGfhrj2CXKv9o9B3ACI/edit?usp=sharing).
+    You can provide feedback through the survey at the end of the features document.
 
 ## Defining a Workflow
 
