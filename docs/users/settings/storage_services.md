@@ -34,7 +34,9 @@ Enter the name or IP address of the service host. Do not include protocol prefix
 The port to connect to. In most cases, you'll want to leave this at 0 (zero). Set this only if the service is running on a non-standard port number.
 
 #### Bucket
-The name of the bucket you'll be uploading into or downloading from on the remote host. For the S3 protocol, this will be a bucket name like `aptrust.dart.test`. For protocols like FTP and rsync, this will be a directory name like `uploads/ingest/` or `downloads/restore`.
+The name of the bucket you'll be uploading into or downloading from on the remote host. For the S3 protocol, this will be a bucket name like `aptrust.dart.test`. (If you are an APTrust member, your bucket name will be **aptrust.receiving.test.<your_domain>** for the demo system and **aptrust.receiving.<your_domain>** for the production system. For example, receiving buckets for the University of Virginia would be **aptrust.test.receiving.virginia.edu** for demo and **aptrust.receiving.virginia.edu** for production.)
+
+For protocols like FTP and rsync, this Bucket setting should be a directory name like `uploads/ingest/` or `downloads/restore`.
 
 #### Allows Upload
 Choose __Yes__ if this service allows you to upload files, __No__ otherwise.
