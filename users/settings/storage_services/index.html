@@ -1299,7 +1299,8 @@
 <h4 id="port">Port</h4>
 <p>The port to connect to. In most cases, you'll want to leave this at 0 (zero). Set this only if the service is running on a non-standard port number.</p>
 <h4 id="bucket">Bucket</h4>
-<p>The name of the bucket you'll be uploading into or downloading from on the remote host. For the S3 protocol, this will be a bucket name like <code>aptrust.dart.test</code>. For protocols like FTP and rsync, this will be a directory name like <code>uploads/ingest/</code> or <code>downloads/restore</code>.</p>
+<p>The name of the bucket you'll be uploading into or downloading from on the remote host. For the S3 protocol, this will be a bucket name like <code>aptrust.dart.test</code>. (If you are an APTrust member, your bucket name will be <strong>aptrust.receiving.test.<your_domain></strong> for the demo system and <strong>aptrust.receiving.<your_domain></strong> for the production system. For example, receiving buckets for the University of Virginia would be <strong>aptrust.test.receiving.virginia.edu</strong> for demo and <strong>aptrust.receiving.virginia.edu</strong> for production.)</p>
+<p>For protocols like FTP and rsync, this Bucket setting should be a directory name like <code>uploads/ingest/</code> or <code>downloads/restore</code>.</p>
 <h4 id="allows-upload">Allows Upload</h4>
 <p>Choose <strong>Yes</strong> if this service allows you to upload files, <strong>No</strong> otherwise.</p>
 <div class="admonition info">
