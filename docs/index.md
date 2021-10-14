@@ -10,7 +10,7 @@ After installation, check out the [Getting Started page](./users/getting_started
 
 ## Supported Operations
 
-The current release of DART 2.0.13 supports the following features:
+The current release of DART 2.0.14 supports the following features:
 
 * Creating BagIt bags that conform to defined BagIt profiles
 * Validating BagIt bags according to defined BagIt profiles
@@ -23,6 +23,7 @@ The current release of DART 2.0.13 supports the following features:
 * BagIt Profile import and export
 * BagIt Profile customization throug a visual editor
 * Settings import and export
+* Workflow export
 
 To start using DART, see our [Getting Started](users/getting_started.md) page.
 
