@@ -10,7 +10,7 @@ After installation, check out the [Getting Started page](./users/getting_started
 
 ## Supported Operations
 
-The current release of DART 2.0.11 supports the following features:
+The current release of DART 2.0.14 supports the following features:
 
 * Creating BagIt bags that conform to defined BagIt profiles
 * Validating BagIt bags according to defined BagIt profiles
@@ -23,8 +23,19 @@ The current release of DART 2.0.11 supports the following features:
 * BagIt Profile import and export
 * BagIt Profile customization throug a visual editor
 * Settings import and export
+* Workflow export
 
 To start using DART, see our [Getting Started](users/getting_started.md) page.
+
+!!! note
+    In the future, DART plans to support running workflows on servers. Currently, this is
+    difficult because DART's underlying Electron framework insists on graphics capabilities
+    even when running in command-line mode.
+
+    We plan to release a stand-alone binary that will be able to run DART jobs and workflows
+    on a server without requiring a UI or graphics capabilities. You'll find a draft of the
+    proposed features [here ](https://docs.google.com/document/d/15s8tgoYPYTzr6ZIB0u1Nk-YZEGfhrj2CXKv9o9B3ACI/edit?usp=sharing).
+    You can provide feedback through the survey at the end of the features document.
 
 ## Plugin Architecture
 

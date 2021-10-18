@@ -4,6 +4,16 @@ A workflow is a set of packaging, validation, and/or upload operations that you 
 
 Workflows ensure that the exact same set of steps is run on each set of files. DART can run workflows from the UI and from the command line, which means you can create scripts that use workflows to package and upload materials.
 
+!!! note
+    In the future, DART plans to support running workflows on servers. Currently, this is
+    difficult because DART's underlying Electron framework insists on graphics capabilities
+    even when running in command-line mode.
+
+    We plan to release a stand-alone binary that will be able to run DART jobs and workflows
+    on a server without requiring a UI or graphics capabilities. You'll find a draft of the
+    proposed features [here ](https://docs.google.com/document/d/15s8tgoYPYTzr6ZIB0u1Nk-YZEGfhrj2CXKv9o9B3ACI/edit?usp=sharing).
+    You can provide feedback through the survey at the end of the features document.
+
 ## Defining a Workflow
 
 DART provides two ways to define a workflow: from a job or from scratch.
