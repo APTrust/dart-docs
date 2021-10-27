@@ -10,7 +10,7 @@ After installation, check out the [Getting Started page](./users/getting_started
 
 ## Supported Operations
 
-The current release of DART 2.0.15 supports the following features:
+The current release of DART 2.0.16 supports the following features:
 
 * Creating BagIt bags that conform to defined BagIt profiles
 * Validating BagIt bags according to defined BagIt profiles
