@@ -53,6 +53,7 @@ nav:
       - Command Line Reference: users/command_line.md
       - Scripting with DART: users/scripting.md
       - Logs: users/logs.md
+      - Dart Runner: users/dart_runner.md
       - FAQ: users/faq.md
   - For Developers:
       - developers/index.md

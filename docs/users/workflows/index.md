@@ -51,3 +51,19 @@ To create a workflow from scratch:
 2. Use meaningful names for your workflows. Many repositories include both a staging environment and a production environment. You may create workflows that are identical except that one pushes packages into the staging environment while the other pushes to production. DART lets you run workflows directly from the workflow menu. Meaningful names help uses choose the right workflow and understand what the consequences of the actions they are about to take.
 
    ![Workflow menu](../../img/workflows/menu.png)
+
+## Exporting a Workflow
+
+You can export DART workflows to run on a server using [dart-runner](../dart_runner.md). To export a workflow:
+
+1. Choose __Workflows > List__ from the DART menu.
+2. Click on the workflow you want to export.
+3. Click the blue __Export__ button near the top right of the Workflow page.
+
+!!! note
+    You may see a warning about unencrypted passwords included in the export. You can ignore this if you're copying the workflow directly to a server you trust. However, you should use environment variables instead of embedded, plain-text passwords when sending workflows to others via insecure networks.
+    See [Storage Service passwords](users/settings/storage_services/#password) for info on how to use environment variables.
+
+After clicking __Export__, click __Copy to Clipboard__ to copy the JSON.
+
+   ![Workflow export](../../img/workflows/export.png)
