@@ -38,7 +38,7 @@ Dart-runner is currently in beta and has the following limitations:
 * It supports only S3 uploads (no SFTP).
 * It's intended primarily for use on Linux servers.
 
-## Getting Started
+## Downloads
 
 Download the initial [0.9 beta version of dart-runner for Linux](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.9-beta/linux-x64/dart-runner).
 
