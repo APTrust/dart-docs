@@ -14,7 +14,7 @@
     
     
       
-        <title>FAQ - DART Documentation</title>
+        <title>Dart Runner - DART Documentation</title>
       
     
     
@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#frequently-asked-questions" class="md-skip">
+        <a href="#dart-runner" class="md-skip">
           Skip to content
         </a>
       
@@ -89,7 +89,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FAQ
+              Dart Runner
             
           </span>
         </div>
@@ -741,18 +741,6 @@
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../dart_runner/" class="md-nav__link">
-        Dart Runner
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
     
   
   
@@ -765,12 +753,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          FAQ
+          Dart Runner
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        FAQ
+        Dart Runner
       </a>
       
         
@@ -788,22 +776,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-darts-bag-size-limit" class="md-nav__link">
-    What is DART's bag size limit?
-  </a>
-  
-    <nav class="md-nav" aria-label="What is DART's bag size limit?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#things-to-look-out-for-when-creating-large-bags" class="md-nav__link">
-    Things to look out for when creating large bags
+  <a href="#features" class="md-nav__link">
+    Features
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    Limitations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
   
 </li>
       
@@ -811,6 +800,18 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
     </li>
   
 
@@ -1072,22 +1073,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-darts-bag-size-limit" class="md-nav__link">
-    What is DART's bag size limit?
-  </a>
-  
-    <nav class="md-nav" aria-label="What is DART's bag size limit?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#things-to-look-out-for-when-creating-large-bags" class="md-nav__link">
-    Things to look out for when creating large bags
+  <a href="#features" class="md-nav__link">
+    Features
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    Limitations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
   
 </li>
       
@@ -1103,35 +1105,139 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/APTrust/dart/edit/master/docs/users/faq.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/APTrust/dart/edit/master/docs/users/dart_runner.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
-<h2 id="what-is-darts-bag-size-limit">What is DART's bag size limit?</h2>
-<p>DART can create bags of almost any size, provided you have enough disk space.
-Several APTrust depositors have used DART to create and upload bags in the
-500 GB - 800 GB range. The largest so far has been 1.5 TB.</p>
-<h3 id="things-to-look-out-for-when-creating-large-bags">Things to look out for when creating large bags</h3>
+                <h1 id="dart-runner">DART Runner</h1>
+<p>Because DART uses the Electron framework, it requires the presence of a graphical user interface and a windowing system, even when it's not going to use a GUI. That means it can't even start in comman-line mode unless it's running in a desktop environment. This limitation is inherent in Electron and makes DART unsuitable for running on a Linux server.</p>
+<p>For this reason, APTrust built dart-runner, which is a lightweight command-line version of DART that can run in server environments without a GUI. Dart-runner is intended to run workflows that were created and tested in DART.</p>
+<p>The general process is:</p>
+<ol>
+<li>Create a Workflow in DART and test it out locally to ensure it does what you want.</li>
+<li>Export the workflow <a href="../workflows/#exporting-a-workflow">as described on the Workflows page</a>.</li>
+<li>Run dart-runner on the server with the exported workflow file and a list of items you want to run through that workflow. The list must conform to the workflow <a href="../workflows/batch_jobs/">CSV format used for batch jobs</a>.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When scripting jobs and workflows on Mac and Windows, you should
+stick with the DART CLI, since it's more mature as of late 2021.
+Since Windows and Mac include a GUI environment by default, DART
+and the DART CLI will always work.</p>
+</div>
+<h2 id="features">Features</h2>
+<p>Dart-runner:</p>
 <ul>
-<li>Be sure you have enough disk space to actually bag the files. In some cases,
-may need to reset the output path for a large bag, to point to an external
-drive. See the Output Path setting in <a href="../jobs/packaging/">packaging</a> for
-details.</li>
-<li>If you're bagging files from a shared network drive with a spotty connection,
-the bagging operation may fail if the network connection is interrupted. In
-these cases, you may have more success creating ten 10 GB bags than one 100 GB
-bag.</li>
-<li>DART validates bags after it creates them, and can take hours to validate
-very large bags. DART spends most of this time validating file checksums against
-the manifests. Be patient!</li>
-<li>Uploading large bags to an S3 or SFTP server can take a long time, especially
-if your network connection is slow or unreliable.</li>
-<li>The maximum size for S3 objects is 5 TB. If you create a bag larger than that,
-you will not be able to upload it to S3. SFTP file size limits are set
-individually for each system by the administrator.</li>
+<li>is a single, lightweight binary, less than 10MB in size, with no external dependencies. To install, just copy the binary to your server.</li>
+<li>is much lighter on CPU and memory than DART.</li>
+<li>can run huge workflows unattended.</li>
+<li>can run multiple jobs in parallel.</li>
+<li>can be scripted from other languages like the DART CLI, though its syntax differs somewhat from the CLI.</li>
+<li>outputs clean, machine-readable JSON describing the outcome of every job. The output format is <a href="https://jsonlines.org/">JSON Lines</a>, with each line describing the outcome of a single job in the workflow.</li>
+<li>provides meaningful error messages when errors occur.</li>
+<li>supports piping, so you can send its output to any file you want for later analysis.</li>
+<li>provides meaningful return codes, so your script knows whether a job succeeded or failed.</li>
 </ul>
+<h2 id="limitations">Limitations</h2>
+<p>Dart-runner is currently in beta and has the following limitations:</p>
+<ul>
+<li>It supports only the BagIt packaging format.</li>
+<li>It supports only S3 uploads (no SFTP).</li>
+<li>It's intended primarily for use on Linux servers.</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<p>Download the initial <a href="https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.9-beta/linux-x64/dart-runner">0.9 beta version of dart-runner for Linux</a>.</p>
+<p>There's also a <a href="https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.9-beta/mac-x64/dart-runner">Mac version of the beta</a> if you want to experiment, but for now, APTrust suggests using the DART CLI on Mac.</p>
+<p>Because it's a single binary with no dependencies, there's no installation process for dart-runner. Simply copy the binary onto your computer and run.</p>
+<p>If you're interested, the souce code is available on GitHub at <a href="https://github.com/APTrust/dart-runner">https://github.com/APTrust/dart-runner</a>.</p>
+<p>To view the built-in docs, run <code>dart-runner --help</code>, the contents of which appear below.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">DART</span> <span class="n">Runner</span><span class="p">:</span> <span class="n">Bag</span> <span class="ow">and</span> <span class="n">ship</span> <span class="n">files</span> <span class="n">from</span> <span class="n">the</span> <span class="n">command</span> <span class="n">line</span><span class="o">.</span>
+
+<span class="n">To</span> <span class="n">use</span> <span class="n">DART</span> <span class="n">Runner</span><span class="p">,</span> <span class="n">you</span> <span class="n">typically</span> <span class="n">want</span> <span class="n">to</span> <span class="n">define</span> <span class="n">a</span> <span class="n">job</span> <span class="ow">or</span> <span class="n">workflow</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">DART</span>
+<span class="n">UI</span><span class="p">,</span> <span class="n">then</span> <span class="k">export</span> <span class="n">it</span> <span class="k">as</span> <span class="n">a</span> <span class="n">json</span> <span class="n">file</span> <span class="n">to</span> <span class="n">be</span> <span class="n">consumed</span> <span class="n">by</span> <span class="n">DART</span> <span class="n">Runner</span><span class="o">.</span> <span class="n">See</span> <span class="n">the</span>
+<span class="n">Resources</span> <span class="n">section</span> <span class="n">below</span><span class="o">.</span>
+
+<span class="o">-------</span>
+<span class="n">Options</span>
+<span class="o">-------</span>
+
+  <span class="o">--</span><span class="n">job</span>          <span class="n">Path</span> <span class="n">to</span> <span class="n">job</span> <span class="n">json</span> <span class="n">file</span><span class="o">.</span> <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="n">only</span> <span class="k">if</span> <span class="n">you</span> <span class="n">are</span> <span class="n">running</span>
+                 <span class="n">a</span> <span class="n">single</span> <span class="n">job</span> <span class="p">(</span><span class="k">as</span> <span class="n">opposed</span> <span class="n">to</span> <span class="n">a</span> <span class="n">workflow</span><span class="p">)</span><span class="o">.</span> <span class="n">Job</span> <span class="n">json</span> <span class="n">files</span> <span class="n">can</span>
+                 <span class="n">be</span> <span class="n">exported</span> <span class="n">from</span> <span class="n">the</span> <span class="n">DART</span> <span class="n">UI</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">workflow</span>     <span class="n">Path</span> <span class="n">to</span> <span class="n">workflow</span> <span class="n">json</span> <span class="n">file</span><span class="o">.</span> <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="k">if</span> <span class="n">you</span> <span class="n">are</span> <span class="n">running</span>
+                 <span class="n">a</span> <span class="n">workflow</span> <span class="n">against</span> <span class="n">a</span> <span class="n">batch</span> <span class="n">of</span> <span class="n">files</span><span class="o">.</span> <span class="n">If</span> <span class="n">you</span> <span class="n">specify</span> <span class="n">a</span> <span class="n">workflow</span>
+                 <span class="n">file</span><span class="p">,</span> <span class="n">you</span> <span class="n">must</span> <span class="n">also</span> <span class="n">specify</span> <span class="o">--</span><span class="n">batch</span><span class="o">.</span> <span class="n">Workflows</span> <span class="n">can</span> <span class="n">be</span> <span class="n">exported</span>
+                 <span class="n">from</span> <span class="n">the</span> <span class="n">DART</span> <span class="n">UI</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">batch</span>        <span class="n">Path</span> <span class="n">to</span> <span class="n">CSV</span> <span class="n">batch</span> <span class="n">file</span><span class="o">.</span> <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="n">with</span> <span class="o">--</span><span class="n">workflow</span> <span class="n">to</span>
+                 <span class="n">specify</span> <span class="n">a</span> <span class="n">set</span> <span class="n">of</span> <span class="n">files</span> <span class="ow">or</span> <span class="n">directories</span> <span class="n">to</span> <span class="n">run</span> <span class="n">through</span> <span class="n">a</span>
+                 <span class="n">workflow</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">dir</span>   <span class="n">Path</span> <span class="n">to</span> <span class="n">package</span> <span class="n">output</span> <span class="n">directory</span><span class="o">.</span> <span class="n">Jobs</span> <span class="ow">and</span> <span class="n">workflows</span> <span class="n">will</span>
+                 <span class="n">create</span> <span class="n">bags</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">directory</span><span class="o">.</span> <span class="n">This</span> <span class="n">option</span> <span class="k">is</span> <span class="n">always</span> <span class="n">REQUIRED</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">delete</span>       <span class="n">Delete</span> <span class="n">bags</span> <span class="n">after</span> <span class="n">job</span> <span class="n">completes</span><span class="err">?</span> <span class="n">Set</span> <span class="n">this</span> <span class="n">to</span> <span class="bp">true</span> <span class="ow">or</span> <span class="bp">false</span><span class="o">.</span>
+                 <span class="n">The</span> <span class="n">default</span> <span class="k">is</span> <span class="bp">true</span> <span class="k">for</span> <span class="n">jobs</span> <span class="ow">and</span> <span class="n">workflows</span> <span class="n">that</span> <span class="n">include</span>
+                 <span class="n">uploads</span><span class="p">:</span> <span class="n">the</span> <span class="n">bags</span> <span class="n">will</span> <span class="n">be</span> <span class="n">deleted</span> <span class="n">after</span> <span class="n">successful</span> <span class="n">uploads</span><span class="o">.</span>
+                 <span class="n">Default</span> <span class="k">is</span> <span class="bp">false</span> <span class="k">for</span> <span class="n">jobs</span> <span class="ow">and</span> <span class="n">workflows</span> <span class="n">that</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">include</span>
+                 <span class="n">uploads</span> <span class="n">because</span> <span class="n">you</span> <span class="n">probably</span> <span class="n">want</span> <span class="n">to</span> <span class="n">do</span> <span class="n">something</span> <span class="n">with</span> <span class="n">the</span> <span class="n">bag</span>
+                 <span class="n">after</span> <span class="n">it</span><span class="s1">&#39;s created.</span>
+
+  <span class="o">--</span><span class="n">concurrency</span>  <span class="n">Number</span> <span class="n">of</span> <span class="n">jobs</span> <span class="n">to</span> <span class="n">run</span> <span class="n">concurrently</span><span class="o">.</span> <span class="n">Default</span> <span class="k">is</span> <span class="mf">1.</span> <span class="n">Max</span> <span class="n">value</span>
+                 <span class="k">for</span> <span class="n">this</span> <span class="n">param</span> <span class="n">should</span> <span class="n">be</span> <span class="n">less</span> <span class="n">than</span> <span class="ow">or</span> <span class="n">equal</span> <span class="n">to</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span>
+                 <span class="n">processors</span> <span class="n">on</span> <span class="n">your</span> <span class="n">machine</span><span class="o">.</span> <span class="n">You</span> <span class="n">may</span> <span class="n">get</span> <span class="n">diminishing</span> <span class="n">returns</span>
+                 <span class="n">when</span> <span class="n">setting</span> <span class="n">this</span> <span class="n">above</span> <span class="mi">2</span> <span class="n">because</span> <span class="n">most</span> <span class="n">of</span> <span class="n">the</span> <span class="n">DART</span> <span class="n">runner</span><span class="s1">&#39;s</span>
+                 <span class="n">work</span> <span class="k">is</span> <span class="n">reading</span> <span class="n">from</span> <span class="ow">and</span> <span class="n">writing</span> <span class="n">to</span> <span class="n">disk</span><span class="o">.</span>
+
+  <span class="o">--</span><span class="n">help</span>         <span class="n">Show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">document</span><span class="o">.</span>
+
+
+<span class="o">--------</span>
+<span class="n">Examples</span>
+<span class="o">--------</span>
+
+<span class="n">To</span> <span class="n">run</span> <span class="n">a</span> <span class="n">single</span> <span class="n">job</span><span class="p">:</span>
+
+    <span class="n">dart</span><span class="o">-</span><span class="n">runner</span> <span class="o">--</span><span class="n">job</span><span class="o">=</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">job</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">dir</span><span class="o">=</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">output</span>
+
+<span class="n">This</span> <span class="n">runs</span> <span class="n">the</span> <span class="n">job</span> <span class="n">described</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">job</span><span class="o">.</span><span class="n">json</span> <span class="n">file</span><span class="p">,</span> <span class="n">writing</span> <span class="n">the</span> <span class="n">bag</span> <span class="n">to</span> <span class="n">the</span>
+<span class="n">specified</span> <span class="n">output</span> <span class="n">directory</span><span class="o">.</span>
+
+<span class="n">To</span> <span class="n">run</span> <span class="n">a</span> <span class="n">workflow</span><span class="p">:</span>
+
+    <span class="n">dart</span><span class="o">-</span><span class="n">runner</span> <span class="o">--</span><span class="n">workflow</span><span class="o">=</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">workflow</span><span class="o">.</span><span class="n">json</span>  \
+                <span class="o">--</span><span class="n">batch</span><span class="o">=</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">batch</span><span class="o">.</span><span class="n">csv</span>         \
+                <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">dir</span><span class="o">=</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">directory</span>    \
+                <span class="o">--</span><span class="n">concurrency</span><span class="o">=</span><span class="mi">2</span>                   \
+                <span class="o">--</span><span class="n">delete</span><span class="o">=</span><span class="bp">false</span>
+
+<span class="n">The</span> <span class="n">command</span> <span class="n">above</span> <span class="n">runs</span> <span class="n">all</span> <span class="n">of</span> <span class="n">the</span> <span class="n">items</span> <span class="n">listed</span> <span class="ow">in</span> <span class="n">the</span> <span class="o">--</span><span class="n">batch</span> <span class="n">CSV</span> <span class="n">file</span> <span class="n">through</span>
+<span class="n">the</span> <span class="n">workflow</span> <span class="n">described</span> <span class="ow">in</span> <span class="n">the</span> <span class="o">--</span><span class="n">workflow</span> <span class="n">json</span> <span class="n">file</span><span class="o">.</span> <span class="n">Bags</span> <span class="n">are</span> <span class="n">written</span> <span class="n">to</span> <span class="n">the</span>
+<span class="n">output</span> <span class="n">directory</span><span class="o">.</span> <span class="n">Setting</span> <span class="n">the</span> <span class="n">delete</span> <span class="n">flag</span> <span class="n">to</span> <span class="bp">false</span> <span class="n">means</span> <span class="n">the</span> <span class="n">bags</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">be</span>
+<span class="n">deleted</span> <span class="n">from</span> <span class="n">the</span> <span class="n">output</span> <span class="n">directory</span> <span class="n">after</span> <span class="n">successful</span> <span class="n">upload</span><span class="o">.</span>
+
+<span class="n">The</span> <span class="o">--</span><span class="n">concurrency</span> <span class="n">flag</span> <span class="n">above</span> <span class="n">tells</span> <span class="n">DART</span> <span class="n">runner</span> <span class="n">to</span> <span class="n">work</span> <span class="n">on</span> <span class="mi">2</span> <span class="n">bags</span> <span class="n">at</span> <span class="n">a</span> <span class="n">time</span>
+<span class="p">(</span><span class="n">instead</span> <span class="n">of</span> <span class="n">the</span> <span class="n">default</span> <span class="mi">1</span> <span class="n">at</span> <span class="n">a</span> <span class="n">time</span><span class="p">)</span> <span class="n">when</span> <span class="n">bagging</span> <span class="ow">and</span> <span class="n">uploading</span><span class="o">.</span>
+
+<span class="n">Setting</span> <span class="o">--</span><span class="n">delete</span> <span class="n">to</span> <span class="bp">true</span> <span class="p">(</span><span class="ow">or</span> <span class="n">omitting</span> <span class="o">--</span><span class="n">delete</span><span class="p">)</span> <span class="n">will</span> <span class="n">cause</span> <span class="n">bags</span> <span class="n">to</span> <span class="n">be</span> <span class="n">deleted</span>
+<span class="n">after</span> <span class="n">successful</span> <span class="n">upload</span><span class="o">.</span>
+
+<span class="o">---------</span>
+<span class="n">Resources</span>
+<span class="o">---------</span>
+
+<span class="n">DART</span>
+    <span class="n">Source</span><span class="p">:</span>        <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">APTrust</span><span class="o">/</span><span class="n">dart</span>
+    <span class="n">User</span> <span class="n">Guide</span><span class="p">:</span>    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">aptrust</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">dart</span><span class="o">-</span><span class="n">docs</span><span class="o">/</span>
+
+<span class="n">DART</span> <span class="n">Runner</span>
+    <span class="n">Source</span><span class="p">:</span>        <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">APTrust</span><span class="o">/</span><span class="n">dart</span><span class="o">-</span><span class="n">runner</span>
+    <span class="n">User</span> <span class="n">Guide</span><span class="p">:</span>    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">aptrust</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">dart</span><span class="o">-</span><span class="n">docs</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">dart</span><span class="o">-</span><span class="n">runner</span><span class="o">/</span>
+
+<span class="n">DART</span> <span class="ow">and</span> <span class="n">DART</span> <span class="n">Runner</span> <span class="n">are</span> <span class="n">free</span> <span class="ow">and</span> <span class="n">open</span> <span class="n">source</span> <span class="n">projects</span> <span class="n">from</span> <span class="n">APTrust</span><span class="o">.</span><span class="n">org</span><span class="o">.</span>
+</code></pre></div>
                 
               
               
@@ -1150,7 +1256,7 @@ individually for each system by the administrator.</li>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../dart_runner/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../logs/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1159,19 +1265,19 @@ individually for each system by the administrator.</li>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Dart Runner
+              Logs
             </div>
           </div>
         </a>
       
       
-        <a href="../../developers/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../faq/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Developer's Guide to DART
+              FAQ
             </div>
           </div>
           <div class="md-footer__button md-icon">

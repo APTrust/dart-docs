@@ -511,6 +511,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exporting-a-workflow" class="md-nav__link">
+    Exporting a Workflow
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -802,6 +809,18 @@
     <li class="md-nav__item">
       <a href="../logs/" class="md-nav__link">
         Logs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dart_runner/" class="md-nav__link">
+        Dart Runner
       </a>
     </li>
   
@@ -1109,6 +1128,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exporting-a-workflow" class="md-nav__link">
+    Exporting a Workflow
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1184,6 +1210,20 @@ You can provide feedback through the survey at the end of the features document.
 </li>
 </ol>
 <p><img alt="Workflow menu" src="../../img/workflows/menu.png" /></p>
+<h2 id="exporting-a-workflow">Exporting a Workflow</h2>
+<p>You can export DART workflows to run on a server using <a href="../dart_runner/">dart-runner</a>. To export a workflow:</p>
+<ol>
+<li>Choose <strong>Workflows &gt; List</strong> from the DART menu.</li>
+<li>Click on the workflow you want to export.</li>
+<li>Click the blue <strong>Export</strong> button near the top right of the Workflow page.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may see a warning about unencrypted passwords included in the export. You can ignore this if you're copying the workflow directly to a server you trust. However, you should use environment variables instead of embedded, plain-text passwords when sending workflows to others via insecure networks.
+See <a href="users/settings/storage_services/#password">Storage Service passwords</a> for info on how to use environment variables.</p>
+</div>
+<p>After clicking <strong>Export</strong>, click <strong>Copy to Clipboard</strong> to copy the JSON.</p>
+<p><img alt="Workflow export" src="../../img/workflows/export.png" /></p>
                 
               
               
