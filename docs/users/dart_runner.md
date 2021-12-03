@@ -8,7 +8,7 @@ The general process is:
 
 1. Create a Workflow in DART and test it out locally to ensure it does what you want.
 2. Export the workflow [as described on the Workflows page](../workflows/#exporting-a-workflow).
-3. Run dart-runner on the server with the exported workflow file and a list of items you want to run through that workflow. The list must conform to the workflow [CSV format used for batch jobs](../workflows/batch_jobs/).
+3. Run dart-runner on the server with the exported workflow file and a list of items you want to run through that workflow. If you're running a batch job, the list must conform to the workflow [CSV format used for batch jobs](../workflows/batch_jobs/). If you're running one-off jobs using Job Params, be sure your JSON conforms to the format below. See below for details.
 
 !!! note
     When scripting jobs and workflows on Mac and Windows, you should
@@ -38,11 +38,20 @@ Dart-runner is currently in beta and has the following limitations:
 * It supports only S3 uploads (no SFTP).
 * It's intended primarily for use on Linux servers.
 
+## Differences in Job Params JSON
+
+The Job Params JSON format for dart-runner differs slightly from the JSON used in the DART CLI. Specifically:
+
+* tags use "value" instead of "userValue" and
+* you don't need to specify the workflow name or ID in the json, because it's specified as a file name on the command line
+
+The help text below shows an example of valid Job Params JSON for dart-runner.
+
 ## Downloads
 
-Download the initial [0.9 beta version of dart-runner for Linux](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.9-beta/linux-x64/dart-runner).
+Download the [0.91 beta version of dart-runner for Linux](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.91-beta/linux-x64/dart-runner).
 
-There's also a [Mac version of the beta](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.9-beta/mac-x64/dart-runner) if you want to experiment, but for now, APTrust suggests using the DART CLI on Mac.
+There's also a [Mac version of the beta](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.91-beta/mac-x64/dart-runner) if you want to experiment, but for now, APTrust suggests using the DART CLI on Mac.
 
 Because it's a single binary with no dependencies, there's no installation process for dart-runner. Simply copy the binary onto your computer and run.
 
@@ -60,10 +69,6 @@ Resources section below.
 -------
 Options
 -------
-
-  --job          Path to job json file. Use this option only if you are running
-                 a single job (as opposed to a workflow). Job json files can
-                 be exported from the DART UI.
 
   --workflow     Path to workflow json file. Use this option if you are running
                  a workflow against a batch of files. If you specify a workflow
@@ -88,7 +93,9 @@ Options
                  for this param should be less than or equal to the number of
                  processors on your machine. You may get diminishing returns
                  when setting this above 2 because most of the DART runner's
-                 work is reading from and writing to disk.
+                 work is reading from and writing to disk. This setting only
+                 makes sense for workflows. For a single job, you can omit
+                 this.
 
   --help         Show this help document.
 
@@ -97,11 +104,20 @@ Options
 Examples
 --------
 
-To run a single job:
+If you're running a single job, you can send job params to dart-runner through
+STDIN, like this:
 
-    dart-runner --job=path/to/job.json --output-dir=path/to/output
+    echo '{ json }' | dart-runner --workflow=workflow.json --output-dir=/dir
 
-This runs the job described in the job.json file, writing the bag to the
+The job params json tells dart-runner which files to bag and what tag values
+to set. The workflow tells dart-runner which BagIt profile to use and where to
+send the bag.
+
+You can also feed the contents of a Job Params file to STDIN, like this:
+
+    cat job_params.json | dart-runner --workflow=workflow.json --output-dir=/dir
+
+This runs the job described in the job_params.json file, writing the bag to the
 specified output directory.
 
 To run a workflow:
@@ -122,6 +138,44 @@ The --concurrency flag above tells DART runner to work on 2 bags at a time
 
 Setting --delete to true (or omitting --delete) will cause bags to be deleted
 after successful upload.
+
+----------------------
+Sample Job Params JSON
+----------------------
+
+The following job params tell dart-runner to bag all of the files in
+/home/linus/documents and /home/linus/files. This also tells the bagger to
+write two tags with the assigned values into the bag-info.txt file and
+one tag into the aptrust-info.txt file.
+
+These job params would be combined with a workflow JSON file that would
+tell dart runner which BagIt profile to use when creating the bag, and where
+to send the bag when it's done.
+
+{
+	"packageName": "TestBag.tar",
+	"files": [
+		"/home/linus/documents",
+		"/home/linus/photos"
+	],
+	"tags": [
+		{
+			"tagFile": "bag-info.txt",
+			"tagName": "Tag-One",
+			"value":   "Value One"
+		},
+		{
+			"tagFile": "bag-info.txt",
+			"tagName": "Tag-Two",
+			"value":   "Value Two"
+		},
+		{
+			"tagFile": "aptrust-info.txt",
+			"tagName": "Tag-Three",
+			"value": "Value Three"
+		}
+	]
+}
 
 ---------
 Resources
