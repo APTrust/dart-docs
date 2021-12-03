@@ -1,3 +1,0 @@
-# DART Runner
-
-Because DART uses the Electron framework, it requires the presence of a graphical user interface and a windowing system, even when it's not going to use a GUI. That means it can't even start in comman-line mode unless it's running in a desktop environment. This limitation is inherent in Electron and makes DART unsuitable for running on a Linux server.

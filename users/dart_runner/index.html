@@ -790,6 +790,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#differences-in-job-params-json" class="md-nav__link">
+    Differences in Job Params JSON
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#downloads" class="md-nav__link">
     Downloads
   </a>
@@ -1087,6 +1094,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#differences-in-job-params-json" class="md-nav__link">
+    Differences in Job Params JSON
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#downloads" class="md-nav__link">
     Downloads
   </a>
@@ -1117,7 +1131,7 @@
 <ol>
 <li>Create a Workflow in DART and test it out locally to ensure it does what you want.</li>
 <li>Export the workflow <a href="../workflows/#exporting-a-workflow">as described on the Workflows page</a>.</li>
-<li>Run dart-runner on the server with the exported workflow file and a list of items you want to run through that workflow. The list must conform to the workflow <a href="../workflows/batch_jobs/">CSV format used for batch jobs</a>.</li>
+<li>Run dart-runner on the server with the exported workflow file and a list of items you want to run through that workflow. If you're running a batch job, the list must conform to the workflow <a href="../workflows/batch_jobs/">CSV format used for batch jobs</a>. If you're running one-off jobs using Job Params, be sure your JSON conforms to the format below. See below for details.</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1146,9 +1160,16 @@ and the DART CLI will always work.</p>
 <li>It supports only S3 uploads (no SFTP).</li>
 <li>It's intended primarily for use on Linux servers.</li>
 </ul>
+<h2 id="differences-in-job-params-json">Differences in Job Params JSON</h2>
+<p>The Job Params JSON format for dart-runner differs slightly from the JSON used in the DART CLI. Specifically:</p>
+<ul>
+<li>tags use "value" instead of "userValue" and</li>
+<li>you don't need to specify the workflow name or ID in the json, because it's specified as a file name on the command line</li>
+</ul>
+<p>The help text below shows an example of valid Job Params JSON for dart-runner.</p>
 <h2 id="downloads">Downloads</h2>
-<p>Download the initial <a href="https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.9-beta/linux-x64/dart-runner">0.9 beta version of dart-runner for Linux</a>.</p>
-<p>There's also a <a href="https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.9-beta/mac-x64/dart-runner">Mac version of the beta</a> if you want to experiment, but for now, APTrust suggests using the DART CLI on Mac.</p>
+<p>Download the <a href="https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.91-beta/linux-x64/dart-runner">0.91 beta version of dart-runner for Linux</a>.</p>
+<p>There's also a <a href="https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.91-beta/mac-x64/dart-runner">Mac version of the beta</a> if you want to experiment, but for now, APTrust suggests using the DART CLI on Mac.</p>
 <p>Because it's a single binary with no dependencies, there's no installation process for dart-runner. Simply copy the binary onto your computer and run.</p>
 <p>If you're interested, the souce code is available on GitHub at <a href="https://github.com/APTrust/dart-runner">https://github.com/APTrust/dart-runner</a>.</p>
 <p>To view the built-in docs, run <code>dart-runner --help</code>, the contents of which appear below.</p>
@@ -1161,10 +1182,6 @@ and the DART CLI will always work.</p>
 <span class="o">-------</span>
 <span class="n">Options</span>
 <span class="o">-------</span>
-
-  <span class="o">--</span><span class="n">job</span>          <span class="n">Path</span> <span class="n">to</span> <span class="n">job</span> <span class="n">json</span> <span class="n">file</span><span class="o">.</span> <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="n">only</span> <span class="k">if</span> <span class="n">you</span> <span class="n">are</span> <span class="n">running</span>
-                 <span class="n">a</span> <span class="n">single</span> <span class="n">job</span> <span class="p">(</span><span class="k">as</span> <span class="n">opposed</span> <span class="n">to</span> <span class="n">a</span> <span class="n">workflow</span><span class="p">)</span><span class="o">.</span> <span class="n">Job</span> <span class="n">json</span> <span class="n">files</span> <span class="n">can</span>
-                 <span class="n">be</span> <span class="n">exported</span> <span class="n">from</span> <span class="n">the</span> <span class="n">DART</span> <span class="n">UI</span><span class="o">.</span>
 
   <span class="o">--</span><span class="n">workflow</span>     <span class="n">Path</span> <span class="n">to</span> <span class="n">workflow</span> <span class="n">json</span> <span class="n">file</span><span class="o">.</span> <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="k">if</span> <span class="n">you</span> <span class="n">are</span> <span class="n">running</span>
                  <span class="n">a</span> <span class="n">workflow</span> <span class="n">against</span> <span class="n">a</span> <span class="n">batch</span> <span class="n">of</span> <span class="n">files</span><span class="o">.</span> <span class="n">If</span> <span class="n">you</span> <span class="n">specify</span> <span class="n">a</span> <span class="n">workflow</span>
@@ -1189,7 +1206,9 @@ and the DART CLI will always work.</p>
                  <span class="k">for</span> <span class="n">this</span> <span class="n">param</span> <span class="n">should</span> <span class="n">be</span> <span class="n">less</span> <span class="n">than</span> <span class="ow">or</span> <span class="n">equal</span> <span class="n">to</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span>
                  <span class="n">processors</span> <span class="n">on</span> <span class="n">your</span> <span class="n">machine</span><span class="o">.</span> <span class="n">You</span> <span class="n">may</span> <span class="n">get</span> <span class="n">diminishing</span> <span class="n">returns</span>
                  <span class="n">when</span> <span class="n">setting</span> <span class="n">this</span> <span class="n">above</span> <span class="mi">2</span> <span class="n">because</span> <span class="n">most</span> <span class="n">of</span> <span class="n">the</span> <span class="n">DART</span> <span class="n">runner</span><span class="s1">&#39;s</span>
-                 <span class="n">work</span> <span class="k">is</span> <span class="n">reading</span> <span class="n">from</span> <span class="ow">and</span> <span class="n">writing</span> <span class="n">to</span> <span class="n">disk</span><span class="o">.</span>
+                 <span class="n">work</span> <span class="k">is</span> <span class="n">reading</span> <span class="n">from</span> <span class="ow">and</span> <span class="n">writing</span> <span class="n">to</span> <span class="n">disk</span><span class="o">.</span> <span class="n">This</span> <span class="n">setting</span> <span class="n">only</span>
+                 <span class="n">makes</span> <span class="n">sense</span> <span class="k">for</span> <span class="n">workflows</span><span class="o">.</span> <span class="n">For</span> <span class="n">a</span> <span class="n">single</span> <span class="n">job</span><span class="p">,</span> <span class="n">you</span> <span class="n">can</span> <span class="n">omit</span>
+                 <span class="n">this</span><span class="o">.</span>
 
   <span class="o">--</span><span class="n">help</span>         <span class="n">Show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">document</span><span class="o">.</span>
 
@@ -1198,11 +1217,20 @@ and the DART CLI will always work.</p>
 <span class="n">Examples</span>
 <span class="o">--------</span>
 
-<span class="n">To</span> <span class="n">run</span> <span class="n">a</span> <span class="n">single</span> <span class="n">job</span><span class="p">:</span>
+<span class="n">If</span> <span class="n">you</span><span class="s1">&#39;re running a single job, you can send job params to dart-runner through</span>
+<span class="n">STDIN</span><span class="p">,</span> <span class="n">like</span> <span class="n">this</span><span class="p">:</span>
 
-    <span class="n">dart</span><span class="o">-</span><span class="n">runner</span> <span class="o">--</span><span class="n">job</span><span class="o">=</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">job</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">dir</span><span class="o">=</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">output</span>
+    <span class="n">echo</span> <span class="s1">&#39;{ json }&#39;</span> <span class="o">|</span> <span class="n">dart</span><span class="o">-</span><span class="n">runner</span> <span class="o">--</span><span class="n">workflow</span><span class="o">=</span><span class="n">workflow</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">dir</span><span class="o">=/</span><span class="n">dir</span>
 
-<span class="n">This</span> <span class="n">runs</span> <span class="n">the</span> <span class="n">job</span> <span class="n">described</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">job</span><span class="o">.</span><span class="n">json</span> <span class="n">file</span><span class="p">,</span> <span class="n">writing</span> <span class="n">the</span> <span class="n">bag</span> <span class="n">to</span> <span class="n">the</span>
+<span class="n">The</span> <span class="n">job</span> <span class="n">params</span> <span class="n">json</span> <span class="n">tells</span> <span class="n">dart</span><span class="o">-</span><span class="n">runner</span> <span class="n">which</span> <span class="n">files</span> <span class="n">to</span> <span class="n">bag</span> <span class="ow">and</span> <span class="n">what</span> <span class="n">tag</span> <span class="n">values</span>
+<span class="n">to</span> <span class="n">set</span><span class="o">.</span> <span class="n">The</span> <span class="n">workflow</span> <span class="n">tells</span> <span class="n">dart</span><span class="o">-</span><span class="n">runner</span> <span class="n">which</span> <span class="n">BagIt</span> <span class="n">profile</span> <span class="n">to</span> <span class="n">use</span> <span class="ow">and</span> <span class="n">where</span> <span class="n">to</span>
+<span class="n">send</span> <span class="n">the</span> <span class="n">bag</span><span class="o">.</span>
+
+<span class="n">You</span> <span class="n">can</span> <span class="n">also</span> <span class="n">feed</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">a</span> <span class="n">Job</span> <span class="n">Params</span> <span class="n">file</span> <span class="n">to</span> <span class="n">STDIN</span><span class="p">,</span> <span class="n">like</span> <span class="n">this</span><span class="p">:</span>
+
+    <span class="n">cat</span> <span class="n">job_params</span><span class="o">.</span><span class="n">json</span> <span class="o">|</span> <span class="n">dart</span><span class="o">-</span><span class="n">runner</span> <span class="o">--</span><span class="n">workflow</span><span class="o">=</span><span class="n">workflow</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">dir</span><span class="o">=/</span><span class="n">dir</span>
+
+<span class="n">This</span> <span class="n">runs</span> <span class="n">the</span> <span class="n">job</span> <span class="n">described</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">job_params</span><span class="o">.</span><span class="n">json</span> <span class="n">file</span><span class="p">,</span> <span class="n">writing</span> <span class="n">the</span> <span class="n">bag</span> <span class="n">to</span> <span class="n">the</span>
 <span class="n">specified</span> <span class="n">output</span> <span class="n">directory</span><span class="o">.</span>
 
 <span class="n">To</span> <span class="n">run</span> <span class="n">a</span> <span class="n">workflow</span><span class="p">:</span>
@@ -1223,6 +1251,44 @@ and the DART CLI will always work.</p>
 
 <span class="n">Setting</span> <span class="o">--</span><span class="n">delete</span> <span class="n">to</span> <span class="bp">true</span> <span class="p">(</span><span class="ow">or</span> <span class="n">omitting</span> <span class="o">--</span><span class="n">delete</span><span class="p">)</span> <span class="n">will</span> <span class="n">cause</span> <span class="n">bags</span> <span class="n">to</span> <span class="n">be</span> <span class="n">deleted</span>
 <span class="n">after</span> <span class="n">successful</span> <span class="n">upload</span><span class="o">.</span>
+
+<span class="o">----------------------</span>
+<span class="n">Sample</span> <span class="n">Job</span> <span class="n">Params</span> <span class="n">JSON</span>
+<span class="o">----------------------</span>
+
+<span class="n">The</span> <span class="n">following</span> <span class="n">job</span> <span class="n">params</span> <span class="n">tell</span> <span class="n">dart</span><span class="o">-</span><span class="n">runner</span> <span class="n">to</span> <span class="n">bag</span> <span class="n">all</span> <span class="n">of</span> <span class="n">the</span> <span class="n">files</span> <span class="ow">in</span>
+<span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">linus</span><span class="o">/</span><span class="n">documents</span> <span class="ow">and</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">linus</span><span class="o">/</span><span class="n">files</span><span class="o">.</span> <span class="n">This</span> <span class="n">also</span> <span class="n">tells</span> <span class="n">the</span> <span class="n">bagger</span> <span class="n">to</span>
+<span class="n">write</span> <span class="n">two</span> <span class="n">tags</span> <span class="n">with</span> <span class="n">the</span> <span class="n">assigned</span> <span class="n">values</span> <span class="n">into</span> <span class="n">the</span> <span class="n">bag</span><span class="o">-</span><span class="n">info</span><span class="o">.</span><span class="n">txt</span> <span class="n">file</span> <span class="ow">and</span>
+<span class="n">one</span> <span class="n">tag</span> <span class="n">into</span> <span class="n">the</span> <span class="n">aptrust</span><span class="o">-</span><span class="n">info</span><span class="o">.</span><span class="n">txt</span> <span class="n">file</span><span class="o">.</span>
+
+<span class="n">These</span> <span class="n">job</span> <span class="n">params</span> <span class="n">would</span> <span class="n">be</span> <span class="n">combined</span> <span class="n">with</span> <span class="n">a</span> <span class="n">workflow</span> <span class="n">JSON</span> <span class="n">file</span> <span class="n">that</span> <span class="n">would</span>
+<span class="n">tell</span> <span class="n">dart</span> <span class="n">runner</span> <span class="n">which</span> <span class="n">BagIt</span> <span class="n">profile</span> <span class="n">to</span> <span class="n">use</span> <span class="n">when</span> <span class="n">creating</span> <span class="n">the</span> <span class="n">bag</span><span class="p">,</span> <span class="ow">and</span> <span class="n">where</span>
+<span class="n">to</span> <span class="n">send</span> <span class="n">the</span> <span class="n">bag</span> <span class="n">when</span> <span class="n">it</span><span class="s1">&#39;s done.</span>
+
+<span class="p">{</span>
+    <span class="s2">&quot;packageName&quot;</span><span class="p">:</span> <span class="s2">&quot;TestBag.tar&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;/home/linus/documents&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;/home/linus/photos&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;tagFile&quot;</span><span class="p">:</span> <span class="s2">&quot;bag-info.txt&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;tagName&quot;</span><span class="p">:</span> <span class="s2">&quot;Tag-One&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;value&quot;</span><span class="p">:</span>   <span class="s2">&quot;Value One&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;tagFile&quot;</span><span class="p">:</span> <span class="s2">&quot;bag-info.txt&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;tagName&quot;</span><span class="p">:</span> <span class="s2">&quot;Tag-Two&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;value&quot;</span><span class="p">:</span>   <span class="s2">&quot;Value Two&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;tagFile&quot;</span><span class="p">:</span> <span class="s2">&quot;aptrust-info.txt&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;tagName&quot;</span><span class="p">:</span> <span class="s2">&quot;Tag-Three&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Value Three&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
 
 <span class="o">---------</span>
 <span class="n">Resources</span>
