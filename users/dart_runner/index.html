@@ -776,6 +776,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
+    Downloads
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#features" class="md-nav__link">
     Features
   </a>
@@ -797,9 +804,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#downloads" class="md-nav__link">
-    Downloads
+  <a href="#usage-examples" class="md-nav__link">
+    Usage Examples
   </a>
+  
+    <nav class="md-nav" aria-label="Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-a-workflow" class="md-nav__link">
+    Running a Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-one-off-jobs" class="md-nav__link">
+    Running One-Off Jobs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1080,6 +1107,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
+    Downloads
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#features" class="md-nav__link">
     Features
   </a>
@@ -1101,9 +1135,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#downloads" class="md-nav__link">
-    Downloads
+  <a href="#usage-examples" class="md-nav__link">
+    Usage Examples
   </a>
+  
+    <nav class="md-nav" aria-label="Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-a-workflow" class="md-nav__link">
+    Running a Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-one-off-jobs" class="md-nav__link">
+    Running One-Off Jobs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1140,6 +1194,11 @@ stick with the DART CLI, since it's more mature as of late 2021.
 Since Windows and Mac include a GUI environment by default, DART
 and the DART CLI will always work.</p>
 </div>
+<h2 id="downloads">Downloads</h2>
+<p>Download the <a href="https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.91-beta/linux-x64/dart-runner">0.91 beta version of dart-runner for Linux</a>.</p>
+<p>There's also a <a href="https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.91-beta/mac-x64/dart-runner">Mac version of the beta</a> if you want to experiment, but for now, APTrust suggests using the DART CLI on Mac.</p>
+<p>Because it's a single binary with no dependencies, there's no installation process for dart-runner. Simply copy the binary onto your computer and run.</p>
+<p>If you're interested, the souce code is available on GitHub at <a href="https://github.com/APTrust/dart-runner">https://github.com/APTrust/dart-runner</a>.</p>
 <h2 id="features">Features</h2>
 <p>Dart-runner:</p>
 <ul>
@@ -1167,11 +1226,44 @@ and the DART CLI will always work.</p>
 <li>you don't need to specify the workflow name or ID in the json, because it's specified as a file name on the command line</li>
 </ul>
 <p>The help text below shows an example of valid Job Params JSON for dart-runner.</p>
-<h2 id="downloads">Downloads</h2>
-<p>Download the <a href="https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.91-beta/linux-x64/dart-runner">0.91 beta version of dart-runner for Linux</a>.</p>
-<p>There's also a <a href="https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.91-beta/mac-x64/dart-runner">Mac version of the beta</a> if you want to experiment, but for now, APTrust suggests using the DART CLI on Mac.</p>
-<p>Because it's a single binary with no dependencies, there's no installation process for dart-runner. Simply copy the binary onto your computer and run.</p>
-<p>If you're interested, the souce code is available on GitHub at <a href="https://github.com/APTrust/dart-runner">https://github.com/APTrust/dart-runner</a>.</p>
+<h2 id="usage-examples">Usage Examples</h2>
+<h3 id="running-a-workflow">Running a Workflow</h3>
+<p>The following command runs all items in the CSV file through the specified workflow:</p>
+<p><code>dart-runner --workflow=workflow.json --batch=batch.csv --output-dir=/home/user/bags</code></p>
+<p>Bags will be written the --output_dir and deleted after successful upload. If you want to keep the bags after upload, add this to the end of the command:</p>
+<p><code>--delete=false</code></p>
+<p>We'll run this example, which creates three bags (as defined in the batch file) and uploads them to a local S3 server.</p>
+<div class="codehilite"><pre><span></span><code>dart-runner --workflow=./testdata/files/postbuild_test_workflow.json \
+            --batch=./testdata/files/postbuild_test_batch.csv \
+            --output-dir=/Users/apd4n/tmp/bags
+</code></pre></div>
+
+<h3 id="running-one-off-jobs">Running One-Off Jobs</h3>
+<p>You can run individual jobs through DART runner by sending JSON to the command's standard input. For example:</p>
+<p><code>echo '{ json }' | dart-runner --workflow=workflow.json --output-dir=/dir</code></p>
+<p><code>cat job_params.json | dart-runner --workflow=workflow.json --output-dir=/dir</code></p>
+<p>Typically, you'd have a script create the json, then pipe it to dart-runner. The JSON format looks like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;packageName&quot;</span><span class="p">:</span> <span class="s2">&quot;TestBag.tar&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;/Users/apd4n/aptrust/dart-runner/core&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;/Users/apd4n/aptrust/dart-runner/bagit&quot;</span><span class="p">],</span>
+    <span class="nt">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">&quot;tagFile&quot;</span><span class="p">:</span> <span class="s2">&quot;aptrust-info.txt&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;tagName&quot;</span><span class="p">:</span> <span class="s2">&quot;Title&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Runner Sample Bag&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">&quot;tagFile&quot;</span><span class="p">:</span> <span class="s2">&quot;aptrust-info.txt&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;tagName&quot;</span><span class="p">:</span> <span class="s2">&quot;Description&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Sample bag made with DART runner&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">&quot;tagFile&quot;</span><span class="p">:</span> <span class="s2">&quot;aptrust-info.txt&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;tagName&quot;</span><span class="p">:</span> <span class="s2">&quot;Access&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Institution&quot;</span>
+    <span class="p">}]</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <p>To view the built-in docs, run <code>dart-runner --help</code>, the contents of which appear below.</p>
 <div class="codehilite"><pre><span></span><code><span class="n">DART</span> <span class="n">Runner</span><span class="p">:</span> <span class="n">Bag</span> <span class="ow">and</span> <span class="n">ship</span> <span class="n">files</span> <span class="n">from</span> <span class="n">the</span> <span class="n">command</span> <span class="n">line</span><span class="o">.</span>
 
