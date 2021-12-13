@@ -16,6 +16,16 @@ The general process is:
     Since Windows and Mac include a GUI environment by default, DART
     and the DART CLI will always work.
 
+## Downloads
+
+Download the [0.91 beta version of dart-runner for Linux](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.91-beta/linux-x64/dart-runner).
+
+There's also a [Mac version of the beta](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.91-beta/mac-x64/dart-runner) if you want to experiment, but for now, APTrust suggests using the DART CLI on Mac.
+
+Because it's a single binary with no dependencies, there's no installation process for dart-runner. Simply copy the binary onto your computer and run.
+
+If you're interested, the souce code is available on GitHub at [https://github.com/APTrust/dart-runner](https://github.com/APTrust/dart-runner).
+
 ## Features
 
 Dart-runner:
@@ -47,15 +57,57 @@ The Job Params JSON format for dart-runner differs slightly from the JSON used i
 
 The help text below shows an example of valid Job Params JSON for dart-runner.
 
-## Downloads
+## Usage Examples
 
-Download the [0.91 beta version of dart-runner for Linux](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.91-beta/linux-x64/dart-runner).
+### Running a Workflow
 
-There's also a [Mac version of the beta](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.91-beta/mac-x64/dart-runner) if you want to experiment, but for now, APTrust suggests using the DART CLI on Mac.
+The following command runs all items in the CSV file through the specified workflow:
 
-Because it's a single binary with no dependencies, there's no installation process for dart-runner. Simply copy the binary onto your computer and run.
+`dart-runner --workflow=workflow.json --batch=batch.csv --output-dir=/home/user/bags`
 
-If you're interested, the souce code is available on GitHub at [https://github.com/APTrust/dart-runner](https://github.com/APTrust/dart-runner).
+Bags will be written the --output_dir and deleted after successful upload. If you want to keep the bags after upload, add this to the end of the command:
+
+`--delete=false`
+
+We'll run this example, which creates three bags (as defined in the batch file) and uploads them to a local S3 server.
+
+```
+dart-runner --workflow=./testdata/files/postbuild_test_workflow.json \
+            --batch=./testdata/files/postbuild_test_batch.csv \
+            --output-dir=/Users/apd4n/tmp/bags
+```
+
+### Running One-Off Jobs
+
+You can run individual jobs through DART runner by sending JSON to the command's standard input. For example:
+
+`echo '{ json }' | dart-runner --workflow=workflow.json --output-dir=/dir`
+
+`cat job_params.json | dart-runner --workflow=workflow.json --output-dir=/dir`
+
+Typically, you'd have a script create the json, then pipe it to dart-runner. The JSON format looks like this:
+
+```json
+{
+	"packageName": "TestBag.tar",
+	"files": [
+	    "/Users/apd4n/aptrust/dart-runner/core",
+	    "/Users/apd4n/aptrust/dart-runner/bagit"],
+	"tags": [{
+		"tagFile": "aptrust-info.txt",
+		"tagName": "Title",
+		"value": "Runner Sample Bag"
+	}, {
+		"tagFile": "aptrust-info.txt",
+		"tagName": "Description",
+		"value": "Sample bag made with DART runner"
+	}, {
+		"tagFile": "aptrust-info.txt",
+		"tagName": "Access",
+		"value": "Institution"
+	}]
+}
+```
 
 To view the built-in docs, run `dart-runner --help`, the contents of which appear below.
 
