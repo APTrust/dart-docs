@@ -20,9 +20,9 @@ The general process is:
 
 Latest version is v0.92-beta, released December 14, 2021.
 
-Download the [0.92 beta version of dart-runner for Linux](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.92-beta/linux-x64/dart-runner).
+Download the [0.92 beta version of dart-runner for Linux](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v.0.92-beta/linux-x64/dart-runner).
 
-There's also a [Mac version of the beta](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.92-beta/mac-x64/dart-runner) if you want to experiment, but for now, APTrust suggests using the DART CLI on Mac.
+There's also a [Mac version of the beta](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v.0.92-beta/mac-x64/dart-runner) if you want to experiment, but for now, APTrust suggests using the DART CLI on Mac.
 
 Because it's a single binary with no dependencies, there's no installation process for dart-runner. Simply copy the binary onto your computer and run.
 
