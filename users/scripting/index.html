@@ -1058,7 +1058,7 @@ need to create a few bag-specific tag values at runtime. See
 </li>
 </ol>
 <p>The examples below show how to do this in Ruby and Python. Note that both examples create the following JSON structure.</p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;workflowName&quot;</span><span class="p">:</span> <span class="s2">&quot;DART Test Workflow&quot;</span><span class="p">,</span>
     <span class="nt">&quot;packageName&quot;</span><span class="p">:</span> <span class="s2">&quot;test.edu.my_files.tar&quot;</span><span class="p">,</span>
     <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;/Users/apd4n/aptrust/dart-docs/site&quot;</span><span class="p">,</span> <span class="s2">&quot;/Users/apd4n/tmp/logs&quot;</span><span class="p">],</span>
@@ -1077,10 +1077,9 @@ need to create a few bag-specific tag values at runtime. See
     <span class="p">}]</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h1 id="example-ruby">Example: Ruby</h1>
 <p>To script DART actions, you'll need one simple Ruby class that allows you to define and run a job. You can cut and paste this to get started, but note that you will likely have to change the value of <code>@@dart_command</code> to point to the DART executable on your local machine.</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">require</span> <span class="s1">&#39;json&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span> <span class="s1">&#39;json&#39;</span>
 
 <span class="k">class</span> <span class="nc">Job</span>
 
@@ -1135,9 +1134,8 @@ need to create a few bag-specific tag values at runtime. See
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
-
 <p>Assuming you saved the code above to a file called <code>job.rb</code>, you can create a script like the following to run a job based on a pre-defined DART workflow.</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">require</span> <span class="s1">&#39;./job&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span> <span class="s1">&#39;./job&#39;</span>
 
 <span class="c1"># Create a new job using the &quot;DART Test Workflow.&quot;</span>
 <span class="c1"># This job will create a tarred bag called test.edu.my_files.tar</span>
@@ -1171,10 +1169,9 @@ need to create a few bag-specific tag values at runtime. See
   <span class="nb">puts</span> <span class="s2">&quot;Job failed. Check the DART log for details.&quot;</span>
 <span class="k">end</span>
 </code></pre></div>
-
 <h1 id="example-python">Example: Python</h1>
 <p>The following Python class will help you define and run DART jobs. You can cut and paste this to get started, but note that you will likely have to change the value of <code>dart_command</code> to point to the DART executable on your local machine.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
 
@@ -1222,9 +1219,8 @@ need to create a few bag-specific tag values at runtime. See
             <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">stderr_data</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">child</span><span class="o">.</span><span class="n">returncode</span>
 </code></pre></div>
-
 <p>Assuming you saved the code above to a file called job.py, you can create a script like the following to run a job based on a pre-defined DART workflow.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">job</span> <span class="kn">import</span> <span class="n">Job</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">job</span> <span class="kn">import</span> <span class="n">Job</span>
 
 
 <span class="c1"># Create a new job using the &quot;DART Test Workflow.&quot;</span>

@@ -1041,9 +1041,8 @@
 <p>DART uses the <a href="https://github.com/winstonjs/winston">Winston</a> library for logging. You can find the location of your DART logs by choosing <strong>Help &gt; About</strong> from the main menu. You should see a dialog like this:</p>
 <p><img alt="About DART" src="../../img/about/about.png" /></p>
 <p>As you develop, you can tail the logs to see what's happening in real time. Just substitute the proper log location in the command below.</p>
-<div class="codehilite"><pre><span></span><code>tail -f /Users/apd4n/Library/Logs/DART/dart.log
+<div class="highlight"><pre><span></span><code>tail -f /Users/apd4n/Library/Logs/DART/dart.log
 </code></pre></div>
-
 <p>Also note that you can tail the logs directly from DART by choose <strong>Help &gt; Logs</strong> from the menu. While this approach is handy, there are two caveats. First, if the log file is large, the log window may take a long time to load. Second, DART rotates its logs when they reach a size of 5 MB. If that rollover happens while you're tailing the log in the DART log window, you won't see any entries logged after the rollover.</p>
 <p>DART logs to a different file when it runs unit tests, usually to a directory called <code>.dart-test/log/dart.log</code>. For more information on logging, see the code in <a href="https://github.com/APTrust/dart/blob/master/util/logger.js">util/logger.js</a> and the config settings in <a href="https://github.com/APTrust/dart/blob/master/core/config.js">core/config.js</a>.</p>
                 

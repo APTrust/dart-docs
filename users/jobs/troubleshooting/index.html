@@ -1165,14 +1165,13 @@ change Storage Service settings.</p>
 <p>This can occur when your local machine's SSH hosts file does not have the
 public key of the sftp server you are connecting to.</p>
 <p>You can fix this by manually connecting to the server with</p>
-<div class="codehilite"><pre><span></span><code><span class="k">local</span><span class="err">:</span><span class="o">~</span><span class="w"> </span><span class="n">yoozer</span><span class="err">$</span><span class="w"> </span><span class="n">ssh</span><span class="w"> </span><span class="n">server</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
-<span class="n">The</span><span class="w"> </span><span class="n">authenticity</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="k">host</span><span class="w"> </span><span class="s1">&#39;server.example.com (::1)&#39;</span><span class="w"> </span><span class="n">can</span><span class="s1">&#39;t be established.</span>
-<span class="s1">ED25519 key fingerprint is SHA256:3WxPp9MParT+tsW/LpcNWR1m4c126aWIR98LVyEgfcw.</span>
-<span class="s1">Are you sure you want to continue connecting (yes/no)? yes</span>
-<span class="s1">Warning: Permanently added &#39;</span><span class="n">localhost</span><span class="s1">&#39; (ED25519) to the list of known hosts.</span>
-<span class="s1">yoozer@server.example.com&#39;</span><span class="n">s</span><span class="w"> </span><span class="nl">password</span><span class="p">:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>local:~ yoozer$ ssh server.example.com
+The authenticity of host &#39;server.example.com (::1)&#39; can&#39;t be established.
+ED25519 key fingerprint is SHA256:3WxPp9MParT+tsW/LpcNWR1m4c126aWIR98LVyEgfcw.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added &#39;localhost&#39; (ED25519) to the list of known hosts.
+yoozer@server.example.com&#39;s password:
 </code></pre></div>
-
 <p>You can hit Control-C after the last prompt, since your ssh hosts file now
 has the key.</p>
                 

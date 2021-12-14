@@ -804,29 +804,64 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage-examples" class="md-nav__link">
-    Usage Examples
+  <a href="#usage" class="md-nav__link">
+    Usage
   </a>
   
-    <nav class="md-nav" aria-label="Usage Examples">
+    <nav class="md-nav" aria-label="Usage">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#running-a-workflow" class="md-nav__link">
-    Running a Workflow
+  <a href="#options" class="md-nav__link">
+    Options
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#running-one-off-jobs" class="md-nav__link">
-    Running One-Off Jobs
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exit-codes" class="md-nav__link">
+    Exit Codes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-job-params-json" class="md-nav__link">
+    Sample Job Params JSON
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-format" class="md-nav__link">
+    Output Format
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripting" class="md-nav__link">
+    Scripting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    Additional Resources
+  </a>
   
 </li>
       
@@ -1135,29 +1170,64 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage-examples" class="md-nav__link">
-    Usage Examples
+  <a href="#usage" class="md-nav__link">
+    Usage
   </a>
   
-    <nav class="md-nav" aria-label="Usage Examples">
+    <nav class="md-nav" aria-label="Usage">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#running-a-workflow" class="md-nav__link">
-    Running a Workflow
+  <a href="#options" class="md-nav__link">
+    Options
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#running-one-off-jobs" class="md-nav__link">
-    Running One-Off Jobs
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exit-codes" class="md-nav__link">
+    Exit Codes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-job-params-json" class="md-nav__link">
+    Sample Job Params JSON
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-format" class="md-nav__link">
+    Output Format
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripting" class="md-nav__link">
+    Scripting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    Additional Resources
+  </a>
   
 </li>
       
@@ -1195,8 +1265,9 @@ Since Windows and Mac include a GUI environment by default, DART
 and the DART CLI will always work.</p>
 </div>
 <h2 id="downloads">Downloads</h2>
-<p>Download the <a href="https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.91-beta/linux-x64/dart-runner">0.91 beta version of dart-runner for Linux</a>.</p>
-<p>There's also a <a href="https://s3.amazonaws.com/aptrust.public.download/dart-runner/v0.91-beta/mac-x64/dart-runner">Mac version of the beta</a> if you want to experiment, but for now, APTrust suggests using the DART CLI on Mac.</p>
+<p>Latest version is v0.92-beta, released December 14, 2021.</p>
+<p>Download the <a href="https://s3.amazonaws.com/aptrust.public.download/dart-runner/v.0.92-beta/linux-x64/dart-runner">0.92 beta version of dart-runner for Linux</a>.</p>
+<p>There's also a <a href="https://s3.amazonaws.com/aptrust.public.download/dart-runner/v.0.92-beta/mac-x64/dart-runner">Mac version of the beta</a> if you want to experiment, but for now, APTrust suggests using the DART CLI on Mac.</p>
 <p>Because it's a single binary with no dependencies, there's no installation process for dart-runner. Simply copy the binary onto your computer and run.</p>
 <p>If you're interested, the souce code is available on GitHub at <a href="https://github.com/APTrust/dart-runner">https://github.com/APTrust/dart-runner</a>.</p>
 <h2 id="features">Features</h2>
@@ -1226,176 +1297,216 @@ and the DART CLI will always work.</p>
 <li>you don't need to specify the workflow name or ID in the json, because it's specified as a file name on the command line</li>
 </ul>
 <p>The help text below shows an example of valid Job Params JSON for dart-runner.</p>
-<h2 id="usage-examples">Usage Examples</h2>
-<h3 id="running-a-workflow">Running a Workflow</h3>
-<p>The following command runs all items in the CSV file through the specified workflow:</p>
-<p><code>dart-runner --workflow=workflow.json --batch=batch.csv --output-dir=/home/user/bags</code></p>
-<p>Bags will be written the --output_dir and deleted after successful upload. If you want to keep the bags after upload, add this to the end of the command:</p>
-<p><code>--delete=false</code></p>
-<p>We'll run this example, which creates three bags (as defined in the batch file) and uploads them to a local S3 server.</p>
-<div class="codehilite"><pre><span></span><code>dart-runner --workflow=./testdata/files/postbuild_test_workflow.json \
-            --batch=./testdata/files/postbuild_test_batch.csv \
-            --output-dir=/Users/apd4n/tmp/bags
-</code></pre></div>
+<h2 id="usage">Usage</h2>
+<h3 id="options">Options</h3>
+<div class="highlight"><pre><span></span><code>  --workflow     Path to workflow json file. Use this option if you are running
+                 a workflow against a batch of files. If you specify a workflow
+                 file, you must also specify --batch. Workflows can be exported
+                 from the DART UI.
 
-<h3 id="running-one-off-jobs">Running One-Off Jobs</h3>
-<p>You can run individual jobs through DART runner by sending JSON to the command's standard input. For example:</p>
-<p><code>echo '{ json }' | dart-runner --workflow=workflow.json --output-dir=/dir</code></p>
-<p><code>cat job_params.json | dart-runner --workflow=workflow.json --output-dir=/dir</code></p>
-<p>Typically, you'd have a script create the json, then pipe it to dart-runner. The JSON format looks like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  --batch        Path to CSV batch file. Use this option with --workflow to
+                 specify a set of files or directories to run through a
+                 workflow. The batch file format is described at
+                 https://aptrust.github.io/dart-docs/users/workflows/batch_jobs/
+
+  --output-dir   Path to package output directory. Jobs and workflows will
+                 create bags in this directory. This option is always REQUIRED.
+
+  --delete       Delete bags after job completes? Set this to true or false.
+                 The default is true for jobs and workflows that include
+                 uploads: the bags will be deleted after successful uploads.
+                 Default is false for jobs and workflows that do not include
+                 uploads because you probably want to do something with the bag
+                 after it&#39;s created.
+
+  --concurrency  Number of jobs to run concurrently. Default is 1. Max value
+                 for this param should be less than or equal to the number of
+                 processors on your machine. You may get diminishing returns
+                 when setting this above 2 because most of the DART runner&#39;s
+                 work is reading from and writing to disk. This setting only
+                 makes sense for workflows. For a single job, you can omit
+                 this.
+
+  --help         Show this help document.
+</code></pre></div>
+<h3 id="examples">Examples</h3>
+<p>If you're running a single job, you can send job params to dart-runner through
+STDIN, like this:</p>
+<div class="highlight"><pre><span></span><code>echo &#39;{ json }&#39; | dart-runner --workflow=workflow.json --output-dir=/dir
+</code></pre></div>
+<p>The job params json tells dart-runner which files to bag and what tag values
+to set. The workflow tells dart-runner which BagIt profile to use and where to
+send the bag.</p>
+<p>You can also feed the contents of a Job Params file to STDIN, as in either example below:</p>
+<div class="highlight"><pre><span></span><code>dart-runner --workflow=workflow.json --output-dir=/dir &lt; job_params.json
+
+cat job_params.json | dart-runner --workflow=workflow.json --output-dir=/dir
+</code></pre></div>
+<p>This runs the job described in the job_params.json file, writing the bag to the
+specified output directory.</p>
+<p>To run a workflow:</p>
+<div class="highlight"><pre><span></span><code>dart-runner --workflow=path/to/workflow.json  \
+            --batch=path/to/batch.csv         \
+            --output-dir=path/to/directory    \
+            --concurrency=2                   \
+            --delete=false
+</code></pre></div>
+<p>The command above runs all of the items listed in the <code>--batch</code> CSV file through
+the workflow described in the <code>--workflow</code> json file. Bags are written to the
+output directory. Setting the delete flag to false means the bags will not be
+deleted from the output directory after successful upload.</p>
+<p>The <code>--concurrency</code> flag above tells DART runner to work on 2 bags at a time
+(instead of the default 1 at a time) when bagging and uploading.</p>
+<p>Setting <code>--delete</code> to true (or omitting <code>--delete</code>) will cause bags to be deleted
+after successful upload.</p>
+<h3 id="exit-codes">Exit Codes</h3>
+<div class="highlight"><pre><span></span><code>    0 - Normal exit. This means there were no errors and all tasks
+        succeeded.
+
+    1 - Runtime error. This means dart runner was able to start the
+        job, but encountered one or more errors along the way.
+
+        In a single job, this usually means at least one step of the job
+        failed: bagging, validation, or upload. Check the JSON output
+        for more details about where the failure occurred and what
+        happened.
+
+        When running a batch of jobs through a workflow, this exit code
+        means that one or more of the jobs in the batch failed. In this
+        case, you should find an error message on stderr saying something
+        like &quot;2 Job(s) failed&quot;.
+
+    2 - Usage error. This means dart runner didn&#39;t even attempt to start
+        the job because something was wrong with the parameters. This
+        usually means you&#39;ve forgotten to provide a necessary parameter
+        such as --workflow, or that the parameter points to a non-existant
+        or unreadable file. This error also occurs when a parameter contains
+        invalid or unparsable data (bad JSON or bad CSV format).
+
+        You should see a message on stderr describing the problem.
+</code></pre></div>
+<h3 id="sample-job-params-json">Sample Job Params JSON</h3>
+<p>The following job params tell dart-runner to bag all of the files in
+/home/linus/documents and /home/linus/files. This also tells the bagger to
+write two tags with the assigned values into the bag-info.txt file and
+one tag into the aptrust-info.txt file.</p>
+<p>These job params would be combined with a workflow JSON file that would
+tell dart runner which BagIt profile to use when creating the bag, and where
+to send the bag when it's done.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;packageName&quot;</span><span class="p">:</span> <span class="s2">&quot;TestBag.tar&quot;</span><span class="p">,</span>
     <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;/Users/apd4n/aptrust/dart-runner/core&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;/Users/apd4n/aptrust/dart-runner/bagit&quot;</span><span class="p">],</span>
-    <span class="nt">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="nt">&quot;tagFile&quot;</span><span class="p">:</span> <span class="s2">&quot;aptrust-info.txt&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;tagName&quot;</span><span class="p">:</span> <span class="s2">&quot;Title&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Runner Sample Bag&quot;</span>
-    <span class="p">},</span> <span class="p">{</span>
-        <span class="nt">&quot;tagFile&quot;</span><span class="p">:</span> <span class="s2">&quot;aptrust-info.txt&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;tagName&quot;</span><span class="p">:</span> <span class="s2">&quot;Description&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Sample bag made with DART runner&quot;</span>
-    <span class="p">},</span> <span class="p">{</span>
-        <span class="nt">&quot;tagFile&quot;</span><span class="p">:</span> <span class="s2">&quot;aptrust-info.txt&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;tagName&quot;</span><span class="p">:</span> <span class="s2">&quot;Access&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Institution&quot;</span>
-    <span class="p">}]</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<p>To view the built-in docs, run <code>dart-runner --help</code>, the contents of which appear below.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">DART</span> <span class="n">Runner</span><span class="p">:</span> <span class="n">Bag</span> <span class="ow">and</span> <span class="n">ship</span> <span class="n">files</span> <span class="n">from</span> <span class="n">the</span> <span class="n">command</span> <span class="n">line</span><span class="o">.</span>
-
-<span class="n">To</span> <span class="n">use</span> <span class="n">DART</span> <span class="n">Runner</span><span class="p">,</span> <span class="n">you</span> <span class="n">typically</span> <span class="n">want</span> <span class="n">to</span> <span class="n">define</span> <span class="n">a</span> <span class="n">job</span> <span class="ow">or</span> <span class="n">workflow</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">DART</span>
-<span class="n">UI</span><span class="p">,</span> <span class="n">then</span> <span class="k">export</span> <span class="n">it</span> <span class="k">as</span> <span class="n">a</span> <span class="n">json</span> <span class="n">file</span> <span class="n">to</span> <span class="n">be</span> <span class="n">consumed</span> <span class="n">by</span> <span class="n">DART</span> <span class="n">Runner</span><span class="o">.</span> <span class="n">See</span> <span class="n">the</span>
-<span class="n">Resources</span> <span class="n">section</span> <span class="n">below</span><span class="o">.</span>
-
-<span class="o">-------</span>
-<span class="n">Options</span>
-<span class="o">-------</span>
-
-  <span class="o">--</span><span class="n">workflow</span>     <span class="n">Path</span> <span class="n">to</span> <span class="n">workflow</span> <span class="n">json</span> <span class="n">file</span><span class="o">.</span> <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="k">if</span> <span class="n">you</span> <span class="n">are</span> <span class="n">running</span>
-                 <span class="n">a</span> <span class="n">workflow</span> <span class="n">against</span> <span class="n">a</span> <span class="n">batch</span> <span class="n">of</span> <span class="n">files</span><span class="o">.</span> <span class="n">If</span> <span class="n">you</span> <span class="n">specify</span> <span class="n">a</span> <span class="n">workflow</span>
-                 <span class="n">file</span><span class="p">,</span> <span class="n">you</span> <span class="n">must</span> <span class="n">also</span> <span class="n">specify</span> <span class="o">--</span><span class="n">batch</span><span class="o">.</span> <span class="n">Workflows</span> <span class="n">can</span> <span class="n">be</span> <span class="n">exported</span>
-                 <span class="n">from</span> <span class="n">the</span> <span class="n">DART</span> <span class="n">UI</span><span class="o">.</span>
-
-  <span class="o">--</span><span class="n">batch</span>        <span class="n">Path</span> <span class="n">to</span> <span class="n">CSV</span> <span class="n">batch</span> <span class="n">file</span><span class="o">.</span> <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="n">with</span> <span class="o">--</span><span class="n">workflow</span> <span class="n">to</span>
-                 <span class="n">specify</span> <span class="n">a</span> <span class="n">set</span> <span class="n">of</span> <span class="n">files</span> <span class="ow">or</span> <span class="n">directories</span> <span class="n">to</span> <span class="n">run</span> <span class="n">through</span> <span class="n">a</span>
-                 <span class="n">workflow</span><span class="o">.</span>
-
-  <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">dir</span>   <span class="n">Path</span> <span class="n">to</span> <span class="n">package</span> <span class="n">output</span> <span class="n">directory</span><span class="o">.</span> <span class="n">Jobs</span> <span class="ow">and</span> <span class="n">workflows</span> <span class="n">will</span>
-                 <span class="n">create</span> <span class="n">bags</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">directory</span><span class="o">.</span> <span class="n">This</span> <span class="n">option</span> <span class="k">is</span> <span class="n">always</span> <span class="n">REQUIRED</span><span class="o">.</span>
-
-  <span class="o">--</span><span class="n">delete</span>       <span class="n">Delete</span> <span class="n">bags</span> <span class="n">after</span> <span class="n">job</span> <span class="n">completes</span><span class="err">?</span> <span class="n">Set</span> <span class="n">this</span> <span class="n">to</span> <span class="bp">true</span> <span class="ow">or</span> <span class="bp">false</span><span class="o">.</span>
-                 <span class="n">The</span> <span class="n">default</span> <span class="k">is</span> <span class="bp">true</span> <span class="k">for</span> <span class="n">jobs</span> <span class="ow">and</span> <span class="n">workflows</span> <span class="n">that</span> <span class="n">include</span>
-                 <span class="n">uploads</span><span class="p">:</span> <span class="n">the</span> <span class="n">bags</span> <span class="n">will</span> <span class="n">be</span> <span class="n">deleted</span> <span class="n">after</span> <span class="n">successful</span> <span class="n">uploads</span><span class="o">.</span>
-                 <span class="n">Default</span> <span class="k">is</span> <span class="bp">false</span> <span class="k">for</span> <span class="n">jobs</span> <span class="ow">and</span> <span class="n">workflows</span> <span class="n">that</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">include</span>
-                 <span class="n">uploads</span> <span class="n">because</span> <span class="n">you</span> <span class="n">probably</span> <span class="n">want</span> <span class="n">to</span> <span class="n">do</span> <span class="n">something</span> <span class="n">with</span> <span class="n">the</span> <span class="n">bag</span>
-                 <span class="n">after</span> <span class="n">it</span><span class="s1">&#39;s created.</span>
-
-  <span class="o">--</span><span class="n">concurrency</span>  <span class="n">Number</span> <span class="n">of</span> <span class="n">jobs</span> <span class="n">to</span> <span class="n">run</span> <span class="n">concurrently</span><span class="o">.</span> <span class="n">Default</span> <span class="k">is</span> <span class="mf">1.</span> <span class="n">Max</span> <span class="n">value</span>
-                 <span class="k">for</span> <span class="n">this</span> <span class="n">param</span> <span class="n">should</span> <span class="n">be</span> <span class="n">less</span> <span class="n">than</span> <span class="ow">or</span> <span class="n">equal</span> <span class="n">to</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span>
-                 <span class="n">processors</span> <span class="n">on</span> <span class="n">your</span> <span class="n">machine</span><span class="o">.</span> <span class="n">You</span> <span class="n">may</span> <span class="n">get</span> <span class="n">diminishing</span> <span class="n">returns</span>
-                 <span class="n">when</span> <span class="n">setting</span> <span class="n">this</span> <span class="n">above</span> <span class="mi">2</span> <span class="n">because</span> <span class="n">most</span> <span class="n">of</span> <span class="n">the</span> <span class="n">DART</span> <span class="n">runner</span><span class="s1">&#39;s</span>
-                 <span class="n">work</span> <span class="k">is</span> <span class="n">reading</span> <span class="n">from</span> <span class="ow">and</span> <span class="n">writing</span> <span class="n">to</span> <span class="n">disk</span><span class="o">.</span> <span class="n">This</span> <span class="n">setting</span> <span class="n">only</span>
-                 <span class="n">makes</span> <span class="n">sense</span> <span class="k">for</span> <span class="n">workflows</span><span class="o">.</span> <span class="n">For</span> <span class="n">a</span> <span class="n">single</span> <span class="n">job</span><span class="p">,</span> <span class="n">you</span> <span class="n">can</span> <span class="n">omit</span>
-                 <span class="n">this</span><span class="o">.</span>
-
-  <span class="o">--</span><span class="n">help</span>         <span class="n">Show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">document</span><span class="o">.</span>
-
-
-<span class="o">--------</span>
-<span class="n">Examples</span>
-<span class="o">--------</span>
-
-<span class="n">If</span> <span class="n">you</span><span class="s1">&#39;re running a single job, you can send job params to dart-runner through</span>
-<span class="n">STDIN</span><span class="p">,</span> <span class="n">like</span> <span class="n">this</span><span class="p">:</span>
-
-    <span class="n">echo</span> <span class="s1">&#39;{ json }&#39;</span> <span class="o">|</span> <span class="n">dart</span><span class="o">-</span><span class="n">runner</span> <span class="o">--</span><span class="n">workflow</span><span class="o">=</span><span class="n">workflow</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">dir</span><span class="o">=/</span><span class="n">dir</span>
-
-<span class="n">The</span> <span class="n">job</span> <span class="n">params</span> <span class="n">json</span> <span class="n">tells</span> <span class="n">dart</span><span class="o">-</span><span class="n">runner</span> <span class="n">which</span> <span class="n">files</span> <span class="n">to</span> <span class="n">bag</span> <span class="ow">and</span> <span class="n">what</span> <span class="n">tag</span> <span class="n">values</span>
-<span class="n">to</span> <span class="n">set</span><span class="o">.</span> <span class="n">The</span> <span class="n">workflow</span> <span class="n">tells</span> <span class="n">dart</span><span class="o">-</span><span class="n">runner</span> <span class="n">which</span> <span class="n">BagIt</span> <span class="n">profile</span> <span class="n">to</span> <span class="n">use</span> <span class="ow">and</span> <span class="n">where</span> <span class="n">to</span>
-<span class="n">send</span> <span class="n">the</span> <span class="n">bag</span><span class="o">.</span>
-
-<span class="n">You</span> <span class="n">can</span> <span class="n">also</span> <span class="n">feed</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">a</span> <span class="n">Job</span> <span class="n">Params</span> <span class="n">file</span> <span class="n">to</span> <span class="n">STDIN</span><span class="p">,</span> <span class="n">like</span> <span class="n">this</span><span class="p">:</span>
-
-    <span class="n">cat</span> <span class="n">job_params</span><span class="o">.</span><span class="n">json</span> <span class="o">|</span> <span class="n">dart</span><span class="o">-</span><span class="n">runner</span> <span class="o">--</span><span class="n">workflow</span><span class="o">=</span><span class="n">workflow</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">dir</span><span class="o">=/</span><span class="n">dir</span>
-
-<span class="n">This</span> <span class="n">runs</span> <span class="n">the</span> <span class="n">job</span> <span class="n">described</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">job_params</span><span class="o">.</span><span class="n">json</span> <span class="n">file</span><span class="p">,</span> <span class="n">writing</span> <span class="n">the</span> <span class="n">bag</span> <span class="n">to</span> <span class="n">the</span>
-<span class="n">specified</span> <span class="n">output</span> <span class="n">directory</span><span class="o">.</span>
-
-<span class="n">To</span> <span class="n">run</span> <span class="n">a</span> <span class="n">workflow</span><span class="p">:</span>
-
-    <span class="n">dart</span><span class="o">-</span><span class="n">runner</span> <span class="o">--</span><span class="n">workflow</span><span class="o">=</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">workflow</span><span class="o">.</span><span class="n">json</span>  \
-                <span class="o">--</span><span class="n">batch</span><span class="o">=</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">batch</span><span class="o">.</span><span class="n">csv</span>         \
-                <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">dir</span><span class="o">=</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">directory</span>    \
-                <span class="o">--</span><span class="n">concurrency</span><span class="o">=</span><span class="mi">2</span>                   \
-                <span class="o">--</span><span class="n">delete</span><span class="o">=</span><span class="bp">false</span>
-
-<span class="n">The</span> <span class="n">command</span> <span class="n">above</span> <span class="n">runs</span> <span class="n">all</span> <span class="n">of</span> <span class="n">the</span> <span class="n">items</span> <span class="n">listed</span> <span class="ow">in</span> <span class="n">the</span> <span class="o">--</span><span class="n">batch</span> <span class="n">CSV</span> <span class="n">file</span> <span class="n">through</span>
-<span class="n">the</span> <span class="n">workflow</span> <span class="n">described</span> <span class="ow">in</span> <span class="n">the</span> <span class="o">--</span><span class="n">workflow</span> <span class="n">json</span> <span class="n">file</span><span class="o">.</span> <span class="n">Bags</span> <span class="n">are</span> <span class="n">written</span> <span class="n">to</span> <span class="n">the</span>
-<span class="n">output</span> <span class="n">directory</span><span class="o">.</span> <span class="n">Setting</span> <span class="n">the</span> <span class="n">delete</span> <span class="n">flag</span> <span class="n">to</span> <span class="bp">false</span> <span class="n">means</span> <span class="n">the</span> <span class="n">bags</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">be</span>
-<span class="n">deleted</span> <span class="n">from</span> <span class="n">the</span> <span class="n">output</span> <span class="n">directory</span> <span class="n">after</span> <span class="n">successful</span> <span class="n">upload</span><span class="o">.</span>
-
-<span class="n">The</span> <span class="o">--</span><span class="n">concurrency</span> <span class="n">flag</span> <span class="n">above</span> <span class="n">tells</span> <span class="n">DART</span> <span class="n">runner</span> <span class="n">to</span> <span class="n">work</span> <span class="n">on</span> <span class="mi">2</span> <span class="n">bags</span> <span class="n">at</span> <span class="n">a</span> <span class="n">time</span>
-<span class="p">(</span><span class="n">instead</span> <span class="n">of</span> <span class="n">the</span> <span class="n">default</span> <span class="mi">1</span> <span class="n">at</span> <span class="n">a</span> <span class="n">time</span><span class="p">)</span> <span class="n">when</span> <span class="n">bagging</span> <span class="ow">and</span> <span class="n">uploading</span><span class="o">.</span>
-
-<span class="n">Setting</span> <span class="o">--</span><span class="n">delete</span> <span class="n">to</span> <span class="bp">true</span> <span class="p">(</span><span class="ow">or</span> <span class="n">omitting</span> <span class="o">--</span><span class="n">delete</span><span class="p">)</span> <span class="n">will</span> <span class="n">cause</span> <span class="n">bags</span> <span class="n">to</span> <span class="n">be</span> <span class="n">deleted</span>
-<span class="n">after</span> <span class="n">successful</span> <span class="n">upload</span><span class="o">.</span>
-
-<span class="o">----------------------</span>
-<span class="n">Sample</span> <span class="n">Job</span> <span class="n">Params</span> <span class="n">JSON</span>
-<span class="o">----------------------</span>
-
-<span class="n">The</span> <span class="n">following</span> <span class="n">job</span> <span class="n">params</span> <span class="n">tell</span> <span class="n">dart</span><span class="o">-</span><span class="n">runner</span> <span class="n">to</span> <span class="n">bag</span> <span class="n">all</span> <span class="n">of</span> <span class="n">the</span> <span class="n">files</span> <span class="ow">in</span>
-<span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">linus</span><span class="o">/</span><span class="n">documents</span> <span class="ow">and</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">linus</span><span class="o">/</span><span class="n">files</span><span class="o">.</span> <span class="n">This</span> <span class="n">also</span> <span class="n">tells</span> <span class="n">the</span> <span class="n">bagger</span> <span class="n">to</span>
-<span class="n">write</span> <span class="n">two</span> <span class="n">tags</span> <span class="n">with</span> <span class="n">the</span> <span class="n">assigned</span> <span class="n">values</span> <span class="n">into</span> <span class="n">the</span> <span class="n">bag</span><span class="o">-</span><span class="n">info</span><span class="o">.</span><span class="n">txt</span> <span class="n">file</span> <span class="ow">and</span>
-<span class="n">one</span> <span class="n">tag</span> <span class="n">into</span> <span class="n">the</span> <span class="n">aptrust</span><span class="o">-</span><span class="n">info</span><span class="o">.</span><span class="n">txt</span> <span class="n">file</span><span class="o">.</span>
-
-<span class="n">These</span> <span class="n">job</span> <span class="n">params</span> <span class="n">would</span> <span class="n">be</span> <span class="n">combined</span> <span class="n">with</span> <span class="n">a</span> <span class="n">workflow</span> <span class="n">JSON</span> <span class="n">file</span> <span class="n">that</span> <span class="n">would</span>
-<span class="n">tell</span> <span class="n">dart</span> <span class="n">runner</span> <span class="n">which</span> <span class="n">BagIt</span> <span class="n">profile</span> <span class="n">to</span> <span class="n">use</span> <span class="n">when</span> <span class="n">creating</span> <span class="n">the</span> <span class="n">bag</span><span class="p">,</span> <span class="ow">and</span> <span class="n">where</span>
-<span class="n">to</span> <span class="n">send</span> <span class="n">the</span> <span class="n">bag</span> <span class="n">when</span> <span class="n">it</span><span class="s1">&#39;s done.</span>
-
-<span class="p">{</span>
-    <span class="s2">&quot;packageName&quot;</span><span class="p">:</span> <span class="s2">&quot;TestBag.tar&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="s2">&quot;/home/linus/documents&quot;</span><span class="p">,</span>
         <span class="s2">&quot;/home/linus/photos&quot;</span>
     <span class="p">],</span>
-    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nt">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
-            <span class="s2">&quot;tagFile&quot;</span><span class="p">:</span> <span class="s2">&quot;bag-info.txt&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;tagName&quot;</span><span class="p">:</span> <span class="s2">&quot;Tag-One&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;value&quot;</span><span class="p">:</span>   <span class="s2">&quot;Value One&quot;</span>
+            <span class="nt">&quot;tagFile&quot;</span><span class="p">:</span> <span class="s2">&quot;bag-info.txt&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;tagName&quot;</span><span class="p">:</span> <span class="s2">&quot;Tag-One&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span>   <span class="s2">&quot;Value One&quot;</span>
         <span class="p">},</span>
         <span class="p">{</span>
-            <span class="s2">&quot;tagFile&quot;</span><span class="p">:</span> <span class="s2">&quot;bag-info.txt&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;tagName&quot;</span><span class="p">:</span> <span class="s2">&quot;Tag-Two&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;value&quot;</span><span class="p">:</span>   <span class="s2">&quot;Value Two&quot;</span>
+            <span class="nt">&quot;tagFile&quot;</span><span class="p">:</span> <span class="s2">&quot;bag-info.txt&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;tagName&quot;</span><span class="p">:</span> <span class="s2">&quot;Tag-Two&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span>   <span class="s2">&quot;Value Two&quot;</span>
         <span class="p">},</span>
         <span class="p">{</span>
-            <span class="s2">&quot;tagFile&quot;</span><span class="p">:</span> <span class="s2">&quot;aptrust-info.txt&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;tagName&quot;</span><span class="p">:</span> <span class="s2">&quot;Tag-Three&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Value Three&quot;</span>
+            <span class="nt">&quot;tagFile&quot;</span><span class="p">:</span> <span class="s2">&quot;aptrust-info.txt&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;tagName&quot;</span><span class="p">:</span> <span class="s2">&quot;Tag-Three&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Value Three&quot;</span>
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>
-
-<span class="o">---------</span>
-<span class="n">Resources</span>
-<span class="o">---------</span>
-
-<span class="n">DART</span>
-    <span class="n">Source</span><span class="p">:</span>        <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">APTrust</span><span class="o">/</span><span class="n">dart</span>
-    <span class="n">User</span> <span class="n">Guide</span><span class="p">:</span>    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">aptrust</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">dart</span><span class="o">-</span><span class="n">docs</span><span class="o">/</span>
-
-<span class="n">DART</span> <span class="n">Runner</span>
-    <span class="n">Source</span><span class="p">:</span>        <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">APTrust</span><span class="o">/</span><span class="n">dart</span><span class="o">-</span><span class="n">runner</span>
-    <span class="n">User</span> <span class="n">Guide</span><span class="p">:</span>    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">aptrust</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">dart</span><span class="o">-</span><span class="n">docs</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">dart</span><span class="o">-</span><span class="n">runner</span><span class="o">/</span>
-
-<span class="n">DART</span> <span class="ow">and</span> <span class="n">DART</span> <span class="n">Runner</span> <span class="n">are</span> <span class="n">free</span> <span class="ow">and</span> <span class="n">open</span> <span class="n">source</span> <span class="n">projects</span> <span class="n">from</span> <span class="n">APTrust</span><span class="o">.</span><span class="n">org</span><span class="o">.</span>
 </code></pre></div>
+<h3 id="output-format">Output Format</h3>
+<p>For each completed job, DART Runner prints one line of JSON to stdout (standard output, which is usually a terminal). This means that when running a single job, you'll get one line of output. When running a batch job, you'll get one line for each entry in the CSV batch file.</p>
+<p>DART Runner also prints summary messages to stderr (standard error) when errors occur, though the JSON output on stdout will have more details about what actually went wrong.</p>
+<p>Output from a successful job looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;jobName&quot;</span><span class="p">:</span> <span class="s2">&quot;TestBag.tar&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;payloadByteCount&quot;</span><span class="p">:</span> <span class="mi">170742</span><span class="p">,</span>
+    <span class="nt">&quot;payloadFileCount&quot;</span><span class="p">:</span> <span class="mi">55</span><span class="p">,</span>
+    <span class="nt">&quot;succeeded&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;packageResult&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;attempt&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;completed&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-12-14T14:50:50.684655-05:00&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="nt">&quot;fileMtime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-12-14T14:50:50.684637052-05:00&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;filepath&quot;</span><span class="p">:</span> <span class="s2">&quot;/home/linustmp/bags/TestBag.tar&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;filesize&quot;</span><span class="p">:</span> <span class="mi">224256</span><span class="p">,</span>
+        <span class="nt">&quot;info&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;operation&quot;</span><span class="p">:</span> <span class="s2">&quot;package&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;provider&quot;</span><span class="p">:</span> <span class="s2">&quot;Bagger - DART Runner v0.91-beta-1-g70b06da for Darwin x86_64 (Build 70b06da 2021-12-14)&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;remoteChecksum&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;remoteURL&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;started&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-12-14T14:50:50.66122-05:00&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;warning&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;validationResult&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;attempt&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;completed&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-12-14T14:50:50.684665-05:00&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="nt">&quot;fileMtime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-12-14T14:50:50.684637052-05:00&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;filepath&quot;</span><span class="p">:</span> <span class="s2">&quot;/home/linustmp/bags/TestBag.tar&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;filesize&quot;</span><span class="p">:</span> <span class="mi">224256</span><span class="p">,</span>
+        <span class="nt">&quot;info&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;operation&quot;</span><span class="p">:</span> <span class="s2">&quot;validation&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;provider&quot;</span><span class="p">:</span> <span class="s2">&quot;Validator - DART Runner v0.91-beta-1-g70b06da for Darwin x86_64 (Build 70b06da 2021-12-14)&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;remoteChecksum&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;remoteURL&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;started&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-12-14T14:50:50.684656-05:00&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;warning&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;uploadResults&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">&quot;attempt&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;completed&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-12-14T14:50:50.733585-05:00&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="nt">&quot;fileMtime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-12-14T14:50:50.684637052-05:00&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;filepath&quot;</span><span class="p">:</span> <span class="s2">&quot;/home/linustmp/bags/TestBag.tar&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;filesize&quot;</span><span class="p">:</span> <span class="mi">224256</span><span class="p">,</span>
+        <span class="nt">&quot;info&quot;</span><span class="p">:</span> <span class="s2">&quot;Output file at /home/linustmp/bags/TestBag.tar was deleted at 2021-12-14T14:50:50-05:00&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;operation&quot;</span><span class="p">:</span> <span class="s2">&quot;upload&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;provider&quot;</span><span class="p">:</span> <span class="s2">&quot;Uploader - DART Runner v0.91-beta-1-g70b06da for Darwin x86_64 (Build 70b06da 2021-12-14)&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;remoteChecksum&quot;</span><span class="p">:</span> <span class="s2">&quot;09f4a6d159e07cd11c82ead5d2a3e95c-1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;remoteURL&quot;</span><span class="p">:</span> <span class="s2">&quot;s3://localhost:9899/dart-runner.test/TestBag.tar&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;started&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-12-14T14:50:50.684666-05:00&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;warning&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">}],</span>
+    <span class="nt">&quot;validationErrors&quot;</span><span class="p">:</span> <span class="kc">null</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The most important elements in this output are:</p>
+<div class="highlight"><pre><span></span><code>  succeeded       - true or false, indicating whether all steps of the job
+                    succeeded
+
+  errors          - Within each result, this will contain a set of name-value
+                    pairs indicating what went wrong. This element will be
+                    empty if the operation succeeded.
+
+  remoteURL       - The URL to which the package was uploaded. (Applies
+                    only to uploadResults.)
+
+  remoteChecksum  - The ETag returned by the remote S3 server after a
+                    successful upload. (Applies only to uploadResults for
+                    S3 uploads.)
+</code></pre></div>
+<h2 id="scripting">Scripting</h2>
+<p>Most scripting languages provide ways of capturing the stdout and stderr output of external programs called from within the script. Most languages also let you capture the external process' return code.</p>
+<p>When scriping DART Runner, you should generally do the following:</p>
+<ol>
+<li>Capture the exit code. If it's not zero, log a message or perform some
+   other kind of error handling.</li>
+<li>Redirect stdout to a file if you want to save all the JSON instead of
+   capturing it.</li>
+</ol>
+<p>You can redirect stdout to a file like this:</p>
+<div class="highlight"><pre><span></span><code>dart-runner [args] &gt; output_log.json
+</code></pre></div>
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="https://github.com/APTrust/dart-runner">DART Runner Source on GitHub</a></li>
+<li><a href="https://aptrust.github.io/dart-docs/users/workflows/batch_jobs/">DART Batch File Format</a></li>
+</ul>
                 
               
               
