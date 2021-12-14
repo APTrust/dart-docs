@@ -9,7 +9,10 @@ site_name: DART Documentation
 theme: material
 markdown_extensions:
   - admonition
-  - codehilite
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
   - markdown_include.include:
       base_path: docs
 repo_url:  https://github.com/APTrust/dart
