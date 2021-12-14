@@ -57,71 +57,11 @@ The Job Params JSON format for dart-runner differs slightly from the JSON used i
 
 The help text below shows an example of valid Job Params JSON for dart-runner.
 
-## Usage Examples
+## Usage
 
-### Running a Workflow
-
-The following command runs all items in the CSV file through the specified workflow:
-
-`dart-runner --workflow=workflow.json --batch=batch.csv --output-dir=/home/user/bags`
-
-Bags will be written the --output_dir and deleted after successful upload. If you want to keep the bags after upload, add this to the end of the command:
-
-`--delete=false`
-
-We'll run this example, which creates three bags (as defined in the batch file) and uploads them to a local S3 server.
+### Options
 
 ```
-dart-runner --workflow=./testdata/files/postbuild_test_workflow.json \
-            --batch=./testdata/files/postbuild_test_batch.csv \
-            --output-dir=/Users/apd4n/tmp/bags
-```
-
-### Running One-Off Jobs
-
-You can run individual jobs through DART runner by sending JSON to the command's standard input. For example:
-
-`echo '{ json }' | dart-runner --workflow=workflow.json --output-dir=/dir`
-
-`cat job_params.json | dart-runner --workflow=workflow.json --output-dir=/dir`
-
-Typically, you'd have a script create the json, then pipe it to dart-runner. The JSON format looks like this:
-
-```json
-{
-	"packageName": "TestBag.tar",
-	"files": [
-	    "/Users/apd4n/aptrust/dart-runner/core",
-	    "/Users/apd4n/aptrust/dart-runner/bagit"],
-	"tags": [{
-		"tagFile": "aptrust-info.txt",
-		"tagName": "Title",
-		"value": "Runner Sample Bag"
-	}, {
-		"tagFile": "aptrust-info.txt",
-		"tagName": "Description",
-		"value": "Sample bag made with DART runner"
-	}, {
-		"tagFile": "aptrust-info.txt",
-		"tagName": "Access",
-		"value": "Institution"
-	}]
-}
-```
-
-To view the built-in docs, run `dart-runner --help`, the contents of which appear below.
-
-```
-DART Runner: Bag and ship files from the command line.
-
-To use DART Runner, you typically want to define a job or workflow in the DART
-UI, then export it as a json file to be consumed by DART Runner. See the
-Resources section below.
-
--------
-Options
--------
-
   --workflow     Path to workflow json file. Use this option if you are running
                  a workflow against a batch of files. If you specify a workflow
                  file, you must also specify --batch. Workflows can be exported
@@ -129,7 +69,8 @@ Options
 
   --batch        Path to CSV batch file. Use this option with --workflow to
                  specify a set of files or directories to run through a
-                 workflow.
+                 workflow. The batch file format is described at
+                 https://aptrust.github.io/dart-docs/users/workflows/batch_jobs/
 
   --output-dir   Path to package output directory. Jobs and workflows will
                  create bags in this directory. This option is always REQUIRED.
@@ -150,11 +91,9 @@ Options
                  this.
 
   --help         Show this help document.
+```
 
-
---------
-Examples
---------
+### Examples
 
 If you're running a single job, you can send job params to dart-runner through
 STDIN, like this:
@@ -165,7 +104,9 @@ The job params json tells dart-runner which files to bag and what tag values
 to set. The workflow tells dart-runner which BagIt profile to use and where to
 send the bag.
 
-You can also feed the contents of a Job Params file to STDIN, like this:
+You can also feed the contents of a Job Params file to STDIN, as in either example below:
+
+    dart-runner --workflow=workflow.json --output-dir=/dir < job_params.json
 
     cat job_params.json | dart-runner --workflow=workflow.json --output-dir=/dir
 
@@ -180,20 +121,49 @@ To run a workflow:
                 --concurrency=2                   \
                 --delete=false
 
-The command above runs all of the items listed in the --batch CSV file through
-the workflow described in the --workflow json file. Bags are written to the
+The command above runs all of the items listed in the `--batch` CSV file through
+the workflow described in the `--workflow` json file. Bags are written to the
 output directory. Setting the delete flag to false means the bags will not be
 deleted from the output directory after successful upload.
 
-The --concurrency flag above tells DART runner to work on 2 bags at a time
+The `--concurrency` flag above tells DART runner to work on 2 bags at a time
 (instead of the default 1 at a time) when bagging and uploading.
 
-Setting --delete to true (or omitting --delete) will cause bags to be deleted
+Setting `--delete` to true (or omitting `--delete`) will cause bags to be deleted
 after successful upload.
 
-----------------------
-Sample Job Params JSON
-----------------------
+### Exit Codes
+
+```
+    0 - Normal exit. This means there were no errors and all tasks
+        succeeded.
+
+    1 - Runtime error. This means dart runner was able to start the
+        job, but encountered one or more errors along the way.
+
+        In a single job, this usually means at least one step of the job
+        failed: bagging, validation, or upload. Check the JSON output
+        for more details about where the failure occurred and what
+        happened.
+
+        When running a batch of jobs through a workflow, this exit code
+        means that one or more of the jobs in the batch failed. In this
+        case, you should find an error message on stderr saying something
+        like "2 Job(s) failed".
+
+    2 - Usage error. This means dart runner didn't even attempt to start
+        the job because something was wrong with the parameters. This
+        usually means you've forgotten to provide a necessary parameter
+        such as --workflow, or that the parameter points to a non-existant
+        or unreadable file. This error also occurs when a parameter contains
+        invalid or unparsable data (bad JSON or bad CSV format).
+
+        You should see a message on stderr describing the problem.
+```
+
+
+### Sample Job Params JSON
+
 
 The following job params tell dart-runner to bag all of the files in
 /home/linus/documents and /home/linus/files. This also tells the bagger to
@@ -204,6 +174,7 @@ These job params would be combined with a workflow JSON file that would
 tell dart runner which BagIt profile to use when creating the bag, and where
 to send the bag when it's done.
 
+``` json
 {
 	"packageName": "TestBag.tar",
 	"files": [
@@ -228,19 +199,107 @@ to send the bag when it's done.
 		}
 	]
 }
+```
 
----------
-Resources
----------
+### Output Format
 
-DART
-    Source:        https://github.com/APTrust/dart
-    User Guide:    https://aptrust.github.io/dart-docs/
+For each completed job, DART Runner prints one line of JSON to stdout (standard output, which is usually a terminal). This means that when running a single job, you'll get one line of output. When running a batch job, you'll get one line for each entry in the CSV batch file.
 
-DART Runner
-    Source:        https://github.com/APTrust/dart-runner
-    User Guide:    https://aptrust.github.io/dart-docs/users/dart-runner/
+DART Runner also prints summary messages to stderr (standard error) when errors occur, though the JSON output on stdout will have more details about what actually went wrong.
 
-DART and DART Runner are free and open source projects from APTrust.org.
+Output from a successful job looks like this:
+
+``` json
+{
+	"jobName": "TestBag.tar",
+	"payloadByteCount": 170742,
+	"payloadFileCount": 55,
+	"succeeded": true,
+	"packageResult": {
+		"attempt": 1,
+		"completed": "2021-12-14T14:50:50.684655-05:00",
+		"errors": {},
+		"fileMtime": "2021-12-14T14:50:50.684637052-05:00",
+		"filepath": "/home/linustmp/bags/TestBag.tar",
+		"filesize": 224256,
+		"info": "",
+		"operation": "package",
+		"provider": "Bagger - DART Runner v0.91-beta-1-g70b06da for Darwin x86_64 (Build 70b06da 2021-12-14)",
+		"remoteChecksum": "",
+		"remoteURL": "",
+		"started": "2021-12-14T14:50:50.66122-05:00",
+		"warning": ""
+	},
+	"validationResult": {
+		"attempt": 1,
+		"completed": "2021-12-14T14:50:50.684665-05:00",
+		"errors": {},
+		"fileMtime": "2021-12-14T14:50:50.684637052-05:00",
+		"filepath": "/home/linustmp/bags/TestBag.tar",
+		"filesize": 224256,
+		"info": "",
+		"operation": "validation",
+		"provider": "Validator - DART Runner v0.91-beta-1-g70b06da for Darwin x86_64 (Build 70b06da 2021-12-14)",
+		"remoteChecksum": "",
+		"remoteURL": "",
+		"started": "2021-12-14T14:50:50.684656-05:00",
+		"warning": ""
+	},
+	"uploadResults": [{
+		"attempt": 1,
+		"completed": "2021-12-14T14:50:50.733585-05:00",
+		"errors": {},
+		"fileMtime": "2021-12-14T14:50:50.684637052-05:00",
+		"filepath": "/home/linustmp/bags/TestBag.tar",
+		"filesize": 224256,
+		"info": "Output file at /home/linustmp/bags/TestBag.tar was deleted at 2021-12-14T14:50:50-05:00",
+		"operation": "upload",
+		"provider": "Uploader - DART Runner v0.91-beta-1-g70b06da for Darwin x86_64 (Build 70b06da 2021-12-14)",
+		"remoteChecksum": "09f4a6d159e07cd11c82ead5d2a3e95c-1",
+		"remoteURL": "s3://localhost:9899/dart-runner.test/TestBag.tar",
+		"started": "2021-12-14T14:50:50.684666-05:00",
+		"warning": ""
+	}],
+	"validationErrors": null
+}
+```
+
+The most important elements in this output are:
 
 ```
+  succeeded       - true or false, indicating whether all steps of the job
+                    succeeded
+
+  errors          - Within each result, this will contain a set of name-value
+                    pairs indicating what went wrong. This element will be
+                    empty if the operation succeeded.
+
+  remoteURL       - The URL to which the package was uploaded. (Applies
+                    only to uploadResults.)
+
+  remoteChecksum  - The ETag returned by the remote S3 server after a
+                    successful upload. (Applies only to uploadResults for
+                    S3 uploads.)
+```
+
+
+## Scripting
+
+Most scripting languages provide ways of capturing the stdout and stderr output of external programs called from within the script. Most languages also let you capture the external process' return code.
+
+When scriping DART Runner, you should generally do the following:
+
+1. Capture the exit code. If it's not zero, log a message or perform some
+   other kind of error handling.
+2. Redirect stdout to a file if you want to save all the JSON instead of
+   capturing it.
+
+You can redirect stdout to a file like this:
+
+    dart-runner [args] > output_log.json
+
+
+## Additional Resources
+
+* [DART Runner Source on GitHub](https://github.com/APTrust/dart-runner)
+* [DART Batch File Format](https://aptrust.github.io/dart-docs/users/workflows/batch_jobs/)
