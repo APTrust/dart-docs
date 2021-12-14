@@ -10,4 +10,4 @@ __Linux__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.17_am
 
 Double-click the installer after download and follow the prompts on screen.
 
-For DART Runner, see [DART Runner Downloads](/users/dart_runner/#downloads)
+For DART Runner, see [DART Runner Downloads](users/dart_runner/#downloads)
