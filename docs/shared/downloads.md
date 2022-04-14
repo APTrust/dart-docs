@@ -1,6 +1,6 @@
-_Updated March 30, 2022_
+_Updated April 14, 2022_
 
-Download the DART installer for your system. The current version is 2.0.19 (released March 30, 2022).
+Download the DART installer for your system. The current version is 2.0.19 (released April 14, 2022).
 
 __Mac__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.19.dmg](https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.19.dmg)
 
