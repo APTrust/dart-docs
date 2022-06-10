@@ -6,6 +6,8 @@ While DART's initial release supports the BagIt packaging format and uploads to 
 
 DART has a plugin architecture that allows developers to contribute code that will add these package formats and network protocols. If you know how to write JavaScript, you can contribute [plugins](plugins/index.md) without having to understand DART's internals.
 
+If you're interested in a deep dive, checkout [DART's full API documentation](https://aptrust.github.io/dart/).
+
 ## Getting the Code
 
 To get started developing DART plugins, download the source from GitHub.
