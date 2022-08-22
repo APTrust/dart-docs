@@ -907,6 +907,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#why-doesnt-dart-preserve-empty-folders-when-bagging" class="md-nav__link">
+    Why doesn't DART preserve empty folders when bagging?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-can-i-report-bugs-or-request-new-features" class="md-nav__link">
+    Where can I report bugs or request new features?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1231,6 +1245,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#why-doesnt-dart-preserve-empty-folders-when-bagging" class="md-nav__link">
+    Why doesn't DART preserve empty folders when bagging?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-can-i-report-bugs-or-request-new-features" class="md-nav__link">
+    Where can I report bugs or request new features?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1271,6 +1299,21 @@ if your network connection is slow or unreliable.</li>
 <li>The maximum size for S3 objects is 5 TB. If you create a bag larger than that,
 you will not be able to upload it to S3. SFTP file size limits are set
 individually for each system by the administrator.</li>
+</ul>
+<h2 id="why-doesnt-dart-preserve-empty-folders-when-bagging">Why doesn't DART preserve empty folders when bagging?</h2>
+<p>DART ignores empty folders to keep in line with the original APTrust bagging guidelines from 2014. APTrust uses a number of S3-compliant storage backends to preserve depositor data. We take the bag apart, store files individually, then reassemble the bag in the latest BagIt format for restoration. (Restoration may occur years after ingest, when the BagIt spec has changed.)</p>
+<p>S3 can store empty files, but not empty folders. While we could accept a bag containing empty folders, we would have no way of restoring those empty folders later.</p>
+<p>The workaround for this is to put empty <code>.keep</code> files in the empty folders you want to preserve. PHP and some other programming languages use this practice.</p>
+<h2 id="where-can-i-report-bugs-or-request-new-features">Where can I report bugs or request new features?</h2>
+<p>We keep track of bug reports and feature requests at https://github.com/APTrust/dart/issues.</p>
+<p>When reporting an issue, please check the list to see if someone else has already reported it. If the issue exists, add your comments instead of opening a new duplicate issue.</p>
+<p>For bug reports, try to include the following:</p>
+<ul>
+<li>A one-line summary of the problem</li>
+<li>A screenshot or copy of an error message you encountered</li>
+<li>The steps you took to produce or expose the problem</li>
+<li>What you expected to happen after taking these steps</li>
+<li>What actually happened</li>
 </ul>
 
               
