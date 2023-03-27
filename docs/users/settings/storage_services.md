@@ -12,14 +12,14 @@ To list all storage services, choose __Settings &gt; Storage Services__ from the
 
 ## Editing Storage Services
 
-Click any storage servicei in the list to edit it.
+Click any storage service in the list to edit it.
 
 ![Editing Storage Services](../../img/settings/storage_services/edit.png)
 
 ### Description of Settings
 
 #### Name
-The name of the service. Choose a name that's meaningful to you and that differentiates this service from others. You can change the name at any time without affecting the bevavior or availability of the service.
+The name of the service. Choose a name that's meaningful to you and that differentiates this service from others. You can change the name at any time without affecting the behavior or availability of the service.
 
 #### Description
 A description of this service.
