@@ -2,7 +2,7 @@ _Updated May 30, 2023_
 
 Download the DART installer for your system. The current version is 2.1.0 (released May 30, 2023).
 
-__Mac__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.1.0.dmg](https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.1.0.dmg)
+__Mac__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.1.0-universal.dmg](https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.1.0-universal.dmg)
 
 __Windows__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.1.0.exe](https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.1.0.exe)
 
