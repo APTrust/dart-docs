@@ -1,4 +1,4 @@
-_Updated March 14, 2023_
+_Updated May 30, 2023_
 
 Download the DART installer for your system. The current version is 2.1.0 (released May 30, 2023).
 
