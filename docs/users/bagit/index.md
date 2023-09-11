@@ -12,7 +12,7 @@ While the general specification for BagIt Profiles can be found on [GitHub](http
 
 1. DART profiles use camel case identifiers with no hyphens or periods in attribute names. For example, the `Allow-Fetch.txt` in GitHub BagIt profiles is called `allowFetchTxt` in DART profiles. This is in part to simplify JavaScript attributes so they can be reference in dot notation, and in part because the nedb object database used in early versions of DART did not support attribute names containing dots.
 
-1. DART profiles include an `id` attribute with a UUID. This is used internally, while externally the bagItProfileIdentifier URL is used externally.
+1. DART profiles include an `id` attribute with a UUID. This is used internally, while the bagItProfileIdentifier URL is used externally.
 
 1. DART profiles include the following additional boolean attributes:
        1. `allowMiscTopLevelFiles` which indicates whether files other than
