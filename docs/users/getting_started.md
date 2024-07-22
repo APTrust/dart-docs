@@ -47,6 +47,10 @@ Follow these steps to create a valid local bag that conforms to the APTrust BagI
 
 When the job is complete, you'll find your bag in the __Output Path__ displayed on the __Review and Run__ screen.
 
+## DART User Group
+
+APTrust hosts a [DART User Group](https://aptrust.org/resources/user-groups/dart-user-group/) for the entire digital preservation community. This group will primarily be a [mailing list](https://groups.google.com/a/aptrust.org/g/dart-users), where users can share experiences, ask questions, and support one another. Depending on the level of interest and engagement, we may expand this initiative to include regular virtual meetings and more structured activities in the future.
+
 ## Further Reading
 
 [BagIt Profiles](bagit/index.md) describes how to build and customize BagIt profiles, so DART can build bags exactly as you want them. Be sure to read the section on tag default values under [Editing a Tag](bagit/customizing.md#editing-a-tag). That will save you from re-entering common tag values, such as Source-Organization, every time you create a new bag.

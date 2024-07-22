@@ -58,6 +58,10 @@ DART 2.0 supports the following types of plugins:
 
 Writing DART plugins requires a working knowledge of JavaScript and HTML. If you're interested in developing DART plugins, see our [Developers](developers/index.md) page and our [full API documentation](https://aptrust.github.io/dart/).
 
+## DART User Group
+
+APTrust hosts a [DART User Group](https://aptrust.org/resources/user-groups/dart-user-group/) for the entire digital preservation community. This group will primarily be a [mailing list](https://groups.google.com/a/aptrust.org/g/dart-users), where users can share experiences, ask questions, and support one another. Depending on the level of interest and engagement, we may expand this initiative to include regular virtual meetings and more structured activities in the future.
+
 ## Useful Links
 
 [Getting Started with DART](users/getting_started.md)
