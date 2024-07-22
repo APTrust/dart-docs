@@ -25,7 +25,7 @@ Your spreadsheet must meet the following requirements:
    `tag_file_name.txt/tag-name`. For example, `bag-info.txt/Source-Organization`,
    or `aptrust-info.txt/Storage-Option`.
 1. Your file _may_ omit tags whose default values are already defined in your BagIt
-   profile. (See [Customizing a Tag](../bagit/customizing/#editing-a-tag) for
+   profile. (See [Customizing a Tag](../bagit/customizing.md#editing-a-tag) for
    more info on how to set default tag values in your bagging profiles.)
 1. Your file _may_ include extra tags not defined in your workflow's BagIt
    profile. For example, if you include a column named `bag-info.txt/Custom-Tag`,

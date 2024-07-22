@@ -10,7 +10,7 @@ Forking child processes has a number of advantages over running jobs in the same
 
 The downside of running jobs in child processes is that if you close the DART application, you kill all of the running jobs. This is why DART always displays a badge in the upper right corner when jobs are running.
 
-![Running jobs badge](../../img/common/running_jobs_badge.png)
+![Running jobs badge](../img/common/running_jobs_badge.png)
 
 All DART jobs, whether run from the UI or from the command line, are launched from the run() method of [main.js](https://github.com/APTrust/dart/blob/master/main.js), which does the following:
 

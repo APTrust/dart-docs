@@ -4,7 +4,7 @@ You'll see the job metadata screen if you chose the BagIt packaging format on th
 
 Default values come from two places:
 
-* Default tag values you've entered into your local BagIt profiles. See the [Editing a Tag](../bagit/customizing/#editing-a-tag) section for information about setting default values.
+* Default tag values you've entered into your local BagIt profiles. See the [Editing a Tag](../bagit/customizing.md#editing-a-tag) section for information about setting default values.
 
 * Auto-filled values calculated by DART when it creates the bag, such as the Payload-Oxum, Bagging-Software, and Bagging-Date.
 

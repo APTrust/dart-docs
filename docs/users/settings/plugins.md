@@ -14,4 +14,4 @@ To see the list of plugins installed on your system, choose __Settings &gt; Plug
 
 ![Plugins list](../../img/settings/plugins/list.png)
 
-See also: [Plugins documentation for developers](/developers/plugins)
+See also: [Plugins documentation for developers](../../developers/plugins/index.md)

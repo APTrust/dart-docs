@@ -28,7 +28,7 @@ DART's base [Plugin](https://github.com/APTrust/dart/blob/master/plugins/plugin.
 
 The [PluginManager](manager.md) uses these descriptions to tell the application what plugins are available and what capabilities they have.
 
-Plugins are EventEmitters. They can work synchronously or asynchronously, but they must emit a standard set of events to communicate with the UI (or the [JobRunner](../job_flow/#the-jobrunner-step-by-step), when DART runs in command-line mode).
+Plugins are EventEmitters. They can work synchronously or asynchronously, but they must emit a standard set of events to communicate with the UI (or the [JobRunner](../job_flow.md/#the-jobrunner-step-by-step), when DART runs in command-line mode).
 
 ## Plugin Types
 

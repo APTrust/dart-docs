@@ -2,7 +2,7 @@
 
 DART stores all of its settings data in plain text JSON files. You find these files in the DART data directory. Choose __Help &gt; About__ from the DART menu to find the data directory on your system. You'll see a dialog like the following.
 
-![About DART](../../img/about/about.png)
+![About DART](../img/about/about.png)
 
 DART uses the simple [conf](https://www.npmjs.com/package/conf) module to read, write, and search data, and [write-file-atomic](https://www.npmjs.com/package/write-file-atomic) to prevent write conflicts.
 
@@ -18,4 +18,4 @@ You can examine DART's data stores by opening the JSON files, or in the console 
 
 1. Type `DART.Core.Context.dataStores` in the console.
 
-![About DART](../../img/about/data_stores_in_console.png)
+![About DART](../img/about/data_stores_in_console.png)

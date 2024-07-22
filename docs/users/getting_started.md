@@ -49,7 +49,7 @@ When the job is complete, you'll find your bag in the __Output Path__ displayed 
 
 ## Further Reading
 
-[BagIt Profiles](../bagit/) describes how to build and customize BagIt profiles, so DART can build bags exactly as you want them. Be sure to read the section on tag default values under [Editing a Tag](../bagit/customizing/#editing-a-tag). That will save you from re-entering common tag values, such as Source-Organization, every time you create a new bag.
+[BagIt Profiles](bagit/index.md) describes how to build and customize BagIt profiles, so DART can build bags exactly as you want them. Be sure to read the section on tag default values under [Editing a Tag](bagit/customizing.md#editing-a-tag). That will save you from re-entering common tag values, such as Source-Organization, every time you create a new bag.
 
 The [Dashboard](dashboard.md) displays information about currently running and recently completed jobs. If you've configured [Remote Repository](settings/remote_repositories.md) connections, the dashboard can show the status of recent and pending ingests.
 

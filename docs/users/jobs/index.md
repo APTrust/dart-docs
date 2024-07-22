@@ -19,8 +19,8 @@ The process for creating and running jobs invlolves these steps:
 1. [Reviewing and running the job](run.md).
 1. [Troubleshooting](troubleshooting.md).
 
-For infomation about developing DART plugins, see the [Plugins Developer Documentation](../../developers/plugins).
+For infomation about developing DART plugins, see the [Plugins Developer Documentation](../../developers/plugins/index.md).
 
 ## Jobs and Workflows
 
-Jobs can be converted to workflows. A [workflow](../workflows/) is essentially a job template that can be run in the DART UI or from the command line. A workflow enables you to run a number of jobs that all follow the same pattern (same packaging format, same default metadata values, and same upload targets).
+Jobs can be converted to workflows. A [workflow](../workflows/index.md) is essentially a job template that can be run in the DART UI or from the command line. A workflow enables you to run a number of jobs that all follow the same pattern (same packaging format, same default metadata values, and same upload targets).

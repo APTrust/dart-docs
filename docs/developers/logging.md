@@ -2,7 +2,7 @@
 
 DART uses the [Winston](https://github.com/winstonjs/winston) library for logging. You can find the location of your DART logs by choosing __Help &gt; About__ from the main menu. You should see a dialog like this:
 
-![About DART](../../img/about/about.png)
+![About DART](../img/about/about.png)
 
 As you develop, you can tail the logs to see what's happening in real time. Just substitute the proper log location in the command below.
 
