@@ -64,3 +64,5 @@ The [Settings](settings/index.md) section describes how to set up upload targets
 Organizations that distribute DART to their members can [Export Settings](settings/index.md) to help users quickly configure DART for their needs.
 
 After you've defined and tested a successful job, you can convert it to a [Workflow](workflows/index.md) to run other files through the same process.
+
+APTrust members may also wish to consult the [Deposit Guidelines](https://aptrust.github.io/userguide/depositing/guidelines/) when preparing deposits.
