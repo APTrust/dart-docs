@@ -16,6 +16,8 @@ The packaging screen incudes the following options:
 
 * Output Path - This is where DART will put the local copy of the package that it builds. Notice that this field is filled in automatically as you type the package name. Unless you have good reason, you should not manually edit this field.
 
+**Note:** When packaging bags that should result in a tar file, make sure that the path in the Output Path field ends with ".tar". DART should add this suffix automatically. If the ".tar" file extension is removed, and a directory matching the name of Output Path happens to exist on your computer, DART will flag the bag as invalid in the job's validation stage. The error message will say that DART was expecting the bag to be a tar file but it found a directory instead.
+
 ![Job packaging](../../img/jobs/packaging.png)
 
 <hr/>
