@@ -1242,6 +1242,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#adding-the-wasabi-tx-storage-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding the Wasabi-TX Storage Option
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1917,6 +1926,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#adding-the-wasabi-tx-storage-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding the Wasabi-TX Storage Option
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2027,6 +2045,19 @@
 <p><img alt="BagIt Profile Tag Files tab" src="../../../img/bagit_profiles/tag_files.png" /></p>
 <h3 id="deleting-a-tag-file">Deleting a Tag File</h3>
 <p>To delete a tag file, delete all of the tags in the file. See <a href="#deleting-a-tag">Deleting a Tag</a> above.</p>
+<h3 id="adding-the-wasabi-tx-storage-option">Adding the Wasabi-TX Storage Option</h3>
+<p>As of April, 2023, APTrust can store objects in Wasabi's Texas datacenter. This storage option is not listed in version 2.2 of the APTrust BagIt profile. Follow these steps to add it, so you can send bags to the beautiful state of Texas!</p>
+<ol>
+<li>Click <strong>Settings &gt; BagIt Profiles</strong> from the top menu.</li>
+<li>Click the APTrust profile. It should have the name <strong>APTrust</strong> and description <strong>APTrust 2.2 default BagIt profile.</strong></li>
+<li>From the tab menu, choose <strong>Tag Files &gt; aptrust-info.txt</strong></li>
+<li>In the list of tags, click <strong>Storage Option</strong>.</li>
+<li>Scroll to the bottom of the <strong>Values</strong> box and press Enter to add a new line.</li>
+<li>Type <strong>Wasabi-TX</strong> into the <strong>Values</strong> box. Be sure the capitalization matches. W, T, and X should be capitalized, with a dash before the TX, as in the screenshot below.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p><img alt="Adding the Wasabi-TX storage option" src="../../../img/bagit_profiles/adding-wasabi-tx.png" /></p>
+<p>The next time you create a bag using the APTrust BagIt profile, you will be able to choose Wasabi-TX as the storage option.</p>
 
 
 
