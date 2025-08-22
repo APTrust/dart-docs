@@ -30,6 +30,8 @@ Choose the network protocol used to communicate with this service. Note: At laun
 #### Host
 Enter the name or IP address of the service host. Do not include protocol prefixes like `https://` or `ftp://`. For example, the host name for Amazon's S3 service is `s3.amazonaws.com`. A locally hosted service may be `s3.example.com` or `ftp.example.com`. You can also enter an IP address here such as `127.0.0.1`.
 
+**Note: This field is case-sensitive, use only lowercase characters!**
+
 #### Port
 The port to connect to. In most cases, you'll want to leave this at 0 (zero). Set this only if the service is running on a non-standard port number.
 
