@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
       
       
 
@@ -1950,9 +1950,9 @@ and the DART CLI will always work.</p>
 to incorrect tag values being written into bags when using
 workflow batch mode. Please download version 0.96-beta or later.</p>
 </div>
-<p>Latest version is v0.99-beta, released June 6, 2025.</p>
-<p>Download the <a href="https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v0.99-beta/linux/amd64/dart-runner">0.99 beta version of dart-runner for Linux Intel</a>.</p>
-<p>There's also a <a href="https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v0.99-beta/mac/amd64/dart-runner">Mac-Intel version of the beta</a> and an <a href="https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v0.99-beta/mac/arm64/dart-runner">ARM version for M-Chip Macs</a> if you want to experiment, but for now, APTrust suggests using the DART CLI on Mac.</p>
+<p>Latest version is v1.0, released September 3, 2025.</p>
+<p>Download the <a href="https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v1.0/linux/amd64/dart-runner">1.0 version of dart-runner for Linux Intel</a>.</p>
+<p>There's also a <a href="https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v1.0/mac/amd64/dart-runner">Mac-Intel version of v1.0</a> and an <a href="https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v1.0/mac/arm64/dart-runner">ARM version for M-Chip Macs</a>.</p>
 <p>Because it's a single binary with no dependencies, there's no installation process for dart-runner. Simply copy the binary onto your computer and run.</p>
 <p>If you're interested, the souce code is available on GitHub at <a href="https://github.com/APTrust/dart-runner">https://github.com/APTrust/dart-runner</a>.</p>
 <h2 id="features">Features</h2>
@@ -2011,6 +2011,10 @@ workflow batch mode. Please download version 0.96-beta or later.</p>
                  work is reading from and writing to disk. This setting only
                  makes sense for workflows. For a single job, you can omit
                  this.
+
+  --skip-artifacts  Don&#39;t save artifacts (tag files and manifests) to a
+                 separate directory when creating bags. (Version 1.0 and
+                 higher only)
 
   --help         Show this help document.
 </code></pre></div>
@@ -2241,7 +2245,7 @@ to send the bag when it's done.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f13b1293.min.js"></script>
       
     
   </body>
