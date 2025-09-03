@@ -23,11 +23,11 @@ The general process is:
     to incorrect tag values being written into bags when using
     workflow batch mode. Please download version 0.96-beta or later.
 
-Latest version is v0.99-beta, released June 6, 2025.
+Latest version is v1.0, released September 3, 2025.
 
-Download the [0.99 beta version of dart-runner for Linux Intel](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v0.99-beta/linux/amd64/dart-runner).
+Download the [1.0 version of dart-runner for Linux Intel](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v1.0/linux/amd64/dart-runner).
 
-There's also a [Mac-Intel version of the beta](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v0.99-beta/mac/amd64/dart-runner) and an [ARM version for M-Chip Macs](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v0.99-beta/mac/arm64/dart-runner) if you want to experiment, but for now, APTrust suggests using the DART CLI on Mac.
+There's also a [Mac-Intel version of v1.0](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v1.0/mac/amd64/dart-runner) and an [ARM version for M-Chip Macs](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v1.0/mac/arm64/dart-runner).
 
 Because it's a single binary with no dependencies, there's no installation process for dart-runner. Simply copy the binary onto your computer and run.
 
@@ -96,6 +96,10 @@ The help text below shows an example of valid Job Params JSON for dart-runner.
                  work is reading from and writing to disk. This setting only
                  makes sense for workflows. For a single job, you can omit
                  this.
+
+  --skip-artifacts  Don't save artifacts (tag files and manifests) to a
+                 separate directory when creating bags. (Version 1.0 and
+				 higher only)
 
   --help         Show this help document.
 ```
