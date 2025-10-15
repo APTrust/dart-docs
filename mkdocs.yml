@@ -18,59 +18,99 @@ markdown_extensions:
 repo_url:  https://github.com/APTrust/dart
 nav:
   - Home: index.md
-  - Videos: videos.md
-  - Download: download.md
-  - For Users:
-      - users/getting_started.md
-      - Jobs:
-          - users/jobs/index.md
-          - users/jobs/list.md
-          - users/jobs/files.md
-          - users/jobs/packaging.md
-          - users/jobs/metadata.md
-          - users/jobs/upload.md
-          - users/jobs/run.md
-          - users/jobs/delete.md
-          - users/jobs/validation.md
-          - users/jobs/troubleshooting.md
-      - Workflows:
-          - users/workflows/index.md
-          - users/workflows/job_params.md
-          - users/workflows/batch_jobs.md
-      - Settings:
-          - users/settings/index.md
-          - users/settings/app_settings.md
-          - users/settings/internal_settings.md
-          - users/settings/remote_repositories.md
-          - users/settings/storage_services.md
-          - users/settings/plugins.md
-          - users/settings/export.md
-          - users/settings/import.md
-      - Dashboard: users/dashboard.md
-      - BagIt Profiles:
-          - users/bagit/index.md
-          - users/bagit/importing.md
-          - users/bagit/exporting.md
-          - users/bagit/creating.md
-          - users/bagit/customizing.md
-      - Command Line Reference: users/command_line.md
-      - Scripting with DART: users/scripting.md
-      - Logs: users/logs.md
-      - Dart Runner: users/dart_runner.md
-      - FAQ: users/faq.md
-  - For Developers:
-      - developers/index.md
-      - Architecture: developers/architecture.md
-      - Data Storage: developers/data_storage.md
-      - Job Flow: developers/job_flow.md
-      - Building: developers/building.md
-      - Testing: developers/testing.md
-      - Documenting: developers/documenting.md
-      - Logging: developers/logging.md
-      - Plugins:
-          - developers/plugins/index.md
-          - Plugin Manager: developers/plugins/manager.md
-          - Format Readers: developers/plugins/format_readers.md
-          - Format Writers: developers/plugins/format_writers.md
-          - Network Clients: developers/plugins/network_clients.md
-          - Repository Clients: developers/plugins/repo_clients.md
+  - DART 2:
+    - Home: dart2/index.md
+    - Videos: dart2/videos.md
+    - Download: dart2/download.md
+    - For Users:
+        - dart2/users/getting_started.md
+        - Jobs:
+            - dart2/users/jobs/index.md
+            - dart2/users/jobs/list.md
+            - dart2/users/jobs/files.md
+            - dart2/users/jobs/packaging.md
+            - dart2/users/jobs/metadata.md
+            - dart2/users/jobs/upload.md
+            - dart2/users/jobs/run.md
+            - dart2/users/jobs/delete.md
+            - dart2/users/jobs/validation.md
+            - dart2/users/jobs/troubleshooting.md
+        - Workflows:
+            - dart2/users/workflows/index.md
+            - dart2/users/workflows/job_params.md
+            - dart2/users/workflows/batch_jobs.md
+        - Settings:
+            - dart2/users/settings/index.md
+            - dart2/users/settings/app_settings.md
+            - dart2/users/settings/internal_settings.md
+            - dart2/users/settings/remote_repositories.md
+            - dart2/users/settings/storage_services.md
+            - dart2/users/settings/plugins.md
+            - dart2/users/settings/export.md
+            - dart2/users/settings/import.md
+        - Dashboard: dart2/users/dashboard.md
+        - BagIt Profiles:
+            - dart2/users/bagit/index.md
+            - dart2/users/bagit/importing.md
+            - dart2/users/bagit/exporting.md
+            - dart2/users/bagit/creating.md
+            - dart2/users/bagit/customizing.md
+        - Command Line Reference: dart2/users/command_line.md
+        - Scripting with DART: dart2/users/scripting.md
+        - Logs: dart2/users/logs.md
+        - Dart Runner: dart2/users/dart_runner.md
+        - FAQ: dart2/users/faq.md
+    - For Developers:
+        - dart2/developers/index.md
+        - Architecture: dart2/developers/architecture.md
+        - Data Storage: dart2/developers/data_storage.md
+        - Job Flow: dart2/developers/job_flow.md
+        - Building: dart2/developers/building.md
+        - Testing: dart2/developers/testing.md
+        - Documenting: dart2/developers/documenting.md
+        - Logging: dart2/developers/logging.md
+        - Plugins:
+            - dart2/developers/plugins/index.md
+            - Plugin Manager: dart2/developers/plugins/manager.md
+            - Format Readers: dart2/developers/plugins/format_readers.md
+            - Format Writers: dart2/developers/plugins/format_writers.md
+            - Network Clients: dart2/developers/plugins/network_clients.md
+            - Repository Clients: dart2/developers/plugins/repo_clients.md
+  - DART 3:
+    - Home: dart3/index.md
+    - Videos: dart3/videos.md
+    - Download: dart3/download.md
+    - For Users:
+        - dart3/users/getting_started.md
+        - Jobs:
+            - dart3/users/jobs/index.md
+            - dart3/users/jobs/list.md
+            - dart3/users/jobs/files.md
+            - dart3/users/jobs/packaging.md
+            - dart3/users/jobs/metadata.md
+            - dart3/users/jobs/upload.md
+            - dart3/users/jobs/run.md
+            - dart3/users/jobs/delete.md
+            - dart3/users/jobs/validation.md
+            - dart3/users/jobs/troubleshooting.md
+        - Workflows:
+            - dart3/users/workflows/index.md
+            - dart3/users/workflows/job_params.md
+            - dart3/users/workflows/batch_jobs.md
+        - Settings:
+            - dart3/users/settings/index.md
+            - dart3/users/settings/app_settings.md
+            - dart3/users/settings/internal_settings.md
+            - dart3/users/settings/remote_repositories.md
+            - dart3/users/settings/storage_services.md
+            - dart3/users/settings/export.md
+            - dart3/users/settings/import.md
+        - Dashboard: dart3/users/dashboard.md
+        - BagIt Profiles:
+            - dart3/users/bagit/index.md
+            - dart3/users/bagit/importing.md
+            - dart3/users/bagit/exporting.md
+            - dart3/users/bagit/creating.md
+            - dart3/users/bagit/customizing.md
+        - Logs: dart3/users/logs.md
+        - FAQ: dart3/users/faq.md
