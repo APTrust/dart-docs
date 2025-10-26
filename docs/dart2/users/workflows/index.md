@@ -10,7 +10,7 @@ Workflows ensure that the exact same set of steps is run on each set of files. D
     even when running in command-line mode.
 
     DART Runner **does** run on servers. For more info, see
-    the [DART Runner page](../dart_runner.md).
+    the [DART Runner page](../../../runner/index.md).
 
 ## Defining a Workflow
 
@@ -52,7 +52,7 @@ To create a workflow from scratch:
 
 ## Exporting a Workflow
 
-You can export DART workflows to run on a server using [dart-runner](../dart_runner.md). To export a workflow:
+You can export DART workflows to run on a server using [dart-runner](../../../runner/index.md). To export a workflow:
 
 1. Choose __Workflows > List__ from the DART menu.
 2. Click on the workflow you want to export.

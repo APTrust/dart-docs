@@ -58,7 +58,6 @@ nav:
         - Command Line Reference: dart2/users/command_line.md
         - Scripting with DART: dart2/users/scripting.md
         - Logs: dart2/users/logs.md
-        - Dart Runner: dart2/users/dart_runner.md
         - FAQ: dart2/users/faq.md
     - For Developers:
         - dart2/developers/index.md
@@ -114,3 +113,4 @@ nav:
             - dart3/users/bagit/customizing.md
         - Logs: dart3/users/logs.md
         - FAQ: dart3/users/faq.md
+  - Dart Runner: runner/index.md

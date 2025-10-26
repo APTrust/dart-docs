@@ -4,7 +4,7 @@ DART is the Digital Archivist's Resource Tool. It provides both a GUI and a comm
 
 ## Download
 
-{! shared/downloads.md !}
+{! dart2/shared/downloads.md !}
 
 After installation, check out the [Getting Started page](./users/getting_started.md)
 
@@ -29,7 +29,7 @@ To start using DART, see our [Getting Started](users/getting_started.md) page.
 
 !!! note
     We recently released DART Runner to run workflows on servers that have no graphical environment.
-    For more info, see [DART Runner](users/dart_runner.md).
+    For more info, see [DART Runner](../runner/index.md).
 
 ## Plugin Architecture
 

@@ -6,7 +6,7 @@ DART is the Digital Archivist's Resource Tool. It provides both a GUI and a comm
 
 [NEEDS NEW DART 3 DOWNLOADS LINKS]
 
-{! shared/downloads.md !}
+{! dart3/shared/downloads.md !}
 
 After installation, check out the [Getting Started page](../dart2/users/getting_started.md)
 

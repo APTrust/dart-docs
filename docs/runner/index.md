@@ -7,8 +7,10 @@ For this reason, APTrust built dart-runner, which is a lightweight command-line 
 The general process is:
 
 1. Create a Workflow in DART and test it out locally to ensure it does what you want.
-2. Export the workflow [as described on the Workflows page](workflows/index.md#exporting-a-workflow).
-3. Run dart-runner on the server with the exported workflow file and a list of items you want to run through that workflow. If you're running a batch job, the list must conform to the workflow [CSV format used for batch jobs](workflows/batch_jobs.md/). If you're running one-off jobs using Job Params, be sure your JSON conforms to the format below. See below for details.
+2. Export the workflow as described on the Workflows page for
+[DART 2](../dart2/users/workflows/index.md#exporting-a-workflow) or
+[DART 3](../dart3/users/workflows/index.md#exporting-a-workflow).
+3. Run dart-runner on the server with the exported workflow file and a list of items you want to run through that workflow. If you're running a batch job, the list must conform to the workflow CSV format used for batch jobs, which is the same in [DART 2](../dart2/users/workflows/batch_jobs.md/) and [DART 3](../dart3/users/workflows/batch_jobs.md/). If you're running one-off jobs using Job Params, be sure your JSON conforms to the format below. See below for details.
 
 !!! note
     When scripting jobs and workflows on Mac and Windows, you should
