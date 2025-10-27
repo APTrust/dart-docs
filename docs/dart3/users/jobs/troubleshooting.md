@@ -1,7 +1,5 @@
 # Troubleshooting Jobs
 
-Note: APTrust will be adding to this section as issues arise.
-
 ## Uploading
 
 ### SFTP

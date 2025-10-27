@@ -12,7 +12,7 @@ After clicking run, your job will begin. DART runs each job in a separate proces
 
 After clicking __Run__, you'll see the progress of each operation on screen. Striped blue bars indicate a work in progress. A green bar represents a completed operation, while a red bar indicates a failure. If a job includes multiple uploads, you'll see one progress bar for each upload.
 
-__Note:__ Some members have issues using DART to upload large bags (400GB or larger) because of local networking infrastructure. If you encounter this, we recommend using DART to create bags and using a third-party S3 client (e.g., [CyberDuck](https://cyberduck.io/){:target="_blank"}, [S3 Browser](https://s3browser.com/){:target="_blank"}) to upload them. 
+__Note:__ Some members have issues using DART to upload large bags (400GB or larger) because of local networking infrastructure. If you encounter this, we recommend using DART to create bags and using a third-party S3 client (e.g., <a href="https://cyberduck.io/" target="_blank">Cyberduck</a>, <a href="https://s3browser.com/" target="_blank">S3 Browser</a>) to upload them.
 
 ![Job review and run](../../img/jobs/run_completed.png)
 
