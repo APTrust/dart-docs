@@ -1,12 +1,11 @@
 _Updated March 14, 2023_
 
-Download the DART installer for your system. The current version is 2.0.22 (released March 14, 2023).
+Download the DART 3 installer for your system. The current version is alpha-03 (released June 6, 2025).
 
-__Mac__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.22.dmg](https://s3.amazonaws.com/aptrust.public.download/DART/DART-2.0.22.dmg)
 
-__Windows__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.22.exe](https://s3.amazonaws.com/aptrust.public.download/DART/DART+Setup+2.0.22.exe)
-
-__Linux__: [https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.22_amd64.deb](https://s3.amazonaws.com/aptrust.public.download/DART/DART_2.0.22_amd64.deb)
+  - [Windows - Intel 64 bit](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart3/alpha-03/windows-amd64/dart3-alpha-03.exe)
+  - [Mac - Any CPU](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart3/alpha-03/mac-universal/DART.zip)
+  - [Linux - Intel 64 bit](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart3/alpha-03/linux-amd64/dart3-alpha-03)
 
 Double-click the installer after download and follow the prompts on screen.
 
