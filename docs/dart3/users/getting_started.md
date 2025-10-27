@@ -2,7 +2,7 @@
 
 DART is the Digital Archivist's Resource Tool. Its primary purpose is to package digital materials and send them off to long-term preservation storage. DART's initial release focuses on packaging materials in BagIt format and uploading them to S3 buckets for ingest in APTrust. DART can be extended through plugins to produce other packaging formats and to communicated via additional network protocols.
 
-DART runs in both graphical and command-line modes on Windows, Mac, and Linux. What can you do with it? Take a look:
+DART runs in both graphical and command-line modes on Windows, Mac, and Linux. What can you do with it? The video below gives a sample. Note that this video shows the DART 2 interface. DART 3 is similar, except that files must be dragged in from the file navigator in the left side bar.
 
 <iframe width="845" height="479" src="https://www.youtube.com/embed/_ga9XfuyO-I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -22,7 +22,7 @@ Follow these steps to create a valid local bag that conforms to the APTrust BagI
 
     ![New job](../img/getting_started/new_job.png)
 
-2. Drag some files or folders into the files window. To avoid a long-running job that will consume a lot of disk space, choose only a few megabytes of files.
+2. Drag some files or folders from the file browser on the left side of the window into the files area on the right. To avoid a long-running job that will consume a lot of disk space, choose only a few megabytes of files.
 
     ![Job files](../img/jobs/files.png)
 

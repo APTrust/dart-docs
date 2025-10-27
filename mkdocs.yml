@@ -77,13 +77,13 @@ nav:
             - Repository Clients: dart2/developers/plugins/repo_clients.md
   - DART 3:
     - Home: dart3/index.md
-    - Videos: dart3/videos.md
     - Download: dart3/download.md
     - For Users:
         - dart3/users/getting_started.md
         - Jobs:
             - dart3/users/jobs/index.md
             - dart3/users/jobs/list.md
+            - dart3/users/jobs/artifacts.md
             - dart3/users/jobs/files.md
             - dart3/users/jobs/packaging.md
             - dart3/users/jobs/metadata.md
