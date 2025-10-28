@@ -56,7 +56,7 @@ You can export DART workflows to run on a server using [dart-runner](../../../ru
 
 !!! note
     You may see a warning about unencrypted passwords included in the export. You can ignore this if you're copying the workflow directly to a server you trust. However, you should use environment variables instead of embedded, plain-text passwords when sending workflows to others via insecure networks.
-    See [Storage Service passwords](../settings/storage_services.md#password) for info on how to use environment variables.
+    See [Storage Service passwords](../settings/storage_services.md#secret-access-key-password) for info on how to use environment variables.
 
 After clicking __Export__, click __Copy to Clipboard__ to copy the JSON.
 
