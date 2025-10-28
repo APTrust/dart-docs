@@ -55,19 +55,33 @@ Choose __Yes__ if this service allows you to download files, __No__ otherwise.
     While DART does not support downloads in its initial release, it may
     support them in a future release.
 
-#### Login
-Enter your login name for the service. For FTP and rsync services, this will typically be a user name. For S3 services, it will be an access key ID.
+#### Access Key ID / Login
+Enter your login name for the service. For SFTP services, this will typically be a user name. For S3 services, it will be an access key ID.
 
-For S3 services, you may want to keep your access keys in an environment variable. If you choose to do so, you can enter `env:` followed by the name of the environment variable here and DART will pull the setting from the environment at run time.
-
-For example, if you keep your AWS access key id in an environment variable called AWS_ACCESS_KEY_ID, then enter `env:AWS_ACCESS_KEY_ID`.
-
-!!! info
-    Environment variables beginning with env: work only when you launch DART from the command line.
-    They don't work when you launch by clicking the DART icon.
-
-#### Password
-Enter your password for the service. For FTP and rsync services, this will typically be an actual passowrd. For S3 services, it will be a secret access key. As with the Login field above, you can set this to reference an environment variable using the `env:` pattern. For example, `env:AWS_SECRET_ACCESS_KEY`.
+#### Secret Access Key / Password
+Enter your password for the service. For SFTP and services, this will typically be an actual passowrd. For S3 services, it will be a secret access key.
 
 #### Login Extra
 This field is typically not used. If your storage service requires it, the plugin documentation should describe what to enter here. Otherwise, leave this field blank.
+
+## Testing Your Connection
+
+Once you have entered all of the configutation settings for a storage service, save your changes, then return to the settings page and click the **Test Connection** button in the top right corner. This will tell whether the connection succeeds. If it doesn't, you should see an informative error message as to why it didn't.
+
+## Sample S3 Setup
+
+The screenshot below shows a sample S3 configuration.
+
+![Sample S3 storage service configuration](../../img/settings/storage_services/storage_s3.png)
+
+## Sample SFTP Setup with Password
+
+The screenshot below shows a sample SFTP configuration using a password.
+
+![Sample SFTP storage service configuration with password](../../img/settings/storage_services/storage_sftp_password.png)
+
+## Sample SFTP Setup with SSH Key
+
+The screenshot below shows a sample SFTP configuration using an SSH key. Note the path to the SSH key file.
+
+![Sample SFTP storage service configuration with SSH key](../../img/settings/storage_services/storage_sftp_key.png)

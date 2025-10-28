@@ -3,8 +3,11 @@
 Remote repositories are services to which you upload data for preservation. DART can query remote repositories to show the status of items you've uploaded for ingest, provided the following three conditions are met:
 
 * The remote repository has a REST API. Most do, including APTrust, Fedora, DSpace, and many others.
-* DART has a plugin that knows how to talk to the repository. (On initial release, the only plugin is for APTrust, but more may be coming.)
+* DART knows how to talk to the repository. (On initial release, the only plugin is for APTrust, but more may be coming.)
 * You have a Remote Repository setting that points to the correct URL and contains valid login credentials.
+
+!!! note
+    While DART 2 included a JavaScript plugin system that allowed users to write their own Remote Repository adapters, DART 3 does not have a plugin system. We simply did not see many (any?) users writing plugins for DART 2, so we omitted the plugin system from DART 3. Users can fork the DART 3 repository and write their own Remote Repository clients in Go.
 
 ## Listing Remote Repositories
 
