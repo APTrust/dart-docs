@@ -101,18 +101,3 @@ To delete a tag, click the red X to the right of the tag name in the tag list vi
 
 To delete a tag file, delete all of the tags in the file. See [Deleting a Tag](#deleting-a-tag) above.
 
-### Adding the Wasabi-TX Storage Option
-
-As of April, 2023, APTrust can store objects in Wasabi's Texas datacenter. This storage option is not listed in version 2.2 of the APTrust BagIt profile. Follow these steps to add it, so you can send bags to the beautiful state of Texas!
-
-1. Click **Settings > BagIt Profiles** from the top menu.
-2. Click the APTrust profile. It should have the name **APTrust** and description **APTrust 2.2 default BagIt profile.**
-3. From the tab menu, choose **Tag Files > aptrust-info.txt**
-4. In the list of tags, click **Storage Option**.
-5. Scroll to the bottom of the **Values** box and press Enter to add a new line.
-6. Type **Wasabi-TX** into the **Values** box. Be sure the capitalization matches. W, T, and X should be capitalized, with a dash before the TX, as in the screenshot below.
-7. Click **Save**.
-
-![Adding the Wasabi-TX storage option](../../img/bagit_profiles/adding-wasabi-tx.png)
-
-The next time you create a bag using the APTrust BagIt profile, you will be able to choose Wasabi-TX as the storage option.

@@ -9,10 +9,14 @@ To import a profile:
 
     ![BagIt Profile list](../../img/bagit_profiles/profile_list.png)
 
+1. Choose how you want to import the profile. The options are from a URL or from JSON data.
+
+    ![BagIt Profile choose import type](../../img/bagit_profiles/profile_import_choose_type.png)
+
 1. Option 1: Choose _Import from URL_. Type or paste the URL you want to import, then click __Import__.
 
     ![BagIt Profile import from URL](../../img/bagit_profiles/profile_import_url.png)
 
 1. Option 2: Choose __Import from JSON__, paste the BagIt profile JSON you want to import, then click __Import__.
 
-    ![BagIt Profile import from JSON](../../img/bagit_profiles/profile_import_text.png)
+    ![BagIt Profile import from JSON](../../img/bagit_profiles/profile_import_json.png)
