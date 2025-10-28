@@ -7,7 +7,7 @@ Remote repositories are services to which you upload data for preservation. DART
 * You have a Remote Repository setting that points to the correct URL and contains valid login credentials.
 
 !!! note
-    While DART 2 included a JavaScript plugin system that allowed users to write their own Remote Repository adapters, DART 3 does not have a plugin system. We simply did not see many (any?) users writing plugins for DART 2, so we omitted the plugin system from DART 3. Users can fork the DART 3 repository and write their own Remote Repository clients in Go.
+    While DART 2 included a JavaScript plugin system that allowed users to write their own Remote Repository adapters, DART 3 does not have a plugin system. We simply did not see many (any?) users writing plugins for DART 2, so we omitted the plugin system from DART 3. Users can contribute code to the DART 3 repository and write their own Remote Repository clients in Go. DART's public, open source code repository is located at https://github.com/APTrust/dart.
 
 ## Listing Remote Repositories
 

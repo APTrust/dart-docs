@@ -94,7 +94,6 @@ nav:
             - dart3/users/jobs/troubleshooting.md
         - Workflows:
             - dart3/users/workflows/index.md
-            - dart3/users/workflows/job_params.md
             - dart3/users/workflows/batch_jobs.md
         - Settings:
             - dart3/users/settings/index.md

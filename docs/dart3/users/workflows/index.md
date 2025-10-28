@@ -2,15 +2,11 @@
 
 A workflow is a set of packaging, validation, and/or upload operations that you define as a template to be run on any sets of files you choose.
 
-Workflows ensure that the exact same set of steps is run on each set of files. DART can run workflows from the UI and from the command line, which means you can create scripts that use workflows to package and upload materials.
+Workflows ensure that the exact same set of steps is run on each set of files. DART can run workflows from the UI, or you can export them and run them from the command line using DART Runner, which means you can create scripts that use workflows to package and upload materials.
 
-!!! note
-    DART won't run on servers that don't have graphics because DART's
-    underlying Electron framework insists on graphics capabilities
-    even when running in command-line mode.
+DART Runner can run unattended on servers using DART workflows to bag and export huge sets of files that may take too long to run on an individual's laptop or desktop. For example, it's common to create a workflow in DART, then run that workflow to package and upload thousands of bags. The following paragraphs describe how to create and export workflows. For information on running workflows in DART Runner, see the [DART Runner page](../../../runner/index.md).
 
-    DART Runner **does** run on servers. For more info, see
-    the [DART Runner page](../../../runner/index.md).
+For information on creating and uploading batches of bags directly in DART, see [Batch Jobs](./batch_jobs.md).
 
 ## Defining a Workflow
 

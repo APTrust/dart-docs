@@ -4,30 +4,6 @@ The dashboard shows running jobs, recently completed jobs, and selected items fr
 
 ![Dashboard](../img/dashboard/dashboard.png)
 
-## Running Jobs
-
-The Running Jobs panel shows jobs DART is currently running on your computer. If more than one job is currently running, you can scroll inside the panel to see the progress of each. Also note the blue badge in the upper right corner of the window showing there are two running jobs. The blue badge appears on all DART views as long as jobs are running.
-
-Note that DART runs each job in a separate process. Actions you take in DART do not affect the running jobs.
-
-!!! warning
-    When you shut down the DART application, all DART jobs stop, even if they
-    are not yet complete. Don't close the DART window while jobs are running,
-    unless you intend to stop all of the jobs.
-
-### Progress Bars for Running Jobs
-
-The progress bars for running jobs show how much progress DART has made in each of the job's steps, which may include packaging, validation, and/or uploading.
-
-!!! info
-    While the progress bars for packaging and validation are very accurate, the
-    progress bar for uploads runs slightly ahead of the actual upload progress.
-    DART knows how many bytes of an upload it has prepared to send, but not how
-    many have been received by the remote host. It's common for the upload
-    progress bar to appear to stall at about 98% while the last chunk of data
-    goes across the wire. For smaller uploads, the stall may last only a second
-    or two. For very large uploads, the final chunk may be hundreds of megabytes
-    and may take several minutes to complete.
 
 ## Recent Jobs
 
@@ -51,8 +27,9 @@ The panels show errors if they cannot communicate with the remote repository. If
 
 !!! info
     Remote repository panels require both a correctly configured Remote Repository
-    setting and a plugin that knows how to communicate with the remote repository.
-    Plugins are typically written by developers associated with the repository,
-    and are packaged with the DART installation.
+    setting and DART code that knows how to communicate with the remote repository.
+    Currently, DART supports only APTrust repositories. Developers may contribute
+    custom code for other repositories that have a REST API. The DART code repository
+    is public and open source. It's located at https://github.com/APTrust/dart.
 
 See also: [Remote Repository](settings/remote_repositories.md)
