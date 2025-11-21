@@ -6,6 +6,7 @@
 #
 # ----------------------------------------------------------------------
 site_name: DART Documentation
+site_url: https://aptrust.github.io/dart-docs/
 theme:
   name: material
   custom_dir: overrides
