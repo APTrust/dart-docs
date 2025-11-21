@@ -6,7 +6,9 @@
 #
 # ----------------------------------------------------------------------
 site_name: DART Documentation
-theme: material
+theme:
+  name: material
+  custom_dir: overrides
 markdown_extensions:
   - admonition
   - pymdownx.highlight
