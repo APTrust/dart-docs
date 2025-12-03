@@ -1,11 +1,11 @@
-_Updated Oct 28, 2025_
+_Updated Dec 3, 2025_
 
-Download the DART 3 installer for your system. The current version is alpha-03 (released June 6, 2025).
+Download the DART 3 installer for your system. The current version is beta-01 (released December 3, 2025).
 
 
-  - [Windows - Intel 64 bit](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart3/alpha-03/windows-amd64/dart3-alpha-03.exe)
-  - [Mac - Any CPU](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart3/alpha-03/mac-universal/DART.zip)
-  - [Linux - Intel 64 bit](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart3/alpha-03/linux-amd64/dart3-alpha-03)
+  - [Windows - Intel 64 bit](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart3/beta-01/windows-amd64/dart.exe)
+  - [Mac - Any CPU](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart3/beta-01/mac-universal/DART.dmg)
+  - [Linux - Intel 64 bit](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart3/beta-01/linux-amd64/dart)
 
 Double-click the installer after download and follow the prompts on screen.
 
