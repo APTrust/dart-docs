@@ -71,10 +71,10 @@ The help text below shows an example of valid Job Params JSON for dart-runner.
 ### Options
 
 ```
-  --workflow     Path to workflow json file. Use this option if you are running
-                 a workflow against a batch of files. If you specify a workflow
-                 file, you must also specify --batch. Workflows can be exported
-                 from the DART UI.
+  --workflow     Path to workflow json file. This parameter is required. If you
+                 specify a workflow file, you must also either specify --batch
+                 or provide input JSON containing job params. Workflows can be
+                 exported from the DART UI.
 
   --batch        Path to CSV batch file. Use this option with --workflow to
                  specify a set of files or directories to run through a
