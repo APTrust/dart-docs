@@ -2170,6 +2170,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../dart3/users/jobs/download_jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Download Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../dart3/users/jobs/troubleshooting/" class="md-nav__link">
         
   
@@ -3134,10 +3157,10 @@ workflow batch mode. Please download version 0.96-beta or later.</p>
 <p>The help text below shows an example of valid Job Params JSON for dart-runner.</p>
 <h2 id="usage">Usage</h2>
 <h3 id="options">Options</h3>
-<div class="highlight"><pre><span></span><code>  --workflow     Path to workflow json file. Use this option if you are running
-                 a workflow against a batch of files. If you specify a workflow
-                 file, you must also specify --batch. Workflows can be exported
-                 from the DART UI.
+<div class="highlight"><pre><span></span><code>  --workflow     Path to workflow json file. This parameter is required. If you
+                 specify a workflow file, you must also either specify --batch
+                 or provide input JSON containing job params. Workflows can be
+                 exported from the DART UI.
 
   --batch        Path to CSV batch file. Use this option with --workflow to
                  specify a set of files or directories to run through a

@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://aptrust.github.io/dart-docs/dart3/users/jobs/upload_jobs/">
+        <link rel="canonical" href="https://aptrust.github.io/dart-docs/dart3/users/jobs/download_jobs/">
       
       
-        <link rel="prev" href="../upload/">
+        <link rel="prev" href="../validation/">
       
       
-        <link rel="next" href="../run/">
+        <link rel="next" href="../troubleshooting/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Upload-Only Jobs - DART Documentation</title>
+        <title>Download Jobs - DART Documentation</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#upload-only-jobs" class="md-skip">
+        <a href="#download-jobs" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Upload-Only Jobs
+              Download Jobs
             
           </span>
         </div>
@@ -2083,19 +2083,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../upload_jobs/" class="md-nav__link">
         
   
   
@@ -2106,7 +2097,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -2185,10 +2175,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../download_jobs/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2199,6 +2198,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -2838,38 +2838,17 @@
   
 
 
-<h1 id="upload-only-jobs">Upload-Only Jobs</h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This document describes upload-only jobs that do not involve bagging.
-For information about uploading as part of the bagging process, see
-<a href="../upload/">Uploading</a></p>
-</div>
-<p>Upload-only jobs allow you to upload files that already exist. You may want to upload files created outside of DART, or upload DART bags that failed to upload on a previous attempt.</p>
-<p>Follow these steps to upload files from DART:</p>
+<h1 id="download-jobs">Download Jobs</h1>
+<p>This feature enables you to download files from any S3 buckets to which you
+have list and read access. Follow these steps to download files:</p>
 <ol>
-<li>
-<p>Choose <strong>Jobs &gt; Upload Files</strong> from the top menu.</p>
-</li>
-<li>
-<p>On the files page, drag files and folders you want to upload from the left side of the screen into the drop zone on the right side. By default, DART shows the files and folders in your DART bagging directory. Use the jump menu above the files list to go to a different folder if needed.</p>
-<p><img alt="Choose files to upload" src="../../../img/jobs/upload_job_choose_files.png" /></p>
-</li>
-<li>
-<p>Click <strong>Next</strong>.</p>
-</li>
-<li>
-<p>Check the box next to each upload target to which you want to send the files you've selected.</p>
-<p><img alt="Choose upload targets" src="../../../img/jobs/upload_job_choose_targets.png" /></p>
-</li>
-<li>
-<p>Click <strong>Next</strong>.</p>
-</li>
-<li>
-<p>Click <strong>Run</strong> on the run screen to upload the files and folders.</p>
-<p><img alt="Run upload job" src="../../../img/jobs/upload_job_run.png" /></p>
-</li>
+<li>From the top menu, choose <strong>Jobs &gt; Download from S3</strong>.</li>
+<li>Choose an S3 service from the <strong>Download From</strong> list.</li>
+<li>Choose a bucket from the bucket list.</li>
+<li>Click on the name of a key/object in files list to download it.</li>
 </ol>
+<p>Note that Glacier files cannot be downloaded because AWS requires objects to be moved from Glacier to S3 before they are downloaded. DART is not currently able to move files from Glacier to S3.</p>
+<p><img alt="Download Job" src="../../../img/jobs/download_job.png" /></p>
 
 
 
