@@ -95,6 +95,7 @@ nav:
             - dart3/users/jobs/run.md
             - dart3/users/jobs/delete.md
             - dart3/users/jobs/validation.md
+            - dart3/users/jobs/download_jobs.md
             - dart3/users/jobs/troubleshooting.md
         - Workflows:
             - dart3/users/workflows/index.md
