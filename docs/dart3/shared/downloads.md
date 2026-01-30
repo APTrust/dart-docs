@@ -1,4 +1,4 @@
-_Updated Dec 3, 2025_
+_Updated January 30, 2026_
 
 Download the DART 3 installer for your system. The current version is beta-02 (released January 30, 2026).
 
