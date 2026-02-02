@@ -29,8 +29,8 @@ Latest version is v1.0.2, released Feb 2, 2026.
 
 | Platform | Architecture | Version | SHA-256 |
 | -------- | ------------ | ------- | ------- |
-| [Windows Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.2/windows/amd64/apt-cmd.exe) | Intel 64-bit | v1.0.2 | 2268ef92b8847d53e5817036cc41dfa7cea9a06113c8c8b834346c7e2e01c494 |
-| [Windows ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.2/windows/arm64/apt-cmd.exe) | ARM 64-bit | v1.0.2 | 82ed797b79aacf2d3e8fe8401cd026a59635828edbfd43e6288a9911328402ff |
+| [Windows Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.2/windows/amd64/apt-cmd.exe) | Intel 64-bit | v1.0.2 | 7fc539da777e5332d3c7e539ebcf9c5fb97b5490d8d1170c7e2fdebb96fa4e05 |
+| [Windows ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.2/windows/arm64/apt-cmd.exe) | ARM 64-bit | v1.0.2 | 49197d88b9a385c9a2669ba5362e9969a93da822b05f7defe54a89293d1ec48c |
 | [Mac Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.2/mac/amd64/apt-cmd)  | Intel 64-bit | v1.0.2 | 4f125ba04dc3e11b53e442cb105607e7d94c973a88b32e112a7692482da5d14a |
 | [Mac ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.2/mac/arm64/apt-cmd) | Apple Silicon (M series) | v1.0.2 | 3dfdbc56e336669a09e5315d84bbcc10575c847f5c83e6110b6e59e9a1ef1a74 |
 | [Linux Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.2/linux/amd64/apt-cmd) | Intel 64-bit | v1.0.2 | 1164b04df7cbbd4c947e73368a3d6dbad5b636a3fe5becb968e6d3cc3985d2d8 |
