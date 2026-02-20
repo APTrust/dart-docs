@@ -115,6 +115,7 @@ nav:
             - dart3/users/bagit/exporting.md
             - dart3/users/bagit/creating.md
             - dart3/users/bagit/customizing.md
+        - Command Line Reference: dart3/users/command_line.md
         - Logs: dart3/users/logs.md
         - FAQ: dart3/users/faq.md
   - Dart Runner: runner/index.md
