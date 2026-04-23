@@ -25,16 +25,16 @@ The general process is:
     to incorrect tag values being written into bags when using
     workflow batch mode. Please download version 0.96-beta or later.
 
-Latest version is v1.0.3, released March 24, 2026.
+Latest version is v1.0.4, released April 23, 2026.
 
 | Platform | Architecture | Version | SHA-256 |
 | -------- | ------------ | ------- | ------- |
-| [Windows Intel](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v1.0.3/windows/amd64/dart-runner.exe) | Intel 64-bit | v1.0.3 | fdeb23567fc038865be073a4c0b2c3294b9e1375a8eb568b0fe65f896c9227b5 |
-| [Windows ARM](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v1.0.3/windows/arm64/dart-runner.exe) | ARM 64-bit | v1.0.3 | d95284770142f7bbdf9c41f3841108d613268d9683fb12b068cb3986b1c2f3d3 |
-| [Mac Intel](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v1.0.3/mac/amd64/dart-runner)  | Intel 64-bit | v1.0.3 | 13d6a6a8766e48a43ce5c287f083677b7b42fa315571bc66e72749d623ea2807 |
-| [Mac ARM](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v1.0.3/mac/arm64/dart-runner) | Apple Silicon (M series) | v1.0.3 | b742f16b4ce287655f59e83c733c9edfc8bec312d8294d96fc67309eff7e1e60 |
-| [Linux Intel](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v1.0.3/linux/amd64/dart-runner) | Intel 64-bit | v1.0.3 | c48b8e778ce3ce42c45ff579aecc4e12809783fbbe35c8a96937f1adfe3638ae |
-| [Linux ARM](https://s3.us-east-1.amazonaws.com/aptrust.public.download/dart-runner/v1.0.3/linux/arm64/dart-runner) | ARM 64-bit | v1.0.3 | a8cef0d3b6b3a268e522fda0f864eb9b97254606fe08e13a64d5d7172367fbce |
+| [Windows Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.4/windows/amd64/dart-runner.exe) | Intel 64-bit | v1.0.4 | 1f05d58d9e04ff5f886a1a268f90366326324861a0296b43ee75787907002541 |
+| [Windows ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.4/windows/arm64/dart-runner.exe) | ARM 64-bit | v1.0.4 | 54a1665d18ecdd848ec548e0853e5bf81155e1db1fd86ac9c95acd0724c58889 |
+| [Mac Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.4/mac/amd64/dart-runner)  | Intel 64-bit | v1.0.4 | 33a67223c379dc227fd40c738bc6739c42d2b153fc3bc9d2c8997df5ff486b32 |
+| [Mac ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.4/mac/arm64/dart-runner) | Apple Silicon (M series) | v1.0.4 | c26aaf8a18620f4f225e4af45137747953741d67d4e28824975f315036385fc3 |
+| [Linux Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.4/linux/amd64/dart-runner) | Intel 64-bit | v1.0.4 | a3745dc3d8f3a5a67787cb355efd9959590dd549f320cb9d9dfec3f805ca934b |
+| [Linux ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.4/linux/arm64/dart-runner) | ARM 64-bit | v1.0.4 | b2478b7bab83bb80b80679db46f8be326fff94063a4cfcfcfce0f6a6d3358bdd |
 
 
 Because it's a single binary with no dependencies, there's no installation process for dart-runner. Simply copy the binary onto your computer and run.
