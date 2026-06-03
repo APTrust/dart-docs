@@ -5,7 +5,7 @@
 # Or just see the README
 #
 # ----------------------------------------------------------------------
-site_name: DART Documentation
+site_name: DART Docs
 site_url: https://aptrust.github.io/dart-docs/
 theme:
   name: material
