@@ -25,19 +25,42 @@ The general process is:
     to incorrect tag values being written into bags when using
     workflow batch mode. Please download version 0.96-beta or later.
 
-Latest version is v1.0.4, released April 23, 2026.
+Latest version is v1.0.5, released July 16, 2026.
 
 | Platform | Architecture | Version | SHA-256 |
 | -------- | ------------ | ------- | ------- |
-| [Windows Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.4/windows/amd64/dart-runner.exe) | Intel 64-bit | v1.0.4 | 1f05d58d9e04ff5f886a1a268f90366326324861a0296b43ee75787907002541 |
-| [Windows ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.4/windows/arm64/dart-runner.exe) | ARM 64-bit | v1.0.4 | 54a1665d18ecdd848ec548e0853e5bf81155e1db1fd86ac9c95acd0724c58889 |
-| [Mac Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.4/mac/amd64/dart-runner)  | Intel 64-bit | v1.0.4 | 33a67223c379dc227fd40c738bc6739c42d2b153fc3bc9d2c8997df5ff486b32 |
-| [Mac ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.4/mac/arm64/dart-runner) | Apple Silicon (M series) | v1.0.4 | c26aaf8a18620f4f225e4af45137747953741d67d4e28824975f315036385fc3 |
-| [Linux Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.4/linux/amd64/dart-runner) | Intel 64-bit | v1.0.4 | a3745dc3d8f3a5a67787cb355efd9959590dd549f320cb9d9dfec3f805ca934b |
-| [Linux ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.4/linux/arm64/dart-runner) | ARM 64-bit | v1.0.4 | b2478b7bab83bb80b80679db46f8be326fff94063a4cfcfcfce0f6a6d3358bdd |
+| [Windows Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.5/windows/amd64/dart-runner.exe) | Intel 64-bit | v1.0.5 | 854ae1486d5d50d9518d9926177312f791925b3725823337307539fc1cc54738 |
+| [Windows ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.5/windows/arm64/dart-runner.exe) | ARM 64-bit | v1.0.5 | cb63d06edaab907f95b38890cf579d5d9141f66f9b856c8defd0cf1a61a9d7ea |
+| [Mac Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.5/mac/amd64/dart-runner)  | Intel 64-bit | v1.0.5 | e39359d1753971e322b3e7aece3ad0c381d69c0a824f8a067657cc584e9612d3 |
+| [Mac ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.5/mac/arm64/dart-runner) | Apple Silicon (M series) | v1.0.5 | 900d70426ae0cb188f49946610e4bbef8e02badbd5f64370d9fedc2366a8d19c |
+| [Linux Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.5/linux/amd64/dart-runner) | Intel 64-bit | v1.0.5 | 3dae400e31e754be179f19026996fc672e0f6ed2b213401fdff7c34a4fcf8a45 |
+| [Linux ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.5/linux/arm64/dart-runner) | ARM 64-bit | v1.0.5 | c5d25896cf4e19d41a958c94b95b5595140a4eaa55a252f16ed2eec48fed4c66 |
 
+Because it's a single binary with no dependencies, there's no installation process for dart-runner. Simply copy the binary onto your computer and run. On Mac and Linux, you will need to give dart-runner executable permissions with the command `chmod 0755 path/to/dart-runner`. Replace the path with the actual path on your machine.
 
-Because it's a single binary with no dependencies, there's no installation process for dart-runner. Simply copy the binary onto your computer and run.
+## Running on MacOS
+
+On newer versions of MacOS, you may need to remove dart-runner from quarentine. In a terminal window, change into the directory containing dart-runner and run the following commands:
+
+```bash
+# Make sure the checksum matches the one listed above for your
+# operating system and architecture. This will print the checksum.
+# For dart-runner version 1.0.5 running on a Mac with an M chip
+# this should print
+# 900d70426ae0cb188f49946610e4bbef8e02badbd5f64370d9fedc2366a8d19c
+shasum -a 256 dart-runner
+
+# Give the app executable permission
+chmod 0755 dart-runner
+
+# If the checksum matches, remove the app from quarentine.
+xattr -d com.apple.quarantine dart-runner
+
+# Test that the app works. The following command should print
+# output like this for version 1.0.5 on an M-chip Mac:
+# DART Runner v1.0.5 for Darwin (Build c827446 2026-07-16)
+./dart-runner version
+```
 
 If you're interested, [the souce code is available on GitHub](https://github.com/APTrust/dart-runner).
 
