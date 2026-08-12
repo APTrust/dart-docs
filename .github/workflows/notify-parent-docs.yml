@@ -26,7 +26,7 @@ jobs:
       #
       # The token must have permission to trigger Actions workflows in
       # APTrust/aptrust-docs. See the README or the setup instructions in
-      # the parent repo for how to create and register DOCS_DISPATCH_TOKEN.
+      # the parent repo for how to create and register DOCS_DISPATCH_PAT.
       #
       # client-payload fields:
       #   repo   — identifies which sub-repo fired the event (used in logs)
@@ -36,7 +36,7 @@ jobs:
       - name: Dispatch rebuild to aptrust-docs
         uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.DOCS_DISPATCH_TOKEN }}
+          token: ${{ secrets.DOCS_DISPATCH_PAT }}
           repository: APTrust/aptrust-docs
           event-type: sub-repo-updated
           client-payload: >-
