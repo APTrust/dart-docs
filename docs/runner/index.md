@@ -62,7 +62,7 @@ xattr -d com.apple.quarantine dart-runner
 ./dart-runner version
 ```
 
-If you're interested, [the souce code is available on GitHub](https://github.com/APTrust/dart-runner).
+If you're interested, [the DART Runner souce code is available on GitHub](https://github.com/APTrust/dart-runner).
 
 ## Features
 
