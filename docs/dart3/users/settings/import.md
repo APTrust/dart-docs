@@ -1,3 +1,9 @@
+---
+description: >-
+  Pull a shared DART 3 configuration into your installation from a URL or from JSON you
+  copy and paste.
+---
+
 # Importing Settings
 
 You can import settings into DART from a URL or by copying and pasting data. DART's data import feature helps organizations configure and distribute basic settings for their users.

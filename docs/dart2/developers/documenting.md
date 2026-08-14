@@ -1,3 +1,9 @@
+---
+description: >-
+  Document DART 2 contributions with JSDoc so the generated API documentation stays
+  useful to future maintainers.
+---
+
 # Documenting DART
 
 If you contribute code to DART, please document it for the sanity of the people who will maintain it. DART uses [JSDoc](https://jsdoc.app/) to generate the [DART API documentation](https://aptrust.github.io/dart/). Look at the source code for examples of how we use JSDoc.

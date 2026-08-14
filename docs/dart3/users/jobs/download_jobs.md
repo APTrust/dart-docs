@@ -1,3 +1,9 @@
+---
+description: >-
+  DART 3 download jobs fetch objects from any S3 bucket you can list and read. Glacier
+  objects are excluded.
+---
+
 # Download Jobs
 
 This feature enables you to download files from any S3 buckets to which you

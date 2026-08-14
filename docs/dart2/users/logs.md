@@ -1,3 +1,9 @@
+---
+description: >-
+  Find and read DART 2 logs for detailed activity information and error messages, using
+  the live log window.
+---
+
 # Logs
 
 DART logs most of its activities as it works. If you're looking for detailed infomation about what DART is doing or has done, or if you want to see detailed error messages, check the logs.

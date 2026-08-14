@@ -1,3 +1,9 @@
+---
+description: >-
+  DART 3 answers on maximum bag size, what to watch for with very large bags, and why
+  empty folders are skipped.
+---
+
 # Frequently Asked Questions
 
 ## What is DART's bag size limit?

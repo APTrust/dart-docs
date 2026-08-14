@@ -1,3 +1,9 @@
+---
+description: >-
+  DART 3 has no command line mode. Export a workflow and run batches through DART Runner
+  instead.
+---
+
 # Command Line Usage
 
 Unlike DART 2, DART 3 does not support command-line operations. It runs only as a graphical UI.

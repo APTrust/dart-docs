@@ -1,3 +1,9 @@
+---
+description: >-
+  Open the DART 3 log file or log folder from the Help menu to trace activity and read
+  detailed error messages.
+---
+
 # Logs
 
 DART logs most of its activities as it works. If you're looking for detailed infomation about what DART is doing or has done, or if you want to see detailed error messages, check the logs.

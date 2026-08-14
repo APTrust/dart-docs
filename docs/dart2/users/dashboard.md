@@ -1,3 +1,9 @@
+---
+description: >-
+  The DART 2 dashboard shows running jobs, recently completed jobs, and selected items
+  from remote repositories.
+---
+
 # Dashboard
 
 The dashboard shows running jobs, recently completed jobs, and selected items from remote repositories.

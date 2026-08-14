@@ -1,3 +1,9 @@
+---
+description: >-
+  Enter BagIt tag values for a DART 2 job, rely on profile default values, and add
+  custom tags to your bag.
+---
+
 # Metadata
 
 You'll see the job metadata screen if you chose the BagIt packaging format on the previous screen. This screen allows you to enter values for tags that will go into BagIt tag files. By default, this screen only shows tags whose values are not already filled in by default values.

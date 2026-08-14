@@ -1,3 +1,9 @@
+---
+description: >-
+  DART 2 video tutorials covering jobs and workflows, working with BagIt profiles, and
+  importing and exporting settings.
+---
+
 # DART Videos
 
 ## Jobs and Workflows

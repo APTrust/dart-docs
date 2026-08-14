@@ -1,3 +1,9 @@
+---
+description: >-
+  Developer's guide to DART 2, covering the plugin architecture and how to get and
+  contribute to the source code.
+---
+
 # Developer's Guide to DART
 
 DART's primary purpose is to pack and ship digital materials for preservation. It includes a GUI for non-technical users who want to drag and drop files, and a [command line interface](../users/command_line.md) for more technical users who want to [script DART jobs](../users/scripting.md).

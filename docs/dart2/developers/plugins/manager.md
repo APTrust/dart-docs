@@ -1,3 +1,9 @@
+---
+description: >-
+  The DART 2 PluginManager discovers and loads plugins, and tells the JobRunner which
+  plugin handles each operation.
+---
+
 # Plugin Manager
 
 DART's PluginManager provides methods that allow the application to discover and load plugins. DART uses the findById method to load individual plugins, and the following methods to discover available plugins:

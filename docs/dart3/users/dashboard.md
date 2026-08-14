@@ -1,3 +1,9 @@
+---
+description: >-
+  The DART 3 dashboard panels for recent jobs and remote repositories, plus what to
+  check when a repo panel errors.
+---
+
 # Dashboard
 
 The dashboard shows running jobs, recently completed jobs, and selected items from remote repositories.

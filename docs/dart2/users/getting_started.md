@@ -1,3 +1,9 @@
+---
+description: >-
+  Install DART 2 and run your first job, creating and validating a BagIt bag that
+  conforms to the APTrust profile.
+---
+
 # Getting Started
 
 DART is the Digital Archivist's Resource Tool. Its primary purpose is to package digital materials and send them off to long-term preservation storage. DART's initial release focuses on packaging materials in BagIt format and uploading them to S3 buckets for ingest in APTrust. DART can be extended through plugins to produce other packaging formats and to communicated via additional network protocols.

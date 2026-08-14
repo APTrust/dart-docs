@@ -1,3 +1,9 @@
+---
+description: >-
+  Write a DART 2 format writer plugin to write tar, zip, OCFL, and other file formats as
+  part of a job.
+---
+
 # Format Writers
 
 Format writers write file formats like tar, zip, OCFL, etc. Format writers provide methods for writing contents into a directory or serialized file. The initial release of DART 2.0 includes two format writers: a [FileSystemWriter](https://aptrust.github.io/dart/FileSystemWriter.html) and a [TarWriter](https://aptrust.github.io/dart/TarWriter.html). Developers can use these two examples as references for how to write a format writer.

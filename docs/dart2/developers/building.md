@@ -1,3 +1,9 @@
+---
+description: >-
+  Build the DART 2 application from source using electron-builder or the
+  electron-toolkit GUI.
+---
+
 # Building DART
 
 Once you've cloned the [DART source code from GitHub](https://github.com/APTrust/dart), there are two ways to build the application.

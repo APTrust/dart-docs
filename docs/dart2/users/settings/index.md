@@ -1,3 +1,9 @@
+---
+description: >-
+  Overview of DART 2 settings, including app settings, internal settings, remote
+  repositories, and storage services.
+---
+
 # Settings
 
 DART includes the following settings:

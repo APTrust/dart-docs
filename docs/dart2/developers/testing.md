@@ -1,3 +1,9 @@
+---
+description: >-
+  Run the DART 2 test suite with Jest using the runInBand option, and write tests for
+  the code you contribute.
+---
+
 # Testing DART
 
 DART uses [Jest](https://jestjs.io/) for testing. You can run DART's test suite with this command

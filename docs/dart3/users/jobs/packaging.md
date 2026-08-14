@@ -1,3 +1,9 @@
+---
+description: >-
+  Set the package format, BagIt profile, serialization, name, and output path on the
+  DART 3 packaging screen.
+---
+
 # Packaging
 
 The packaging screen incudes the following options:

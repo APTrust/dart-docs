@@ -1,3 +1,9 @@
+---
+description: >-
+  Add files and folders to a DART 2 job by dragging them into the drop zone, and remove
+  any you no longer want.
+---
+
 # Adding Files
 
 After you create a new job or click on a job in the Jobs list, you'll see the files page. You can add files to a job by dragging them into the drop zone, which is outlined in blue.

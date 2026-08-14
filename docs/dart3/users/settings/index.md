@@ -1,3 +1,9 @@
+---
+description: >-
+  What you can configure in DART 3, from app and internal settings to remote
+  repositories and storage services.
+---
+
 # Settings
 
 DART includes the following settings:

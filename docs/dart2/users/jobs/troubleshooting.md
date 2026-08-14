@@ -1,3 +1,9 @@
+---
+description: >-
+  Troubleshoot DART 2 job errors, including SFTP upload failures caused by a mismatched
+  storage service bucket name.
+---
+
 # Troubleshooting Jobs
 
 Note: APTrust will be adding to this section as issues arise.

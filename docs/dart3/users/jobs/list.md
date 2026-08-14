@@ -1,3 +1,9 @@
+---
+description: >-
+  Browse the DART 3 job list, open a job to edit it, or view its logs, manifests, and
+  tag files.
+---
+
 # Listing Jobs
 
 To list all jobs, Choose __Jobs &gt; List__ from the menu. The list shows the job name and information about when it was last packaged, validated, and/or uploaded.

@@ -1,3 +1,9 @@
+---
+description: >-
+  DART 3 upload-only jobs send files that already exist to a storage service, without
+  bagging them first.
+---
+
 # Upload-Only Jobs
 
 !!! note

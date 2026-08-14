@@ -1,3 +1,9 @@
+---
+description: >-
+  How DART 2 runs each job in a forked child process, and the advantages and tradeoffs
+  of that design.
+---
+
 # Job Flow
 
 All DART jobs are run as individual processes. When you run a job from the DART UI, the application forks a child process and runs the job in that process. The code that forks the child is in the run method of the [JobRunController](https://github.com/APTrust/dart/blob/master/ui/controllers/job_run_controller.js), which is [documented here](https://aptrust.github.io/dart/JobRunController.html).

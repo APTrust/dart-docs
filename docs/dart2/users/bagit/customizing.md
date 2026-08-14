@@ -1,3 +1,9 @@
+---
+description: >-
+  Customize a BagIt profile in DART 2 with the visual editor tabs for About, Info,
+  General, tag files, and tags.
+---
+
 # Customizing Profiles
 
 To customize a BagIt profile, click the name of the profile in the profiles list, or click new and follow the steps to [create a BagIt profile](creating.md).

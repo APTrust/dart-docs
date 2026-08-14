@@ -1,3 +1,9 @@
+---
+description: >-
+  Create a new BagIt profile in DART 2, either from scratch or by cloning an existing
+  profile as your base.
+---
+
 # Creating Profiles
 
 To create a new BagIt Profile:

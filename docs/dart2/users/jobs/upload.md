@@ -1,3 +1,9 @@
+---
+description: >-
+  Choose one or more upload targets for a DART 2 job from the storage services
+  configured in your installation.
+---
+
 # Uploads
 
 You can specify one or more upload targets on the uploads page. Simply check the box beside each target you want to upload to.

@@ -1,3 +1,9 @@
+---
+description: >-
+  DART 3 App Settings hold application-wide values used when creating bags, such as the
+  bagging directory.
+---
+
 # App Settings
 
 App Settings contain DART's application-wide settings. These may be used when creating bags and other packages. To view the list of all settings, select <b>Settings &gt; App Settings</b> from the main menu.

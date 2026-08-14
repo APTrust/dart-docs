@@ -1,3 +1,9 @@
+---
+description: >-
+  DART 2 packaging options, including package format, BagIt profile, serialization,
+  package name, and output path.
+---
+
 # Packaging
 
 The packaging screen incudes the following options:

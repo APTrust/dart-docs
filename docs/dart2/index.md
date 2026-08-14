@@ -1,3 +1,9 @@
+---
+description: >-
+  DART 2 is the Digital Archivist's Resource Tool, a GUI and command-line app for
+  packaging files and uploading them to remote repositories.
+---
+
 # Welcome to DART
 
 DART is the Digital Archivist's Resource Tool. It provides both a GUI and a command-line interface for packaging files and uploading them to remote repositories.

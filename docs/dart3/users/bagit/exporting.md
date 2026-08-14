@@ -1,3 +1,9 @@
+---
+description: >-
+  Share a DART 3 BagIt profile by exporting it as 1.3 specification JSON, with caveats
+  about tag validation.
+---
+
 # Exporting Profiles
 
 DART can export profiles to the [BagIt Profiles 1.3 specification](https://bagit-profiles.github.io/bagit-profiles-specification/), though note that that specification does not support validation of tags outside the bagit.txt and bag-info.txt files. When exporting a DART profile to the 1.3 specification format, you will lose information describing how to validate tags outside of those files.

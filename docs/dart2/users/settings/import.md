@@ -1,3 +1,9 @@
+---
+description: >-
+  Import DART 2 settings from a URL or from pasted JSON to configure your installation
+  from shared data.
+---
+
 # Importing Settings
 
 You can import settings into DART from a URL or by copying and pasting data. DART's data import feature helps organizations configure and distribute basic settings for their users.

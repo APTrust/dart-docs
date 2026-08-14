@@ -1,3 +1,9 @@
+---
+description: >-
+  DART 2 stores its settings as plain text JSON files, using the conf module and
+  write-file-atomic to avoid conflicts.
+---
+
 # Data Storage
 
 DART stores all of its settings data in plain text JSON files. You find these files in the DART data directory. Choose __Help &gt; About__ from the DART menu to find the data directory on your system. You'll see a dialog like the following.

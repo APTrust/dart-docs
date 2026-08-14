@@ -1,3 +1,9 @@
+---
+description: >-
+  View and edit DART 2 App Settings, the application-wide values such as bagging
+  directory and institution domain.
+---
+
 # App Settings
 
 App Settings contain DART's application-wide settings. These may be used when creating bags and other packages. To view the list of all settings, select <b>Settings &gt; App Settings</b> from the main menu.

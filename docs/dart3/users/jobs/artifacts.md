@@ -1,3 +1,9 @@
+---
+description: >-
+  DART 3 keeps each job's manifests, tag files, and results as artifacts you can copy to
+  the clipboard or save.
+---
+
 # Job Artifacts
 
 After running a job, DART 3 keeps a copy of the job's artifacts in its local database. These artifacts let you know what the job was intended to do, how it turned out, and which files and metadata were added into the bag. Artifacts are described below.

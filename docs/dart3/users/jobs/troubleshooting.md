@@ -1,3 +1,9 @@
+---
+description: >-
+  Fixes for DART 3 job failures, starting with the SFTP bad path error caused by a wrong
+  storage service bucket name.
+---
+
 # Troubleshooting Jobs
 
 ## Uploading

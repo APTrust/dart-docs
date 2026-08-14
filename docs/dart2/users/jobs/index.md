@@ -1,3 +1,9 @@
+---
+description: >-
+  DART 2 jobs package files into formats such as BagIt, validate the package, and upload
+  it to remote locations.
+---
+
 # Jobs
 
 A job is a set of actions that may include one or more of the following:

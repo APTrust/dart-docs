@@ -1,3 +1,9 @@
+---
+description: >-
+  DART 2 command line reference for running jobs from a JobParams file, a job JSON file,
+  or STDIN input.
+---
+
 # Command Line Reference
 
 DART provides several ways of running jobs from the command line. The most convenient method, and the easiest to script, is to define a workflow and then create a [JobParams](workflows/job_params.md) object that describes which files to pass through the workflow and what custom metadata attributes to assign.

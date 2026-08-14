@@ -1,3 +1,9 @@
+---
+description: >-
+  Add a BagIt profile to DART 3, starting either from nothing or from a copy of a
+  profile you already have.
+---
+
 # Creating Profiles
 
 To create a new BagIt Profile:

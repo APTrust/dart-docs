@@ -1,3 +1,9 @@
+---
+description: >-
+  Read-only internal settings in DART 3, which may be empty at initial release and grow
+  as new features arrive.
+---
+
 # Internal Settings
 
 Internal Settings contain configuration information that users cannot edit. These settings are created by plugins, settings imports, and software updates. Though you cannot change them, knowing their values may be helpful to DART users and developers.

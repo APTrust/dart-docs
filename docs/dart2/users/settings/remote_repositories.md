@@ -1,3 +1,9 @@
+---
+description: >-
+  Configure DART 2 remote repositories so DART can query a repository REST API for the
+  status of items you upload.
+---
+
 # Remote Repositories
 
 Remote repositories are services to which you upload data for preservation. DART can query remote repositories to show the status of items you've uploaded for ingest, provided the following three conditions are met:

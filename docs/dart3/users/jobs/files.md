@@ -1,3 +1,9 @@
+---
+description: >-
+  Drag files into a DART 3 job from the built-in file browser on the left of the window,
+  and remove any you don't want.
+---
+
 # Adding Files
 
 After you create a new job or click on a job in the Jobs list, you'll see the files page. You can add files to a job by dragging them from the file browser on the left side of the window into the drop zone on the right, which is outlined in blue.

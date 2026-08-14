@@ -1,3 +1,9 @@
+---
+description: >-
+  How DART 2 uses BagIt profiles to produce and validate bags, and how DART profiles
+  differ from the published spec.
+---
+
 # BagIt Profiles
 
 While the [BagIt specification](https://tools.ietf.org/html/rfc8493) describes the general requirements for a valid bag, BagIt profiles describe the tags, manifests, and tag manifests required to make a valid bag for a specific organization or purpose.

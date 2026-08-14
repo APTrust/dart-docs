@@ -1,3 +1,9 @@
+---
+description: >-
+  Edit a DART 3 BagIt profile in the visual editor, tab by tab, from the profile name
+  through individual tags.
+---
+
 # Customizing Profiles
 
 To customize a BagIt profile, click the name of the profile in the profiles list, or click new and follow the steps to [create a BagIt profile](creating.md).

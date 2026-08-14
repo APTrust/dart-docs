@@ -1,3 +1,9 @@
+---
+description: >-
+  Define a DART 3 workflow once, then reuse it in the UI or export it to run unattended
+  under DART Runner.
+---
+
 # Workflows
 
 A workflow is a set of packaging, validation, and/or upload operations that you define as a template to be run on any sets of files you choose.

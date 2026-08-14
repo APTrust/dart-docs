@@ -1,3 +1,9 @@
+---
+description: >-
+  DART 3 packages files into BagIt bags and uploads them to S3 and SFTP endpoints, in
+  loose, tar, and gzip formats.
+---
+
 # Welcome to DART
 
 DART is the Digital Archivist's Resource Tool. It provides both a GUI and a command-line interface for packaging files and uploading them to remote repositories.

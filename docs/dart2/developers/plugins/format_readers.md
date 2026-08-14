@@ -1,3 +1,9 @@
+---
+description: >-
+  Write a DART 2 format reader plugin to list and read the contents of tar, zip, OCFL,
+  and other file formats.
+---
+
 # Format Readers
 
 Format readers read file formats like tar, zip, OCFL, etc. Format readers provide methods for listing the contents of a directory or serialized file, and for reading individual files from the directory/file.

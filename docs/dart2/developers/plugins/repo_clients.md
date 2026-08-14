@@ -1,3 +1,9 @@
+---
+description: >-
+  Write a DART 2 repository client plugin that reads from the REST API of a repository
+  such as APTrust or Fedora.
+---
+
 # Repository Clients
 
 Repository clients communicate with the REST APIs of remote repositories such as APTrust, Fedora, etc. For safety, these clients should be limited to read operations, such as showing a list of ingested objects or a list of pending work items from a queue.

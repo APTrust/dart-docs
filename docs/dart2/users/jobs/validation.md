@@ -1,3 +1,9 @@
+---
+description: >-
+  Validate an existing bag in DART 2 against a chosen BagIt profile or against the BagIt
+  specification itself.
+---
+
 # Validation Jobs
 
 If you simply want to validate an existing bag, follow these steps:

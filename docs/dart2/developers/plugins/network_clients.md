@@ -1,3 +1,9 @@
+---
+description: >-
+  Write a DART 2 network client plugin to upload, download, and list files over
+  protocols such as S3 and SFTP.
+---
+
 # Network Clients
 
 Network Clients allow DART to send and receive data using defined network protocols such as S3, FTP, etc. These clients should be able to do the following:

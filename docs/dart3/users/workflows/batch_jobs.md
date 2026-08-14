@@ -1,3 +1,9 @@
+---
+description: >-
+  Drive many DART 3 jobs through one workflow from a spreadsheet, bagging and uploading
+  every row the same way.
+---
+
 # Batch Jobs
 
 Batch jobs allow you to define a series of jobs in a spreadsheet and then run all of the jobs through the same workflow. Note that a [workflow](./index.md) typically includes a BagIt profile, often with default tag values already filled in, and one or more upload targets.

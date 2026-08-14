@@ -1,3 +1,9 @@
+---
+description: >-
+  Bring a BagIt profile into DART 3 from a URL or from JSON data, including Library of
+  Congress profile layouts.
+---
+
 # Importing Profiles
 
 DART can import BagIt profiles that follow the [BagIt Profiles 1.3 specification](https://bagit-profiles.github.io/bagit-profiles-specification/), ordered Library of Congress profiles, such as [SANC State Profile](https://github.com/LibraryOfCongress/bagger/blob/master/bagger-business/src/main/resources/gov/loc/repository/bagger/profiles/SANC-state-profile.json), and unordered Library of Congress profiles like [other-project-profile.json](https://github.com/LibraryOfCongress/bagger/blob/master/bagger-business/src/main/resources/\gov/loc/repository/bagger/profiles/other-project-profile.json).

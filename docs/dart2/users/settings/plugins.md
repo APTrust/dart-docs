@@ -1,3 +1,9 @@
+---
+description: >-
+  View the DART 2 plugins installed on your system, including format readers, writers,
+  and network clients.
+---
+
 # Plugins
 
 DART plugins provide features such as the following:

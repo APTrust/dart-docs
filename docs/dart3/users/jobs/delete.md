@@ -1,3 +1,9 @@
+---
+description: >-
+  Removing a job from DART 3, using the Jobs list and the red Delete button on the job's
+  files page.
+---
+
 # Deleting Jobs
 
 To delete a job:

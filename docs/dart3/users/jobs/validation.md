@@ -1,3 +1,9 @@
+---
+description: >-
+  Validate existing bags in DART 3 by dragging them out of the bagging directory into a
+  validation job.
+---
+
 # Validation Jobs
 
 If you simply want to validate an existing bag, follow these steps:

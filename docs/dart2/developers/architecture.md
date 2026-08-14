@@ -1,3 +1,9 @@
+---
+description: >-
+  The core design principles behind DART 2, including cross-platform support, plugins,
+  and loosely coupled components.
+---
+
 # Architecture
 
 DART was designed around a few core principles.

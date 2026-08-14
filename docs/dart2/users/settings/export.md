@@ -1,3 +1,9 @@
+---
+description: >-
+  Export DART 2 settings, BagIt profiles, and storage services so other users can import
+  your configuration.
+---
+
 # Exporting Settings
 
 If you're setting up DART for a number of users, you may want to configure your local DART installation, then export your settings for others to use. For example, you can set up a BagIt Profile, application settings, remote repositories and storage services for your institution, then publish them to a URL for others to install via DART's import feature.

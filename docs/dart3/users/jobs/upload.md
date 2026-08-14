@@ -1,3 +1,9 @@
+---
+description: >-
+  Pick upload targets for a DART 3 bagging job from your configured storage services,
+  using a more robust uploader.
+---
+
 # Uploads
 
 !!! note

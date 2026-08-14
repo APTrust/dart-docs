@@ -1,3 +1,9 @@
+---
+description: >-
+  A DART 2 workflow is a reusable template of packaging, validation, and upload steps to
+  run on any set of files.
+---
+
 # Workflows
 
 A workflow is a set of packaging, validation, and/or upload operations that you define as a template to be run on any sets of files you choose.

@@ -1,3 +1,9 @@
+---
+description: >-
+  What a DART 3 job does, from packaging and validation through upload, and the steps
+  involved in creating one.
+---
+
 # Jobs
 
 A job is a set of actions that may include one or more of the following:

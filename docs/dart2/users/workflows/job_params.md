@@ -1,3 +1,9 @@
+---
+description: >-
+  The DART 2 JobParams JSON object supplies the workflow name, package name, files, and
+  tags for a command-line job.
+---
+
 # Job Params
 
 The JobParams object is a simple JSON structure that gives a DART command-line job four essential pieces of information it needs to run a job. These are:

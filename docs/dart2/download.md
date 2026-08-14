@@ -1,3 +1,9 @@
+---
+description: >-
+  Download the DART 2 installer, version 2.0.22, for Mac, Windows, or Linux, with links
+  and setup instructions.
+---
+
 _Updated March 14, 2023_
 
 Download the DART installer for your system. The current version is 2.0.22 (released March 14, 2023).

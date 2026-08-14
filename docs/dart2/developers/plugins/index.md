@@ -1,3 +1,9 @@
+---
+description: >-
+  How DART 2 plugins work, what the base Plugin object provides, and what its
+  description fields mean to developers.
+---
+
 # Plugins
 
 Plugins allow DART to read and write data formats (such as tar, zip, etc.), to upload and download files using various protocols (such as s3, ftp, etc.), to communicate with the REST APIs of remote repositories (such as APTrust) and to help users through the complexities of initial setup and configuration (such as the APTrust and DPN setup modules).

@@ -1,3 +1,9 @@
+---
+description: >-
+  Check the DART 3 run summary before starting a job, then follow each packaging,
+  validation, and upload step.
+---
+
 # Run Your Job
 
 After defining the files your job will work with and the optional packaging, metadata, and upload steps, the Run page displays a summary of the work that DART will perform. Review the details to ensure that everything looks right, then click the __Run__ button to run the job.

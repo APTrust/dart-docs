@@ -1,3 +1,9 @@
+---
+description: >-
+  Script DART 2 jobs in Ruby or Python by passing JobParams JSON to the DART command
+  through STDIN.
+---
+
 # Scripting with DART
 
 The easiest way to script DART jobs is to:

@@ -1,3 +1,9 @@
+---
+description: >-
+  Point DART 3 at a preservation repository REST API to track ingest status. Repository
+  clients are now written in Go.
+---
+
 # Remote Repositories
 
 Remote repositories are services to which you upload data for preservation. DART can query remote repositories to show the status of items you've uploaded for ingest, provided the following three conditions are met:

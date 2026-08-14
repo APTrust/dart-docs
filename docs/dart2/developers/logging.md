@@ -1,3 +1,9 @@
+---
+description: >-
+  DART 2 uses the Winston logging library. Find your log file location and tail the logs
+  as you develop.
+---
+
 # Logging
 
 DART uses the [Winston](https://github.com/winstonjs/winston) library for logging. You can find the location of your DART logs by choosing __Help &gt; About__ from the main menu. You should see a dialog like this:

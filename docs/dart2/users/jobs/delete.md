@@ -1,3 +1,9 @@
+---
+description: >-
+  How to delete a job in DART 2, starting from the Jobs list and using the Delete button
+  on the job files page.
+---
+
 # Deleting Jobs
 
 To delete a job:

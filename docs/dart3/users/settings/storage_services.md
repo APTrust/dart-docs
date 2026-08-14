@@ -1,3 +1,9 @@
+---
+description: >-
+  DART 3 storage services define the S3 and SFTP buckets and folders you drop materials
+  into or pick them up from.
+---
+
 # Storage Services
 
 Storage services are not repositories! They are pickup and drop-off points for materials going into or coming out of repositories. Some repositories ask depositors to upload materials into an S3 bucket or an SFTP folder for ingest, and restore materials to a similar bucket or folder for depositors to retrieve.
