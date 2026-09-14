@@ -6,7 +6,7 @@ description: >-
 
 # DART Runner
 
-Because DART uses the Electron framework, it requires the presence of a graphical user interface and a windowing system, even when it's not going to use a GUI. That means it can't even start in comman-line mode unless it's running in a desktop environment. This limitation is inherent in Electron and makes DART unsuitable for running on a Linux server.
+Because DART uses the Electron framework, it requires the presence of a graphical user interface and a windowing system, even when it's not going to use a GUI. That means it can't even start in command-line mode unless it's running in a desktop environment. This limitation is inherent in Electron and makes DART unsuitable for running on a Linux server.
 
 For this reason, APTrust built dart-runner, which is a lightweight command-line version of DART that can run in server environments without a GUI. Dart-runner is intended to run workflows that were created and tested in DART.
 
@@ -17,12 +17,6 @@ The general process is:
 [DART 2 Workflows](../dart2/users/workflows/index.md#exporting-a-workflow) or
 [DART 3 Workflows](../dart3/users/workflows/index.md#exporting-a-workflow).
 3. Run dart-runner on the server with the exported workflow file and a list of items you want to run through that workflow. If you're running a batch job, the list must conform to the workflow CSV format used for batch jobs, which is the same in [DART 2 Bacth Jobs](../dart2/users/workflows/batch_jobs.md/) and [DART 3 Batch Jobs](../dart3/users/workflows/batch_jobs.md/). If you're running one-off jobs using Job Params, be sure your JSON conforms to the format below. See below for details.
-
-!!! note
-    When scripting jobs and workflows on Mac and Windows, you should
-    stick with the DART CLI, since it's more mature as of late 2021.
-    Since Windows and Mac include a GUI environment by default, DART
-    and the DART CLI will always work.
 
 ## Downloads
 
@@ -86,11 +80,10 @@ Dart-runner:
 
 ## Limitations
 
-Dart-runner is currently in beta and has the following limitations:
+Dart-runner has the following limitations:
 
 * It supports only the BagIt packaging format.
 * It supports only S3 uploads (no SFTP).
-* It's intended primarily for use on Linux servers.
 
 ## Differences in Job Params JSON
 

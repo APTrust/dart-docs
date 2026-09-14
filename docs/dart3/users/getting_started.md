@@ -6,7 +6,7 @@ description: >-
 
 # Getting Started
 
-DART is the Digital Archivist's Resource Tool. Its primary purpose is to package digital materials and send them off to long-term preservation storage. DART's initial release focuses on packaging materials in BagIt format and uploading them to S3 buckets for ingest in APTrust. DART can be extended through plugins to produce other packaging formats and to communicated via additional network protocols.
+DART is the Digital Archivist's Resource Tool. Its primary purpose is to package digital materials and send them off to long-term preservation storage. DART focuses on packaging materials in BagIt format and uploading them to S3 buckets for ingest in APTrust but can create BagIt bags and send them to any S3 or SFTP server. DART can be extended through plugins to produce other packaging formats and to communicated via additional network protocols.
 
 DART runs in both graphical and command-line modes on Windows, Mac, and Linux. What can you do with it? The video below gives a sample. Note that this video shows the DART 2 interface. DART 3 is similar, except that files must be dragged in from the file navigator in the left side bar.
 
@@ -18,7 +18,7 @@ DART runs in both graphical and command-line modes on Windows, Mac, and Linux. W
 
 ## Set Up
 
-After installation, DART includes two BagIt profiles by default, one for APTrust and one for DPN. You can use one of these two profiles to create your first job. While jobs can include packaging, validation, and upload operations, you won't be able to upload anything until you've set up a [Storage Service](settings/storage_services.md) to receive an upload. With this, your first job will be limited to creating and validating a BagIt bag.
+After installation, DART includes two BagIt profiles by default, one for APTrust and one for Beyond the Repository. You can use one of these two profiles to create your first job. While jobs can include packaging, validation, and upload operations, you won't be able to upload anything until you've set up a [Storage Service](settings/storage_services.md) to receive an upload. In the following tutorial, your first job will be limited to creating and validating a BagIt bag.
 
 ## Running Your First Job
 

@@ -16,7 +16,7 @@ DART was initially designed for APTrust depositors to bag files according to the
 
 DART plugin architecture will allow it to handle similary patterned jobs that use different packaging formats and network protocols such as zip, rar, or parchive formats sent via FTP or rsync.
 
-The process for creating and running jobs invlolves these steps:
+The process for creating and running jobs involves these steps:
 
 1. [Adding files](files.md).
 1. [Choosing a package format](packaging.md).

@@ -21,6 +21,6 @@ On Windows, double click the app icon, then click **More Info** and **Run Anyway
 
 On Linux, you may have to grant DART executable permissions by running `chmod 0755 dart` in the directory containing the DART program.
 
-For DART Runner, see [DART Runner Downloads](https://aptrust.github.io/dart-docs/users/dart_runner/#downloads)
+For DART Runner, see [DART Runner Downloads](users/dart_runner/#downloads)
 
 After installation, check out the [Getting Started page](users/getting_started.md)
