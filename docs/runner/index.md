@@ -25,16 +25,16 @@ The general process is:
     to incorrect tag values being written into bags when using
     workflow batch mode. Please download version 0.96-beta or later.
 
-Latest version is v1.0.5, released July 16, 2026.
+Latest version is v1.0.6, released October 28, 2026.
 
 | Platform | Architecture | Version | SHA-256 |
 | -------- | ------------ | ------- | ------- |
-| [Windows Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.5/windows/amd64/dart-runner.exe) | Intel 64-bit | v1.0.5 | 854ae1486d5d50d9518d9926177312f791925b3725823337307539fc1cc54738 |
-| [Windows ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.5/windows/arm64/dart-runner.exe) | ARM 64-bit | v1.0.5 | cb63d06edaab907f95b38890cf579d5d9141f66f9b856c8defd0cf1a61a9d7ea |
-| [Mac Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.5/mac/amd64/dart-runner)  | Intel 64-bit | v1.0.5 | e39359d1753971e322b3e7aece3ad0c381d69c0a824f8a067657cc584e9612d3 |
-| [Mac ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.5/mac/arm64/dart-runner) | Apple Silicon (M series) | v1.0.5 | 900d70426ae0cb188f49946610e4bbef8e02badbd5f64370d9fedc2366a8d19c |
-| [Linux Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.5/linux/amd64/dart-runner) | Intel 64-bit | v1.0.5 | 3dae400e31e754be179f19026996fc672e0f6ed2b213401fdff7c34a4fcf8a45 |
-| [Linux ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.5/linux/arm64/dart-runner) | ARM 64-bit | v1.0.5 | c5d25896cf4e19d41a958c94b95b5595140a4eaa55a252f16ed2eec48fed4c66 |
+| [Windows Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.6/windows/amd64/dart-runner.exe) | Intel 64-bit | v1.0.6 | f895fefb961dcab20020b04677ad601481d7b2113a072ed6fd82fbeb84dd7c92 |
+| [Windows ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.6/windows/arm64/dart-runner.exe) | ARM 64-bit | v1.0.6 | f3a8d13834a674b00bd37bf9bddcfaa4d22abc35ed5779c7fc3af42e0c6e37cc |
+| [Mac Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.6/mac/amd64/dart-runner)  | Intel 64-bit | v1.0.6 | db9d9e4ad6cf2a427d55e3010b444def8674116cac36441e3f6a6467791140b1 |
+| [Mac ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.6/mac/arm64/dart-runner) | Apple Silicon (M series) | v1.0.6 | cc36e69d2d6e8260248999dc3a95572e24f5abcc2fade5492f85bff784751891 |
+| [Linux Intel](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.6/linux/amd64/dart-runner) | Intel 64-bit | v1.0.6 | 2699cb93075b05de1275c9e1c6162a0bab9ed18526d96f5bc84c5647b0a3549c |
+| [Linux ARM](https://s3.amazonaws.com/aptrust.public.download/dart-runner/v1.0.6/linux/arm64/dart-runner) | ARM 64-bit | v1.0.6 | 063b1e040c8c8154456066904e825d7e17e237721c298619301562e1784cb901 |
 
 Because it's a single binary with no dependencies, there's no installation process for dart-runner. Simply copy the binary onto your computer and run. On Mac and Linux, you will need to give dart-runner executable permissions with the command `chmod 0755 path/to/dart-runner`. Replace the path with the actual path on your machine.
 
