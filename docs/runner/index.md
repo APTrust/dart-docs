@@ -40,7 +40,7 @@ Because it's a single binary with no dependencies, there's no installation proce
 
 ## Running on MacOS
 
-On newer versions of MacOS, you may need to remove dart-runner from quarentine. In a terminal window, change into the directory containing dart-runner and run the following commands:
+On newer versions of MacOS, you may need to remove dart-runner from quarantine. In a terminal window, change into the directory containing dart-runner and run the following commands:
 
 ```bash
 # Make sure the checksum matches the one listed above for your
@@ -53,7 +53,7 @@ shasum -a 256 dart-runner
 # Give the app executable permission
 chmod 0755 dart-runner
 
-# If the checksum matches, remove the app from quarentine.
+# If the checksum matches, remove the app from quarantine.
 xattr -d com.apple.quarantine dart-runner
 
 # Test that the app works. The following command should print
