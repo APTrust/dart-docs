@@ -1,6 +1,6 @@
-_Updated October 28, 2026_
+_Updated November 3, 2026_
 
-Download the DART 3 installer for your system. The current version is v3.0 (released April 28, 2026).
+Download the DART 3 installer for your system. The current version is v3.0.1 (released November 3, 2026).
 
 
 | Operating System       | Version | Download Link | SHA-256 Checksum |
