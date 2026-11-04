@@ -4,6 +4,10 @@ description: >-
   per-platform install notes.
 ---
 
+<!-- Single source for DART 3 downloads. index.md and users/getting_started.md link here.
+     To release a new version, edit only this file: the description above, the
+     "Updated" and "current version" lines, and the table (URLs and SHA-256s). -->
+
 _Updated November 3, 2026_
 
 Download the DART 3 installer for your system. The current version is v3.0.1 (released November 3, 2026).

@@ -14,7 +14,7 @@ DART runs in both graphical and command-line modes on Windows, Mac, and Linux. W
 
 ## Installation
 
-{! dart3/shared/downloads.md !}
+Download the latest DART 3 installer for Windows, Mac, or Linux from the [DART 3 Download](../download.md) page.
 
 ## Set Up
 

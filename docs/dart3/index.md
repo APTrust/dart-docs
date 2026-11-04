@@ -10,7 +10,7 @@ DART is the Digital Archivist's Resource Tool. It provides both a GUI and a comm
 
 ## Download
 
-{! dart3/shared/downloads.md !}
+Download the latest DART 3 installer for Windows, Mac, or Linux from the [DART 3 Download](download.md) page.
 
 After installation, check out the [Getting Started page](users/getting_started.md)
 
